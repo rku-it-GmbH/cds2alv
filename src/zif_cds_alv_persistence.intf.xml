@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_INTF" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOINTERF>
+    <CLSNAME>ZIF_CDS_ALV_PERSISTENCE</CLSNAME>
+    <LANGU>D</LANGU>
+    <DESCRIPT>Persistenz für das CDS ALV Framework</DESCRIPT>
+    <EXPOSURE>2</EXPOSURE>
+    <STATE>1</STATE>
+    <UNICODE>X</UNICODE>
+   </VSEOINTERF>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_REPORT_FOR_CDS_VIEW</CMPNAME>
+     <SCONAME>R_PROGRAM_INFO</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Alle Daten eines Programms zur Anzeige eines CDS-Views</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_REPORT_FOR_CDS_VIEW</CMPNAME>
+     <SCONAME>R_PROGRAM_INFO</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>All data of a program for displaying a CDS view</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

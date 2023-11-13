@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DTEL" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD04V>
+    <ROLLNAME>ZCDS_ALV_PARAM_HAS_HELP</ROLLNAME>
+    <DDLANGUAGE>D</DDLANGUAGE>
+    <DOMNAME>XFELD</DOMNAME>
+    <LOGFLAG>X</LOGFLAG>
+    <HEADLEN>55</HEADLEN>
+    <SCRLEN1>10</SCRLEN1>
+    <SCRLEN2>20</SCRLEN2>
+    <SCRLEN3>40</SCRLEN3>
+    <DDTEXT>Kennzeichen: Hilfe zum Parameter vorhanden</DDTEXT>
+    <REPTEXT>Hilfe vorhanden</REPTEXT>
+    <SCRTEXT_S>Hilfe</SCRTEXT_S>
+    <SCRTEXT_M>Hilfe vorhanden</SCRTEXT_M>
+    <SCRTEXT_L>Hilfe vorhanden</SCRTEXT_L>
+    <DTELMASTER>D</DTELMASTER>
+    <REFKIND>D</REFKIND>
+   </DD04V>
+   <I18N_LANGS>
+    <LANGU>E</LANGU>
+   </I18N_LANGS>
+   <DD04_TEXTS>
+    <item>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DDTEXT>Flag: Help available for a parameter</DDTEXT>
+     <REPTEXT>Help available</REPTEXT>
+     <SCRTEXT_S>Help</SCRTEXT_S>
+     <SCRTEXT_M>Help available</SCRTEXT_M>
+     <SCRTEXT_L>Help available</SCRTEXT_L>
+    </item>
+   </DD04_TEXTS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

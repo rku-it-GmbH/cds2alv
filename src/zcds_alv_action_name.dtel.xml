@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DTEL" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD04V>
+    <ROLLNAME>ZCDS_ALV_ACTION_NAME</ROLLNAME>
+    <DDLANGUAGE>D</DDLANGUAGE>
+    <DOMNAME>ZCDS_ALV_ACTION_NAME</DOMNAME>
+    <HEADLEN>30</HEADLEN>
+    <SCRLEN1>10</SCRLEN1>
+    <SCRLEN2>15</SCRLEN2>
+    <SCRLEN3>20</SCRLEN3>
+    <DDTEXT>Name</DDTEXT>
+    <REPTEXT>Objektname</REPTEXT>
+    <SCRTEXT_S>Objektname</SCRTEXT_S>
+    <SCRTEXT_M>Objektname</SCRTEXT_M>
+    <SCRTEXT_L>Objektname</SCRTEXT_L>
+    <DTELMASTER>E</DTELMASTER>
+    <REFKIND>D</REFKIND>
+   </DD04V>
+   <I18N_LANGS>
+    <LANGU>E</LANGU>
+   </I18N_LANGS>
+   <DD04_TEXTS>
+    <item>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DDTEXT>Name</DDTEXT>
+     <REPTEXT>Action Name</REPTEXT>
+     <SCRTEXT_S>Act. Name</SCRTEXT_S>
+     <SCRTEXT_M>Action Name</SCRTEXT_M>
+     <SCRTEXT_L>Action Name</SCRTEXT_L>
+    </item>
+   </DD04_TEXTS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,378 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZCDS_ALV</ARBGB>
+    <MASTERLANG>D</MASTERLANG>
+    <STEXT>CDS ALV Framework</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZCDS_ALV</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Die Tabelle konnte nicht um das Style-Feld &amp;1 erweitert werden.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZCDS_ALV</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Keine Navigation für Objekt &amp;1, Aktion &amp;2 definiert.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZCDS_ALV</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Bitte markieren Sie nur eine Zeile für diese Aktion.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZCDS_ALV</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Aufruf mit Tabellenparameter nur für Funktionsbausteine möglich!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZCDS_ALV</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Ungültiger Importparameter &amp;1 für Funktionsbaustein &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZCDS_ALV</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Fehler beim Generieren des Reports für CDS-View &amp;1 (Zeile &amp;2, Wort &amp;3)</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZCDS_ALV</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Der CDS-View &amp;1 existiert nicht.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZCDS_ALV</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Kein Programm für CDS-View &amp;1 vorhanden.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZCDS_ALV</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Der CDS-View &amp;1 existiert bereits.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZCDS_ALV</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Der DDIC-View &amp;1 existiert bereits.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZCDS_ALV</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>Query oder Quick-View &amp;1 ist nicht vorhanden.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZCDS_ALV</ARBGB>
+     <MSGNR>012</MSGNR>
+     <TEXT>Query oder Quick-View &amp;1 kann nicht gelesen werden.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZCDS_ALV</ARBGB>
+     <MSGNR>013</MSGNR>
+     <TEXT>Objekt &amp;1 konnte nicht aktiviert werden.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZCDS_ALV</ARBGB>
+     <MSGNR>014</MSGNR>
+     <TEXT>Programminfos für CDS-View &amp;1 konnten nicht gespeichert werden.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZCDS_ALV</ARBGB>
+     <MSGNR>015</MSGNR>
+     <TEXT>Das Objekt implementiert nicht das Interface &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZCDS_ALV</ARBGB>
+     <MSGNR>016</MSGNR>
+     <TEXT>Keine gültige implementierende Klasse für Interface &amp;1 konfiguriert.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZCDS_ALV</ARBGB>
+     <MSGNR>017</MSGNR>
+     <TEXT>Für Interface &amp;1 konnte keine Instanz der Klasse &amp;2 instanziiert werden.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZCDS_ALV</ARBGB>
+     <MSGNR>018</MSGNR>
+     <TEXT>Die Tabelle hat nicht die passende Struktur für CDS-View &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZCDS_ALV</ARBGB>
+     <MSGNR>019</MSGNR>
+     <TEXT>Klasse &amp;1 für Erweiterung &amp;2 konnte nicht instanziiert werden.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZCDS_ALV</ARBGB>
+     <MSGNR>020</MSGNR>
+     <TEXT>Es sind keine Programmerweiterungen verfügbar.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZCDS_ALV</ARBGB>
+     <MSGNR>021</MSGNR>
+     <TEXT>Konvertierung für XML-Version &amp;1 aktuell nicht umgesetzt.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZCDS_ALV</ARBGB>
+     <MSGNR>022</MSGNR>
+     <TEXT>Bitte geben Sie einen Dateinamen an.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZCDS_ALV</ARBGB>
+     <MSGNR>023</MSGNR>
+     <TEXT>Fehler beim Lesen der Datei &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZCDS_ALV</ARBGB>
+     <MSGNR>024</MSGNR>
+     <TEXT>Fehler beim Ablegen der Datei &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZCDS_ALV</ARBGB>
+     <MSGNR>025</MSGNR>
+     <TEXT>Fehler beim Löschen der Datei &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZCDS_ALV</ARBGB>
+     <MSGNR>026</MSGNR>
+     <TEXT>Datei &amp;1 wurde abgelegt.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZCDS_ALV</ARBGB>
+     <MSGNR>027</MSGNR>
+     <TEXT>&amp;1 ist keine gültige Klasse.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZCDS_ALV</ARBGB>
+     <MSGNR>028</MSGNR>
+     <TEXT>&amp;1 ist kein gültiges Interface.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZCDS_ALV</ARBGB>
+     <MSGNR>029</MSGNR>
+     <TEXT>Klasse &amp;1 implementiert nicht das Interface &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZCDS_ALV</ARBGB>
+     <MSGNR>030</MSGNR>
+     <TEXT>Fehler beim RFC-Aufruf: &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZCDS_ALV</ARBGB>
+     <MSGNR>031</MSGNR>
+     <TEXT>Mailversand an Empfängerliste &amp;1 angestoßen.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZCDS_ALV</ARBGB>
+     <MSGNR>032</MSGNR>
+     <TEXT>Leere Empfängerliste &amp;1</TEXT>
+    </T100>
+   </T100>
+   <I18N_LANGS>
+    <LANGU>E</LANGU>
+   </I18N_LANGS>
+   <T100T>
+    <T100T>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCDS_ALV</ARBGB>
+     <STEXT>CDS ALV Framework</STEXT>
+    </T100T>
+   </T100T>
+   <T100_TEXTS>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>001</MSGNR>
+     <TEXT>Style field &amp;1 could not be inserted into the table.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>002</MSGNR>
+     <TEXT>No navigation defined for semantic object &amp;1, action &amp;2.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>003</MSGNR>
+     <TEXT>Please select exactly one line for this action.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>004</MSGNR>
+     <TEXT>Only function modules may be called with tables parameters!</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>005</MSGNR>
+     <TEXT>Invalid importing parameter &amp;1 for function module &amp;2.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>006</MSGNR>
+     <TEXT>Syntax error in generated report for CDS view &amp;1 (Line &amp;2, Word &amp;3)</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>007</MSGNR>
+     <TEXT>CDS view &amp;1 does not exist.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>008</MSGNR>
+     <TEXT>No program available for CDS view &amp;1.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>009</MSGNR>
+     <TEXT>CDS view &amp;1 already exists.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>010</MSGNR>
+     <TEXT>DDIC view &amp;1 already exists.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>011</MSGNR>
+     <TEXT>Query or quick view &amp;1 does not exist.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>012</MSGNR>
+     <TEXT>Error reading query or quick view &amp;1.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>013</MSGNR>
+     <TEXT>Object &amp;1 could not be activated.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>014</MSGNR>
+     <TEXT>Program infos for CDS View &amp;1 could not be saved.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>015</MSGNR>
+     <TEXT>The given object does not implement interface &amp;1.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>016</MSGNR>
+     <TEXT>There is no valid implementing class configured for interface &amp;1.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>017</MSGNR>
+     <TEXT>No instance of class &amp;2 could be instantiated for interface &amp;1.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>018</MSGNR>
+     <TEXT>The given table does not have the right line type for CDS view &amp;1.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>019</MSGNR>
+     <TEXT>Class &amp;1 could not be instantiated for extension &amp;2.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>020</MSGNR>
+     <TEXT>There are no program extensions available.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>021</MSGNR>
+     <TEXT>Conversion is currently not implemented for XML version &amp;1.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>022</MSGNR>
+     <TEXT>Please enter a file name!</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>023</MSGNR>
+     <TEXT>Error occured reading file &amp;1.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>024</MSGNR>
+     <TEXT>Error occured storing file &amp;1.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>025</MSGNR>
+     <TEXT>Error occured deleting file &amp;1.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>026</MSGNR>
+     <TEXT>File &amp;1 was stored.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>027</MSGNR>
+     <TEXT>&amp;1 is not a valid class.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>028</MSGNR>
+     <TEXT>&amp;1 is not a valid interface.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>029</MSGNR>
+     <TEXT>Class &amp;1 does not implement interface &amp;2.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>030</MSGNR>
+     <TEXT>Error during RFC call: &amp;1</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>031</MSGNR>
+     <TEXT>Mail delivery to receiver list &amp;1 was triggered.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>032</MSGNR>
+     <TEXT>Empty receiver list &amp;1.</TEXT>
+    </item>
+   </T100_TEXTS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

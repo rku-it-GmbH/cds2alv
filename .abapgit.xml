@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+ <asx:values>
+  <DATA>
+   <MASTER_LANGUAGE>D</MASTER_LANGUAGE>
+   <I18N_LANGUAGES>
+    <LAISO>E</LAISO>
+   </I18N_LANGUAGES>
+   <STARTING_FOLDER>/src/</STARTING_FOLDER>
+   <FOLDER_LOGIC>FULL</FOLDER_LOGIC>
+   <REQUIREMENTS>
+    <item>
+     <COMPONENT>SAP_ABA</COMPONENT>
+     <MIN_RELEASE>750</MIN_RELEASE>
+    </item>
+   </REQUIREMENTS>
+  </DATA>
+ </asx:values>
+</asx:abap>

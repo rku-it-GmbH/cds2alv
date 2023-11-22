@@ -4,8 +4,8 @@
   <asx:values>
    <VSEOINTERF>
     <CLSNAME>ZIF_CDS_ALV_CONDITION_PROVIDER</CLSNAME>
-    <LANGU>D</LANGU>
-    <DESCRIPT>Bereitstellung von Parametern und Selektionskriterien</DESCRIPT>
+    <LANGU>E</LANGU>
+    <DESCRIPT>Condition and Parameter provider for selection</DESCRIPT>
     <EXPOSURE>2</EXPOSURE>
     <STATE>1</STATE>
     <UNICODE>X</UNICODE>

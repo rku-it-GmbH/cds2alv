@@ -4,10 +4,10 @@
   <asx:values>
    <DD02V>
     <TABNAME>ZCDS_ALV_DEMO</TABNAME>
-    <DDLANGUAGE>D</DDLANGUAGE>
+    <DDLANGUAGE>E</DDLANGUAGE>
     <TABCLASS>TRANSP</TABCLASS>
     <CLIDEP>X</CLIDEP>
-    <DDTEXT>Tabelle für das Demoprogramm</DDTEXT>
+    <DDTEXT>Demo database table</DDTEXT>
     <MAINFLAG>X</MAINFLAG>
     <CONTFLAG>L</CONTFLAG>
     <EXCLASS>4</EXCLASS>
@@ -40,7 +40,7 @@
      <DATATYPE>CHAR</DATATYPE>
      <LENG>000030</LENG>
      <MASK>  CHAR</MASK>
-     <DDTEXT>Schlüssel</DDTEXT>
+     <DDTEXT>Key</DDTEXT>
     </DD03P>
     <DD03P>
      <FIELDNAME>DEMO_TEXT</FIELDNAME>
@@ -50,7 +50,7 @@
      <DATATYPE>CHAR</DATATYPE>
      <LENG>000100</LENG>
      <MASK>  CHAR</MASK>
-     <DDTEXT>Freitext</DDTEXT>
+     <DDTEXT>Free Text</DDTEXT>
     </DD03P>
     <DD03P>
      <FIELDNAME>DEMO_INTEGER</FIELDNAME>
@@ -60,7 +60,7 @@
      <DATATYPE>INT4</DATATYPE>
      <LENG>000010</LENG>
      <MASK>  INT4</MASK>
-     <DDTEXT>Ganze Zahl</DDTEXT>
+     <DDTEXT>Integer</DDTEXT>
     </DD03P>
     <DD03P>
      <FIELDNAME>DEMO_FLOAT</FIELDNAME>
@@ -71,7 +71,7 @@
      <LENG>000016</LENG>
      <DECIMALS>000016</DECIMALS>
      <MASK>  FLTP</MASK>
-     <DDTEXT>Gleitpunktzahl</DDTEXT>
+     <DDTEXT>Float</DDTEXT>
     </DD03P>
     <DD03P>
      <FIELDNAME>DEMO_AMOUNT</FIELDNAME>
@@ -84,7 +84,7 @@
      <LENG>000014</LENG>
      <DECIMALS>000002</DECIMALS>
      <MASK>  CURR</MASK>
-     <DDTEXT>Betrag</DDTEXT>
+     <DDTEXT>Amount</DDTEXT>
     </DD03P>
     <DD03P>
      <FIELDNAME>DEMO_CURRENCY</FIELDNAME>
@@ -94,7 +94,7 @@
      <DATATYPE>CUKY</DATATYPE>
      <LENG>000005</LENG>
      <MASK>  CUKY</MASK>
-     <DDTEXT>Währung</DDTEXT>
+     <DDTEXT>Currency</DDTEXT>
     </DD03P>
     <DD03P>
      <FIELDNAME>DEMO_QUANTITY</FIELDNAME>
@@ -107,7 +107,7 @@
      <LENG>000031</LENG>
      <DECIMALS>000014</DECIMALS>
      <MASK>  QUAN</MASK>
-     <DDTEXT>Menge</DDTEXT>
+     <DDTEXT>Quantity</DDTEXT>
     </DD03P>
     <DD03P>
      <FIELDNAME>DEMO_UNIT</FIELDNAME>
@@ -117,7 +117,7 @@
      <DATATYPE>UNIT</DATATYPE>
      <LENG>000003</LENG>
      <MASK>  UNIT</MASK>
-     <DDTEXT>Einheit</DDTEXT>
+     <DDTEXT>Unit</DDTEXT>
     </DD03P>
     <DD03P>
      <FIELDNAME>DEMO_EMAIL</FIELDNAME>
@@ -166,12 +166,12 @@
     </DD08V>
    </DD08V_TABLE>
    <I18N_LANGS>
-    <LANGU>E</LANGU>
+    <LANGU>D</LANGU>
    </I18N_LANGS>
    <DD02_TEXTS>
     <item>
-     <DDLANGUAGE>E</DDLANGUAGE>
-     <DDTEXT>Demo database table</DDTEXT>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DDTEXT>Tabelle für das Demoprogramm</DDTEXT>
     </item>
    </DD02_TEXTS>
   </asx:values>

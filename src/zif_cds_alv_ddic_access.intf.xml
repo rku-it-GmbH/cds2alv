@@ -4,8 +4,8 @@
   <asx:values>
    <VSEOINTERF>
     <CLSNAME>ZIF_CDS_ALV_DDIC_ACCESS</CLSNAME>
-    <LANGU>D</LANGU>
-    <DESCRIPT>DDIC-Zugriffe für CDS-Views</DESCRIPT>
+    <LANGU>E</LANGU>
+    <DESCRIPT>DDIC access for CDS views</DESCRIPT>
     <EXPOSURE>2</EXPOSURE>
     <STATE>1</STATE>
     <UNICODE>X</UNICODE>

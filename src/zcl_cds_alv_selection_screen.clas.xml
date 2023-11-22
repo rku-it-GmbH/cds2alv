@@ -4,8 +4,8 @@
   <asx:values>
    <VSEOCLASS>
     <CLSNAME>ZCL_CDS_ALV_SELECTION_SCREEN</CLSNAME>
-    <LANGU>D</LANGU>
-    <DESCRIPT>Viewklasse für Selection-Screens</DESCRIPT>
+    <LANGU>E</LANGU>
+    <DESCRIPT>View class for selection screens</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>
@@ -15,30 +15,30 @@
     <item>
      <ID>I</ID>
      <KEY>DIS</KEY>
-     <ENTRY>Anzeige im ALV-Grid</ENTRY>
+     <ENTRY>Display in alv grid</ENTRY>
      <LENGTH>100</LENGTH>
     </item>
     <item>
      <ID>I</ID>
      <KEY>SEL</KEY>
-     <ENTRY>Selektion von der Datenbank</ENTRY>
+     <ENTRY>Select from database</ENTRY>
      <LENGTH>100</LENGTH>
     </item>
    </TPOOL>
    <I18N_TPOOL>
     <item>
-     <LANGUAGE>E</LANGUAGE>
+     <LANGUAGE>D</LANGUAGE>
      <TEXTPOOL>
       <item>
        <ID>I</ID>
        <KEY>DIS</KEY>
-       <ENTRY>Display in alv grid</ENTRY>
+       <ENTRY>Anzeige im ALV-Grid</ENTRY>
        <LENGTH>100</LENGTH>
       </item>
       <item>
        <ID>I</ID>
        <KEY>SEL</KEY>
-       <ENTRY>Select from database</ENTRY>
+       <ENTRY>Selektion von der Datenbank</ENTRY>
        <LENGTH>100</LENGTH>
       </item>
      </TEXTPOOL>

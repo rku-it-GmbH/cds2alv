@@ -2,7 +2,7 @@
 <abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
-   <AREAT>erweiterte Tabellenpflege (generiert)</AREAT>
+   <AREAT>Table Maintentenance (generated)</AREAT>
    <INCLUDES>
     <SOBJ_NAME>LZCDS_ALV_TABLESF00</SOBJ_NAME>
     <SOBJ_NAME>LZCDS_ALV_TABLESI00</SOBJ_NAME>
@@ -13,7 +13,7 @@
    <FUNCTIONS>
     <item>
      <FUNCNAME>TABLEFRAME_ZCDS_ALV_TABLES</FUNCNAME>
-     <SHORT_TEXT>erweiterte Tabellenpflege obere Ebene</SHORT_TEXT>
+     <SHORT_TEXT>Extended table maintenance upper level</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>VIEW_ACTION</PARAMETER>
@@ -60,54 +60,54 @@
       <RSFDO>
        <PARAMETER>VIEW_ACTION</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Aktion mit Tabelle: anz./änd./transp. (S/U/T)</STEXT>
+       <STEXT>Action with table: show/change/transp. (S/U/T)</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>VIEW_NAME</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Name der Tabelle</STEXT>
+       <STEXT>Name of the table</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>CORR_NUMBER</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Korrekturnummer für durchgeführte Änderungen</STEXT>
+       <STEXT>Correction number for changes made</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>DBA_SELLIST</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Selektionsbedingungen für den DB-Zugriff</STEXT>
+       <STEXT>Selection conditons for DB access</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>DPL_SELLIST</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Selektionsbedingungen für die Anzeige</STEXT>
+       <STEXT>Selection conditons for the display</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EXCL_CUA_FUNCT</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Tabelle mit dynam. zu deaktivierenden CUA-Funkt.</STEXT>
+       <STEXT>Table with dynam. CUA function to be deactivated.</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>X_HEADER</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Kontrollblocktabelle für die Tabelle</STEXT>
+       <STEXT>Control block table for the table</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>X_NAMTAB</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Kontrollblocktabelle für die Tabellen-Felder</STEXT>
+       <STEXT>Control block table for the table fields</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>MISSING_CORR_NUMBER</PARAMETER>
        <KIND>X</KIND>
-       <STEXT>Korrekturnummer fehlt</STEXT>
+       <STEXT>Correctioin number is missing</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>TABLEPROC_ZCDS_ALV_TABLES</FUNCNAME>
      <GLOBAL_FLAG>X</GLOBAL_FLAG>
-     <SHORT_TEXT>erweiterte Tabellenpflege untere Ebene</SHORT_TEXT>
+     <SHORT_TEXT>Extended table maintenance lower level</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>FCODE</PARAMETER>
@@ -182,96 +182,91 @@
       <RSFDO>
        <PARAMETER>FCODE</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>gewünschte Funktion des Bausteins</STEXT>
+       <STEXT>Desired function of the module</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>VIEW_ACTION</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Aktion mit Tabelle: anz./änd./transp. (S/U/T)</STEXT>
+       <STEXT>Actions with table</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>VIEW_NAME</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Name der Tabelle</STEXT>
+       <STEXT>Name of the table</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>CORR_NUMBER</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Korrekturnummer für durchgeführte Änderungen</STEXT>
+       <STEXT>Correction number for changes made</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>LAST_ACT_ENTRY</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Index der Cursorposition in der Anzeigetabelle</STEXT>
+       <STEXT>Index of cursor position in display table</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>UCOMM</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>letztes User-command innerhalb der Viewpflege</STEXT>
+       <STEXT>Last user-command within the view maintenance</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>UPDATE_REQUIRED</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Flag: Einträge verändert, Sichern erforderlich</STEXT>
+       <STEXT>Flag: Entries changed, backup required</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>CORR_KEYTAB</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Tabelle mit den Keys der zu transport. Einträge</STEXT>
+       <STEXT>Table with the keys of the transport. Entries</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>DBA_SELLIST</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Selektionsbedingungen für den DB-Zugriff</STEXT>
+       <STEXT>Selection conditions for DB access</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>DPL_SELLIST</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Selektionsbedingungen für die Anzeige</STEXT>
+       <STEXT>Selection conditions for the display</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EXCL_CUA_FUNCT</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Tab. der nicht zu aktivierenden CUA-Funktionen</STEXT>
+       <STEXT>Table of CUA functions that cannot be activated</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EXTRACT</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Tab. der gerade sichtbaren Daten (Anzeigetabelle</STEXT>
+       <STEXT>Table of the currently visible data (display table)</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>TOTAL</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Tabelle, mit allen von der DB gelesenen Daten</STEXT>
+       <STEXT>Table, with all data read by the DB</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>X_HEADER</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Kontrollblocktabelle für die Tabelle</STEXT>
+       <STEXT>Control block table for the table</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>X_NAMTAB</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Kontrollblocktabelle für die Tabellen-Felder</STEXT>
+       <STEXT>Control block table for the table fields</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>MISSING_CORR_NUMBER</PARAMETER>
        <KIND>X</KIND>
-       <STEXT>Korrekturnummer fehlt</STEXT>
+       <STEXT>Correction number is missing</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>SAVING_CORRECTION_FAILED</PARAMETER>
        <KIND>X</KIND>
-       <STEXT>Fehler beim Sichern der Korrektureinträge</STEXT>
+       <STEXT>Error while saving correction entries</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
    </FUNCTIONS>
-   <I18N_TPOOL>
-    <item>
-     <LANGUAGE>E</LANGUAGE>
-    </item>
-   </I18N_TPOOL>
    <DYNPROS>
     <item>
      <HEADER>

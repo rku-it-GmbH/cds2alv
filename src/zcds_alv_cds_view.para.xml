@@ -7,8 +7,8 @@
    </TPARA>
    <TPARAT>
     <PARAMID>ZCDS_ALV_CDS_VIEW</PARAMID>
-    <SPRACHE>D</SPRACHE>
-    <PARTEXT>CDS-View zur Anzeige im ALV</PARTEXT>
+    <SPRACHE>E</SPRACHE>
+    <PARTEXT>CDS view for display in ALV</PARTEXT>
    </TPARAT>
   </asx:values>
  </asx:abap>

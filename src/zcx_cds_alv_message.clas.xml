@@ -4,8 +4,8 @@
   <asx:values>
    <VSEOCLASS>
     <CLSNAME>ZCX_CDS_ALV_MESSAGE</CLSNAME>
-    <LANGU>D</LANGU>
-    <DESCRIPT>Ausnahmeklasse für das CDS-ALV Framework</DESCRIPT>
+    <LANGU>E</LANGU>
+    <DESCRIPT>Exception class for the CDS ALV Framework</DESCRIPT>
     <CATEGORY>40</CATEGORY>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>

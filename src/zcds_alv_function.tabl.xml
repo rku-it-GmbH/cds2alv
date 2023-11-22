@@ -4,9 +4,9 @@
   <asx:values>
    <DD02V>
     <TABNAME>ZCDS_ALV_FUNCTION</TABNAME>
-    <DDLANGUAGE>D</DDLANGUAGE>
+    <DDLANGUAGE>E</DDLANGUAGE>
     <TABCLASS>INTTAB</TABCLASS>
-    <DDTEXT>Eigene Funktionen für ALV-Grids</DDTEXT>
+    <DDTEXT>Custom Functions for ALV grids</DDTEXT>
     <MASTERLANG>D</MASTERLANG>
     <EXCLASS>1</EXCLASS>
    </DD02V>
@@ -24,7 +24,7 @@
      <INTLEN>000008</INTLEN>
      <DATATYPE>STRG</DATATYPE>
      <MASK>  STRG</MASK>
-     <DDTEXT>Icon der Funktion</DDTEXT>
+     <DDTEXT>Function icon</DDTEXT>
     </DD03P>
     <DD03P>
      <FIELDNAME>TEXT</FIELDNAME>
@@ -33,7 +33,7 @@
      <INTLEN>000008</INTLEN>
      <DATATYPE>STRG</DATATYPE>
      <MASK>  STRG</MASK>
-     <DDTEXT>Text der Funktion</DDTEXT>
+     <DDTEXT>Function text</DDTEXT>
     </DD03P>
     <DD03P>
      <FIELDNAME>TOOLTIP</FIELDNAME>
@@ -54,12 +54,12 @@
     </DD03P>
    </DD03P_TABLE>
    <I18N_LANGS>
-    <LANGU>E</LANGU>
+    <LANGU>D</LANGU>
    </I18N_LANGS>
    <DD02_TEXTS>
     <item>
-     <DDLANGUAGE>E</DDLANGUAGE>
-     <DDTEXT>Custom Functions for ALV grids</DDTEXT>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DDTEXT>Eigene Funktionen für ALV-Grids</DDTEXT>
     </item>
    </DD02_TEXTS>
   </asx:values>

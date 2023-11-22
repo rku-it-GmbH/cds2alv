@@ -4,8 +4,8 @@
   <asx:values>
    <VSEOINTERF>
     <CLSNAME>ZIF_CDS_ALV_SELECT_EXTENSION</CLSNAME>
-    <LANGU>D</LANGU>
-    <DESCRIPT>Programmerweiterung für alternative Selektion</DESCRIPT>
+    <LANGU>E</LANGU>
+    <DESCRIPT>Program extension for alternative selection</DESCRIPT>
     <EXPOSURE>2</EXPOSURE>
     <STATE>1</STATE>
     <UNICODE>X</UNICODE>
@@ -18,10 +18,22 @@
      <DESCRIPT>DD: Name eines struktierten Objekts (z.B. Entity, Context)</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
+     <CMPNAME>ALTERNATIVE_RESELECTION</CMPNAME>
+     <SCONAME>I_CDS_VIEW</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>DD: Name of a structured object (e.g. entity, context)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
      <CMPNAME>ALTERNATIVE_SELECTION</CMPNAME>
      <SCONAME>I_CDS_VIEW</SCONAME>
      <LANGU>D</LANGU>
      <DESCRIPT>DD: Name eines struktierten Objekts (z.B. Entity, Context)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ALTERNATIVE_SELECTION</CMPNAME>
+     <SCONAME>I_CDS_VIEW</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>DD: Name of a structured object (e.g. entity, context)</DESCRIPT>
     </SEOSUBCOTX>
    </DESCRIPTIONS_SUB>
   </asx:values>

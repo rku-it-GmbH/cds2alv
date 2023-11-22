@@ -4,7 +4,7 @@
   <asx:values>
    <VSEOCLASS>
     <CLSNAME>ZCL_CDS_ALV_SADL_MAPPING_PROV</CLSNAME>
-    <LANGU>D</LANGU>
+    <LANGU>E</LANGU>
     <DESCRIPT>SADL Mapping Provider</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
@@ -16,6 +16,12 @@
      <CMPNAME>CONSTRUCTOR</CMPNAME>
      <SCONAME>CX_BSA_COMPILE_TIME</SCONAME>
      <LANGU>D</LANGU>
+     <DESCRIPT>Design time exception during SADL load generation</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>CX_BSA_COMPILE_TIME</SCONAME>
+     <LANGU>E</LANGU>
      <DESCRIPT>Design time exception during SADL load generation</DESCRIPT>
     </SEOSUBCOTX>
    </DESCRIPTIONS_SUB>

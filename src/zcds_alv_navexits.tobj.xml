@@ -10,10 +10,10 @@
     <IMPORTABLE>3</IMPORTABLE>
    </OBJH>
    <OBJT>
-    <LANGUAGE>D</LANGUAGE>
+    <LANGUAGE>E</LANGUAGE>
     <OBJECTNAME>ZCDS_ALV_NAVEXIT</OBJECTNAME>
     <OBJECTTYPE>S</OBJECTTYPE>
-    <DDTEXT>Eigene Implementierungen (Exits) für Intent-Based Navigation</DDTEXT>
+    <DDTEXT>Custom Implementations (Exits) for Intent-Based Navigation</DDTEXT>
    </OBJT>
    <OBJS>
     <OBJS>

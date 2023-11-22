@@ -2,7 +2,7 @@
 @AbapCatalog.compiler.compareFilter: true
 @AbapCatalog.preserveKey: true
 @AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'SELECT-OPTIONS der generierten Programme für CDS-Views'
+@EndUserText.label: 'SELECT-OPTIONS of generated programs for CDS Views'
 @VDM.viewType: #BASIC
 define view ZI_CDS_ALV_SelectOptions as select from zcds_alv_selopts {
     key progname as ProgramName,

@@ -4,9 +4,9 @@
   <asx:values>
    <DD02V>
     <TABNAME>ZCDS_ALV_VALUEHELP_BINDING</TABNAME>
-    <DDLANGUAGE>D</DDLANGUAGE>
+    <DDLANGUAGE>E</DDLANGUAGE>
     <TABCLASS>INTTAB</TABCLASS>
-    <DDTEXT>Zusätzliche Parameter für Suchhilfeanbindung</DDTEXT>
+    <DDTEXT>Additional parameters for a value help</DDTEXT>
     <EXCLASS>1</EXCLASS>
    </DD02V>
    <DD03P_TABLE>
@@ -48,16 +48,16 @@
      <DATATYPE>CHAR</DATATYPE>
      <LENG>000030</LENG>
      <MASK>  CHAR</MASK>
-     <DDTEXT>Verwendung</DDTEXT>
+     <DDTEXT>Usage</DDTEXT>
     </DD03P>
    </DD03P_TABLE>
    <I18N_LANGS>
-    <LANGU>E</LANGU>
+    <LANGU>D</LANGU>
    </I18N_LANGS>
    <DD02_TEXTS>
     <item>
-     <DDLANGUAGE>E</DDLANGUAGE>
-     <DDTEXT>Additional parameters for a value help</DDTEXT>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DDTEXT>Zusätzliche Parameter für Suchhilfeanbindung</DDTEXT>
     </item>
    </DD02_TEXTS>
   </asx:values>

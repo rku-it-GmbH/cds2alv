@@ -4,9 +4,9 @@
   <asx:values>
    <DD02V>
     <TABNAME>ZCDS_ALV_PROGEXT</TABNAME>
-    <DDLANGUAGE>D</DDLANGUAGE>
+    <DDLANGUAGE>E</DDLANGUAGE>
     <TABCLASS>TRANSP</TABCLASS>
-    <DDTEXT>Programmerweiterungen des generierten Reports zum CDS-View</DDTEXT>
+    <DDTEXT>Program extensions of a generated report for a CDS view</DDTEXT>
     <MAINFLAG>X</MAINFLAG>
     <CONTFLAG>C</CONTFLAG>
     <EXCLASS>3</EXCLASS>
@@ -74,12 +74,12 @@
     </DD08V>
    </DD08V_TABLE>
    <I18N_LANGS>
-    <LANGU>E</LANGU>
+    <LANGU>D</LANGU>
    </I18N_LANGS>
    <DD02_TEXTS>
     <item>
-     <DDLANGUAGE>E</DDLANGUAGE>
-     <DDTEXT>Program extensions of a generated report for a CDS view</DDTEXT>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DDTEXT>Programmerweiterungen des generierten Reports zum CDS-View</DDTEXT>
     </item>
    </DD02_TEXTS>
   </asx:values>

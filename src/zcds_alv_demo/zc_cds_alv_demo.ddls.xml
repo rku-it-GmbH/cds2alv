@@ -4,8 +4,8 @@
   <asx:values>
    <DDLS>
     <DDLNAME>ZC_CDS_ALV_DEMO</DDLNAME>
-    <DDLANGUAGE>D</DDLANGUAGE>
-    <DDTEXT>Consumption-View für das Demoprogramm</DDTEXT>
+    <DDLANGUAGE>E</DDLANGUAGE>
+    <DDTEXT>Demo Consumption View</DDTEXT>
    </DDLS>
   </asx:values>
  </asx:abap>

@@ -4,32 +4,32 @@
   <asx:values>
    <DD04V>
     <ROLLNAME>ZCDS_ALV_ACTIVE_FLAG</ROLLNAME>
-    <DDLANGUAGE>D</DDLANGUAGE>
+    <DDLANGUAGE>E</DDLANGUAGE>
     <DOMNAME>XFELD</DOMNAME>
     <LOGFLAG>X</LOGFLAG>
     <HEADLEN>55</HEADLEN>
     <SCRLEN1>10</SCRLEN1>
     <SCRLEN2>20</SCRLEN2>
     <SCRLEN3>40</SCRLEN3>
-    <DDTEXT>Kennzeichen: Aktiv</DDTEXT>
-    <REPTEXT>Aktiv</REPTEXT>
-    <SCRTEXT_S>Aktiv</SCRTEXT_S>
-    <SCRTEXT_M>Aktiv</SCRTEXT_M>
-    <SCRTEXT_L>Aktiv</SCRTEXT_L>
-    <DTELMASTER>D</DTELMASTER>
+    <DDTEXT>Flag: Active</DDTEXT>
+    <REPTEXT>Active</REPTEXT>
+    <SCRTEXT_S>Active</SCRTEXT_S>
+    <SCRTEXT_M>Active</SCRTEXT_M>
+    <SCRTEXT_L>Active</SCRTEXT_L>
+    <DTELMASTER>E</DTELMASTER>
     <REFKIND>D</REFKIND>
    </DD04V>
    <I18N_LANGS>
-    <LANGU>E</LANGU>
+    <LANGU>D</LANGU>
    </I18N_LANGS>
    <DD04_TEXTS>
     <item>
-     <DDLANGUAGE>E</DDLANGUAGE>
-     <DDTEXT>Flag: Active</DDTEXT>
-     <REPTEXT>Active</REPTEXT>
-     <SCRTEXT_S>Active</SCRTEXT_S>
-     <SCRTEXT_M>Active</SCRTEXT_M>
-     <SCRTEXT_L>Active</SCRTEXT_L>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DDTEXT>Kennzeichen: Aktiv</DDTEXT>
+     <REPTEXT>Aktiv</REPTEXT>
+     <SCRTEXT_S>Aktiv</SCRTEXT_S>
+     <SCRTEXT_M>Aktiv</SCRTEXT_M>
+     <SCRTEXT_L>Aktiv</SCRTEXT_L>
     </item>
    </DD04_TEXTS>
   </asx:values>

@@ -4,8 +4,8 @@
   <asx:values>
    <DDLS>
     <DDLNAME>ZC_CDS_ALV_EXTENSIONPARAMETERS</DDLNAME>
-    <DDLANGUAGE>D</DDLANGUAGE>
-    <DDTEXT>Parameter einer Programmerweiterung</DDTEXT>
+    <DDLANGUAGE>E</DDLANGUAGE>
+    <DDTEXT>Program extension parameters</DDTEXT>
    </DDLS>
   </asx:values>
  </asx:abap>

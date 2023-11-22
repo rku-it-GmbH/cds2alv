@@ -4,8 +4,8 @@
   <asx:values>
    <VSEOINTERF>
     <CLSNAME>ZIF_CDS_ALV_GRID_BUILDER</CLSNAME>
-    <LANGU>D</LANGU>
-    <DESCRIPT>Aufbau eines ALV-Grids mittels CDS-Annotationen</DESCRIPT>
+    <LANGU>E</LANGU>
+    <DESCRIPT>Annotation-based ALV grid builder</DESCRIPT>
     <EXPOSURE>2</EXPOSURE>
     <STATE>1</STATE>
     <UNICODE>X</UNICODE>
@@ -16,6 +16,12 @@
      <SCONAME>R_TITLE</SCONAME>
      <LANGU>D</LANGU>
      <DESCRIPT>Titelzeile</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_GUI_TITLE</CMPNAME>
+     <SCONAME>R_TITLE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Title</DESCRIPT>
     </SEOSUBCOTX>
    </DESCRIPTIONS_SUB>
   </asx:values>

@@ -4,8 +4,8 @@
   <asx:values>
    <VSEOCLASS>
     <CLSNAME>ZCL_CDS_ALV_GRID_EVENT_HANDLER</CLSNAME>
-    <LANGU>D</LANGU>
-    <DESCRIPT>Event Handler für das ALV Grid</DESCRIPT>
+    <LANGU>E</LANGU>
+    <DESCRIPT>Event Handler for the ALV grid</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>
@@ -15,61 +15,67 @@
     <item>
      <ID>I</ID>
      <KEY>001</KEY>
-     <ENTRY>Auffrischen</ENTRY>
+     <ENTRY>Refresh</ENTRY>
      <LENGTH>21</LENGTH>
     </item>
     <item>
      <ID>I</ID>
      <KEY>002</KEY>
-     <ENTRY>Anzeigen/Ändern</ENTRY>
+     <ENTRY>Display/Change</ENTRY>
      <LENGTH>25</LENGTH>
     </item>
     <item>
      <ID>I</ID>
      <KEY>003</KEY>
-     <ENTRY>Speichern</ENTRY>
+     <ENTRY>Save</ENTRY>
      <LENGTH>19</LENGTH>
     </item>
     <item>
      <ID>I</ID>
      <KEY>004</KEY>
-     <ENTRY>Löschen</ENTRY>
+     <ENTRY>Delete</ENTRY>
      <LENGTH>17</LENGTH>
     </item>
     <item>
      <ID>I</ID>
      <KEY>005</KEY>
-     <ENTRY>Weitere Funktionen</ENTRY>
+     <ENTRY>Addtional Functions</ENTRY>
      <LENGTH>28</LENGTH>
     </item>
    </TPOOL>
    <I18N_TPOOL>
     <item>
-     <LANGUAGE>E</LANGUAGE>
+     <LANGUAGE>D</LANGUAGE>
      <TEXTPOOL>
       <item>
        <ID>I</ID>
        <KEY>001</KEY>
-       <ENTRY>Refresh</ENTRY>
+       <ENTRY>Auffrischen</ENTRY>
        <LENGTH>21</LENGTH>
       </item>
       <item>
        <ID>I</ID>
        <KEY>002</KEY>
-       <ENTRY>Display/Change</ENTRY>
+       <ENTRY>Anzeigen/Ändern</ENTRY>
        <LENGTH>25</LENGTH>
       </item>
       <item>
        <ID>I</ID>
        <KEY>003</KEY>
-       <ENTRY>Save</ENTRY>
+       <ENTRY>Speichern</ENTRY>
        <LENGTH>19</LENGTH>
       </item>
       <item>
        <ID>I</ID>
        <KEY>004</KEY>
-       <ENTRY>Delete</ENTRY>
+       <ENTRY>Löschen</ENTRY>
        <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>005</KEY>
+       <ENTRY>Weitere Funktionen</ENTRY>
+       <LENGTH>28</LENGTH>
       </item>
      </TEXTPOOL>
     </item>

@@ -4,14 +4,14 @@
   <asx:values>
    <DD40V>
     <TYPENAME>ZCDS_ALV_REPORT_EXTENSIONS</TYPENAME>
-    <DDLANGUAGE>D</DDLANGUAGE>
+    <DDLANGUAGE>E</DDLANGUAGE>
     <ROWTYPE>ZCDS_ALV_REPORT_EXTENSION</ROWTYPE>
     <ROWKIND>S</ROWKIND>
     <DATATYPE>STRU</DATATYPE>
     <ACCESSMODE>T</ACCESSMODE>
     <KEYDEF>D</KEYDEF>
     <KEYKIND>N</KEYKIND>
-    <DDTEXT>Erweiterungen der Ablauflogik von Reports für CDS-Views</DDTEXT>
+    <DDTEXT>Report source code extensions for CDS views</DDTEXT>
    </DD40V>
   </asx:values>
  </asx:abap>

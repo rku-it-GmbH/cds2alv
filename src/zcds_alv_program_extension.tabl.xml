@@ -4,10 +4,10 @@
   <asx:values>
    <DD02V>
     <TABNAME>ZCDS_ALV_PROGRAM_EXTENSION</TABNAME>
-    <DDLANGUAGE>D</DDLANGUAGE>
+    <DDLANGUAGE>E</DDLANGUAGE>
     <TABCLASS>INTTAB</TABCLASS>
     <LANGDEP>X</LANGDEP>
-    <DDTEXT>Programmerweiterungen für einen CDS-View</DDTEXT>
+    <DDTEXT>Program extensions for a CDS view</DDTEXT>
     <MASTERLANG>D</MASTERLANG>
     <EXCLASS>1</EXCLASS>
    </DD02V>
@@ -23,7 +23,7 @@
      <ADMINFIELD>0</ADMINFIELD>
      <PRECFIELD>ZCDS_ALV_REPORT_EXTENSION</PRECFIELD>
      <MASK>      S</MASK>
-     <DDTEXT>Erweiterung für Reports zu CDS-Views</DDTEXT>
+     <DDTEXT>CDS view report extension</DDTEXT>
      <COMPTYPE>S</COMPTYPE>
     </DD03P>
     <DD03P>
@@ -42,12 +42,12 @@
     </DD03P>
    </DD03P_TABLE>
    <I18N_LANGS>
-    <LANGU>E</LANGU>
+    <LANGU>D</LANGU>
    </I18N_LANGS>
    <DD02_TEXTS>
     <item>
-     <DDLANGUAGE>E</DDLANGUAGE>
-     <DDTEXT>Program extensions for a CDS view</DDTEXT>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DDTEXT>Programmerweiterungen für einen CDS-View</DDTEXT>
     </item>
    </DD02_TEXTS>
   </asx:values>

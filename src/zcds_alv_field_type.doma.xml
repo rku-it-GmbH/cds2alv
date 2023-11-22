@@ -4,19 +4,19 @@
   <asx:values>
    <DD01V>
     <DOMNAME>ZCDS_ALV_FIELD_TYPE</DOMNAME>
-    <DDLANGUAGE>D</DDLANGUAGE>
+    <DDLANGUAGE>E</DDLANGUAGE>
     <DATATYPE>CHAR</DATATYPE>
     <LENG>000040</LENG>
     <OUTPUTLEN>000040</OUTPUTLEN>
-    <DDTEXT>Art eines Feldes im Consumption View (UI.lineItem.Type)</DDTEXT>
+    <DDTEXT>Consumption View Field Type (UI.lineItem.Type)</DDTEXT>
    </DD01V>
    <I18N_LANGS>
-    <LANGU>E</LANGU>
+    <LANGU>D</LANGU>
    </I18N_LANGS>
    <DD01_TEXTS>
     <item>
-     <DDLANGUAGE>E</DDLANGUAGE>
-     <DDTEXT>Consumption View Field Type (UI.lineItem.Type)</DDTEXT>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DDTEXT>Art eines Feldes im Consumption View (UI.lineItem.Type)</DDTEXT>
     </item>
    </DD01_TEXTS>
   </asx:values>

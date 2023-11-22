@@ -4,8 +4,8 @@
   <asx:values>
    <DDLS>
     <DDLNAME>ZI_CDS_ALV_DEMO</DDLNAME>
-    <DDLANGUAGE>D</DDLANGUAGE>
-    <DDTEXT>Interfaceview für das Demoprogramm</DDTEXT>
+    <DDLANGUAGE>E</DDLANGUAGE>
+    <DDTEXT>Demo Interface View</DDTEXT>
    </DDLS>
   </asx:values>
  </asx:abap>

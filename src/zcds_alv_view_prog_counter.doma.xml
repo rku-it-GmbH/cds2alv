@@ -4,20 +4,20 @@
   <asx:values>
    <DD01V>
     <DOMNAME>ZCDS_ALV_VIEW_PROG_COUNTER</DOMNAME>
-    <DDLANGUAGE>D</DDLANGUAGE>
+    <DDLANGUAGE>E</DDLANGUAGE>
     <DATATYPE>NUMC</DATATYPE>
     <LENG>000016</LENG>
     <OUTPUTLEN>000016</OUTPUTLEN>
     <CONVEXIT>ALPHA</CONVEXIT>
-    <DDTEXT>Laufende Nummer für generierte Programme</DDTEXT>
+    <DDTEXT>Counter for generated programs</DDTEXT>
    </DD01V>
    <I18N_LANGS>
-    <LANGU>E</LANGU>
+    <LANGU>D</LANGU>
    </I18N_LANGS>
    <DD01_TEXTS>
     <item>
-     <DDLANGUAGE>E</DDLANGUAGE>
-     <DDTEXT>Counter for generated programs</DDTEXT>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DDTEXT>Laufende Nummer für generierte Programme</DDTEXT>
     </item>
    </DD01_TEXTS>
   </asx:values>

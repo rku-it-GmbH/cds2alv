@@ -4,8 +4,8 @@
   <asx:values>
    <VSEOCLASS>
     <CLSNAME>ZCL_CDS_ALV_REPORT_LAUNCHER</CLSNAME>
-    <LANGU>D</LANGU>
-    <DESCRIPT>Start eines generierten Report für einen CDS-View</DESCRIPT>
+    <LANGU>E</LANGU>
+    <DESCRIPT>Launcher for generated Reports for CDS Views</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>

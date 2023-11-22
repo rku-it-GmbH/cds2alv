@@ -4,7 +4,7 @@
   <asx:values>
    <VSEOINTERF>
     <CLSNAME>ZIF_CDS_ALV_IOC_CONTAINER</CLSNAME>
-    <LANGU>D</LANGU>
+    <LANGU>E</LANGU>
     <DESCRIPT>Inversion of Control Container</DESCRIPT>
     <EXPOSURE>2</EXPOSURE>
     <STATE>1</STATE>

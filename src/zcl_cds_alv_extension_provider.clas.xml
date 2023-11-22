@@ -4,8 +4,8 @@
   <asx:values>
    <VSEOCLASS>
     <CLSNAME>ZCL_CDS_ALV_EXTENSION_PROVIDER</CLSNAME>
-    <LANGU>D</LANGU>
-    <DESCRIPT>Factory für Erweiterungen</DESCRIPT>
+    <LANGU>E</LANGU>
+    <DESCRIPT>Factory for extensions</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>

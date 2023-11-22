@@ -3,14 +3,21 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <VSEOCLASS>
-    <CLSNAME>ZCL_CDS_ALV_BASE</CLSNAME>
+    <CLSNAME>ZCL_CDS_ALV_VERSION</CLSNAME>
     <LANGU>E</LANGU>
-    <DESCRIPT>Abstract Superclass for objects with annotated CDS Views</DESCRIPT>
+    <DESCRIPT>Version Class</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>
     <UNICODE>X</UNICODE>
    </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>VERSION</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Version</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
   </asx:values>
  </asx:abap>
 </abapGit>

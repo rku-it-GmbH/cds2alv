@@ -4,9 +4,9 @@
   <asx:values>
    <DD02V>
     <TABNAME>ZCDS_ALV_NAVEXIT</TABNAME>
-    <DDLANGUAGE>D</DDLANGUAGE>
+    <DDLANGUAGE>E</DDLANGUAGE>
     <TABCLASS>TRANSP</TABCLASS>
-    <DDTEXT>Eigene Implementierungen (Exits) für Intent-Based Navigation</DDTEXT>
+    <DDTEXT>Custom Implementations (Exits) for Intent-Based Navigation</DDTEXT>
     <MAINFLAG>X</MAINFLAG>
     <CONTFLAG>C</CONTFLAG>
     <EXCLASS>1</EXCLASS>
@@ -133,12 +133,12 @@
     </DD36M>
    </DD36M>
    <I18N_LANGS>
-    <LANGU>E</LANGU>
+    <LANGU>D</LANGU>
    </I18N_LANGS>
    <DD02_TEXTS>
     <item>
-     <DDLANGUAGE>E</DDLANGUAGE>
-     <DDTEXT>Custom Implementations (Exits) for Intent-Based Navigation</DDTEXT>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DDTEXT>Eigene Implementierungen (Exits) für Intent-Based Navigation</DDTEXT>
     </item>
    </DD02_TEXTS>
    <TABL_EXTRAS>

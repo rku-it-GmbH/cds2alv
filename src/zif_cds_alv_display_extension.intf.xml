@@ -4,8 +4,8 @@
   <asx:values>
    <VSEOINTERF>
     <CLSNAME>ZIF_CDS_ALV_DISPLAY_EXTENSION</CLSNAME>
-    <LANGU>D</LANGU>
-    <DESCRIPT>Programmerweiterung für alternative Anzeige</DESCRIPT>
+    <LANGU>E</LANGU>
+    <DESCRIPT>Program extension for alternative display</DESCRIPT>
     <EXPOSURE>2</EXPOSURE>
     <STATE>1</STATE>
     <UNICODE>X</UNICODE>

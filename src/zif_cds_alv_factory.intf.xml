@@ -4,8 +4,8 @@
   <asx:values>
    <VSEOINTERF>
     <CLSNAME>ZIF_CDS_ALV_FACTORY</CLSNAME>
-    <LANGU>D</LANGU>
-    <DESCRIPT>Factory für das CDS ALV Framework</DESCRIPT>
+    <LANGU>E</LANGU>
+    <DESCRIPT>Factory for the CDS ALV Framework</DESCRIPT>
     <EXPOSURE>2</EXPOSURE>
     <STATE>1</STATE>
     <UNICODE>X</UNICODE>

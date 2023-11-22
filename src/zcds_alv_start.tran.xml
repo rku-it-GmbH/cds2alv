@@ -14,14 +14,14 @@
     <S_PLATIN>X</S_PLATIN>
    </TSTCC>
    <TSTCT>
-    <SPRSL>D</SPRSL>
+    <SPRSL>E</SPRSL>
     <TCODE>ZCDS_ALV_START</TCODE>
-    <TTEXT>Anzeige eines CDS-Views im ALV</TTEXT>
+    <TTEXT>Display of a CDS view in ALV</TTEXT>
    </TSTCT>
    <I18N_TPOOL>
     <TSTCT>
-     <SPRSL>E</SPRSL>
-     <TTEXT>Display of a CDS view in ALV</TTEXT>
+     <SPRSL>D</SPRSL>
+     <TTEXT>Anzeige eines CDS-Views im ALV</TTEXT>
     </TSTCT>
    </I18N_TPOOL>
   </asx:values>

@@ -4,20 +4,20 @@
   <asx:values>
    <DD01V>
     <DOMNAME>ZCDS_ALV_SELECTION_TEXT</DOMNAME>
-    <DDLANGUAGE>D</DDLANGUAGE>
+    <DDLANGUAGE>E</DDLANGUAGE>
     <DATATYPE>CHAR</DATATYPE>
     <LENG>000040</LENG>
     <OUTPUTLEN>000040</OUTPUTLEN>
     <LOWERCASE>X</LOWERCASE>
-    <DDTEXT>Text für alternative Selektion</DDTEXT>
+    <DDTEXT>Text for alternative selection mode</DDTEXT>
    </DD01V>
    <I18N_LANGS>
-    <LANGU>E</LANGU>
+    <LANGU>D</LANGU>
    </I18N_LANGS>
    <DD01_TEXTS>
     <item>
-     <DDLANGUAGE>E</DDLANGUAGE>
-     <DDTEXT>Text for alternative selection mode</DDTEXT>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DDTEXT>Text für alternative Selektion</DDTEXT>
     </item>
    </DD01_TEXTS>
   </asx:values>

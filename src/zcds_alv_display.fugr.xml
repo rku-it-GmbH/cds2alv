@@ -2,7 +2,7 @@
 <abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
-   <AREAT>Anzeige des ALV-Grids für einen CDS-View</AREAT>
+   <AREAT>ALV grid display for a CDS view</AREAT>
    <INCLUDES>
     <SOBJ_NAME>LZCDS_ALV_DISPLAYF01</SOBJ_NAME>
     <SOBJ_NAME>LZCDS_ALV_DISPLAYI01</SOBJ_NAME>
@@ -13,7 +13,7 @@
    <FUNCTIONS>
     <item>
      <FUNCNAME>Z_CDS_ALV_FULL_SCREEN</FUNCNAME>
-     <SHORT_TEXT>Anzeige des ALV-Grids im Full Screen</SHORT_TEXT>
+     <SHORT_TEXT>ALV grid display in full screen mode</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>I_BUILDER</PARAMETER>
@@ -41,7 +41,7 @@
       <RSFDO>
        <PARAMETER>I_TABLE_CONTAINER</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Container für Daten eines CDS-Views</STEXT>
+       <STEXT>Table container for data from a CDS view</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ZCX_CDS_ALV_MESSAGE</PARAMETER>
@@ -52,7 +52,7 @@
     </item>
     <item>
      <FUNCNAME>Z_CDS_ALV_SPLIT_SCREEN</FUNCNAME>
-     <SHORT_TEXT>Anzeige im Split Screen</SHORT_TEXT>
+     <SHORT_TEXT>Display in split screen</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>I_BUILDER</PARAMETER>
@@ -87,27 +87,27 @@
       <RSFDO>
        <PARAMETER>I_BUILDER</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Aufbau eines ALV-Grids mittels CDS-Annotationen</STEXT>
+       <STEXT>Annotation-based ALV grid builder</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>I_TABLE_CONTAINER</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Container für Daten eines CDS-Views</STEXT>
+       <STEXT>Table container for data from a CDS view</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>I_CONTROLLER</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Controller für den Split Screen</STEXT>
+       <STEXT>Split screen controller</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>I_SUB_REPID</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>ABAP-Programm, aktuelles Rahmenprogramm</STEXT>
+       <STEXT>Program</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>I_SUB_DYNNR</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Dynpro-Nummer</STEXT>
+       <STEXT>dynpro number</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
@@ -117,7 +117,7 @@
      <HEADER>
       <PROGRAM>SAPLZCDS_ALV_DISPLAY</PROGRAM>
       <SCREEN>0100</SCREEN>
-      <LANGUAGE>D</LANGUAGE>
+      <LANGUAGE>E</LANGUAGE>
       <DESCRIPT>Full Screen</DESCRIPT>
       <TYPE>N</TYPE>
       <NEXTSCREEN>0100</NEXTSCREEN>
@@ -180,7 +180,7 @@
      <HEADER>
       <PROGRAM>SAPLZCDS_ALV_DISPLAY</PROGRAM>
       <SCREEN>0200</SCREEN>
-      <LANGUAGE>D</LANGUAGE>
+      <LANGUAGE>E</LANGUAGE>
       <DESCRIPT>Split Screen</DESCRIPT>
       <TYPE>N</TYPE>
       <NEXTSCREEN>0200</NEXTSCREEN>
@@ -225,7 +225,7 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>FRAME</TYPE>
        <NAME>FRAME_FOR_SELECTION</NAME>
-       <TEXT>Selektionskriterien_________________________________________________________________________________________________________________</TEXT>
+       <TEXT>Selection_criteria__________________________________________________________________________________________________________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>001</COLUMN>
        <LENGTH>255</LENGTH>
@@ -239,7 +239,7 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>FRAME</TYPE>
        <NAME>FRAME_FOR_ALV_GRID</NAME>
-       <TEXT>Ergebnisliste_______________________________________________________________________________________________________________________</TEXT>
+       <TEXT>List_of_results_____________________________________________________________________________________________________________________</TEXT>
        <LINE>043</LINE>
        <COLUMN>001</COLUMN>
        <LENGTH>255</LENGTH>
@@ -322,7 +322,7 @@
       <TEXTNO>001</TEXTNO>
       <TYPE>E</TYPE>
       <TEXT_TYPE>S</TEXT_TYPE>
-      <FUN_TEXT>Zurück</FUN_TEXT>
+      <FUN_TEXT>Back</FUN_TEXT>
      </RSMPE_FUNT>
      <RSMPE_FUNT>
       <CODE>CANC</CODE>
@@ -331,14 +331,14 @@
       <TEXT_TYPE>S</TEXT_TYPE>
       <TEXT_NAME>ICON_CANCEL</TEXT_NAME>
       <ICON_ID>@0W@</ICON_ID>
-      <FUN_TEXT>Abbrechen</FUN_TEXT>
+      <FUN_TEXT>Cancel</FUN_TEXT>
      </RSMPE_FUNT>
      <RSMPE_FUNT>
       <CODE>EXIT</CODE>
       <TEXTNO>001</TEXTNO>
       <TYPE>E</TYPE>
       <TEXT_TYPE>S</TEXT_TYPE>
-      <FUN_TEXT>Beenden</FUN_TEXT>
+      <FUN_TEXT>Exit</FUN_TEXT>
      </RSMPE_FUNT>
      <RSMPE_FUNT>
       <CODE>SELECT</CODE>
@@ -346,7 +346,7 @@
       <TEXT_TYPE>S</TEXT_TYPE>
       <TEXT_NAME>ICON_EXECUTE_OBJECT</TEXT_NAME>
       <ICON_ID>@15@</ICON_ID>
-      <FUN_TEXT>Ausführen (F8)</FUN_TEXT>
+      <FUN_TEXT>Run (F8)</FUN_TEXT>
      </RSMPE_FUNT>
     </FUN>
     <MEN>
@@ -523,37 +523,37 @@
      <RSMPE_MNLT>
       <CODE>000001</CODE>
       <TEXT_TYPE>S</TEXT_TYPE>
-      <TEXT>&lt;Objekt&gt;</TEXT>
+      <TEXT>&lt;Object&gt;</TEXT>
       <PATH>O</PATH>
-      <INT_NOTE>Normergänzung</INT_NOTE>
+      <INT_NOTE>Additions</INT_NOTE>
      </RSMPE_MNLT>
      <RSMPE_MNLT>
       <CODE>000002</CODE>
       <TEXT_TYPE>S</TEXT_TYPE>
-      <TEXT>Bearbeiten</TEXT>
-      <PATH>B</PATH>
-      <INT_NOTE>Normergänzung</INT_NOTE>
+      <TEXT>Edit</TEXT>
+      <PATH>E</PATH>
+      <INT_NOTE>Additions</INT_NOTE>
      </RSMPE_MNLT>
      <RSMPE_MNLT>
       <CODE>000003</CODE>
       <TEXT_TYPE>S</TEXT_TYPE>
-      <TEXT>Springen</TEXT>
-      <PATH>S</PATH>
-      <INT_NOTE>Normergänzung</INT_NOTE>
+      <TEXT>Go To</TEXT>
+      <PATH>G</PATH>
+      <INT_NOTE>Additions</INT_NOTE>
      </RSMPE_MNLT>
      <RSMPE_MNLT>
       <CODE>000004</CODE>
       <TEXT_TYPE>S</TEXT_TYPE>
-      <TEXT>Zusätze</TEXT>
-      <PATH>Z</PATH>
-      <INT_NOTE>Normergänzung</INT_NOTE>
+      <TEXT>Extras</TEXT>
+      <PATH>A</PATH>
+      <INT_NOTE>Additions</INT_NOTE>
      </RSMPE_MNLT>
      <RSMPE_MNLT>
       <CODE>000005</CODE>
       <TEXT_TYPE>S</TEXT_TYPE>
-      <TEXT>Umfeld</TEXT>
-      <PATH>U</PATH>
-      <INT_NOTE>Normergänzung</INT_NOTE>
+      <TEXT>Environment</TEXT>
+      <PATH>V</PATH>
+      <INT_NOTE>Additions</INT_NOTE>
      </RSMPE_MNLT>
     </MTX>
     <ACT>

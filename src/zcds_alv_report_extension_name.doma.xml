@@ -4,20 +4,20 @@
   <asx:values>
    <DD01V>
     <DOMNAME>ZCDS_ALV_REPORT_EXTENSION_NAME</DOMNAME>
-    <DDLANGUAGE>D</DDLANGUAGE>
+    <DDLANGUAGE>E</DDLANGUAGE>
     <DATATYPE>CHAR</DATATYPE>
     <LENG>000010</LENG>
     <OUTPUTLEN>000010</OUTPUTLEN>
     <ENTITYTAB>ZCDS_ALV_EXTHDR</ENTITYTAB>
-    <DDTEXT>Erweiterung der Ablauflogik für Reports zu CDS-Views</DDTEXT>
+    <DDTEXT>Report source code extension for CDS views</DDTEXT>
    </DD01V>
    <I18N_LANGS>
-    <LANGU>E</LANGU>
+    <LANGU>D</LANGU>
    </I18N_LANGS>
    <DD01_TEXTS>
     <item>
-     <DDLANGUAGE>E</DDLANGUAGE>
-     <DDTEXT>Report source code extension for CDS views</DDTEXT>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DDTEXT>Erweiterung der Ablauflogik für Reports zu CDS-Views</DDTEXT>
     </item>
    </DD01_TEXTS>
   </asx:values>

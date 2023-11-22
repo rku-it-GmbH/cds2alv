@@ -2,7 +2,7 @@
 <abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
-   <AREAT>Dialog zur Verwaltung von Erweiterungen</AREAT>
+   <AREAT>Maintenance dialog for extensions</AREAT>
    <INCLUDES>
     <SOBJ_NAME>LZCDS_ALV_EXTENSIONSF01</SOBJ_NAME>
     <SOBJ_NAME>LZCDS_ALV_EXTENSIONSF02</SOBJ_NAME>
@@ -14,7 +14,7 @@
    <FUNCTIONS>
     <item>
      <FUNCNAME>Z_CDS_ALV_EXTENSIONS_DIALOG</FUNCNAME>
-     <SHORT_TEXT>Dialog zur Pflege der Programmerweiterungen zum CDS-View</SHORT_TEXT>
+     <SHORT_TEXT>Maintenance dialog for program extensions for CDS views</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>I_CDS_VIEW</PARAMETER>
@@ -31,7 +31,7 @@
       <RSFDO>
        <PARAMETER>I_CDS_VIEW</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>DD: Name eines struktierten Objekts (z.B. Entity, Context)</STEXT>
+       <STEXT>DD: Name of a structured object (e.g. entity, context)</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ZCX_CDS_ALV_MESSAGE</PARAMETER>
@@ -41,11 +41,6 @@
      <EXCEPTION_CLASSES>X</EXCEPTION_CLASSES>
     </item>
    </FUNCTIONS>
-   <I18N_TPOOL>
-    <item>
-     <LANGUAGE>E</LANGUAGE>
-    </item>
-   </I18N_TPOOL>
    <DYNPROS>
     <item>
      <HEADER>
@@ -118,7 +113,7 @@
       <MODAL>P</MODAL>
       <PFKCODE>000001</PFKCODE>
       <BUTCODE>0001</BUTCODE>
-      <INT_NOTE>Status für Dialog</INT_NOTE>
+      <INT_NOTE>Dialog status</INT_NOTE>
      </RSMPE_STAT>
     </STA>
     <FUN>
@@ -128,7 +123,7 @@
       <TEXT_TYPE>S</TEXT_TYPE>
       <TEXT_NAME>ICON_CANCEL</TEXT_NAME>
       <ICON_ID>@0W@</ICON_ID>
-      <FUN_TEXT>Abbrechen</FUN_TEXT>
+      <FUN_TEXT>Cancel</FUN_TEXT>
       <PATH>A</PATH>
      </RSMPE_FUNT>
      <RSMPE_FUNT>
@@ -137,7 +132,7 @@
       <TEXT_TYPE>S</TEXT_TYPE>
       <TEXT_NAME>ICON_OKAY</TEXT_NAME>
       <ICON_ID>@0V@</ICON_ID>
-      <FUN_TEXT>Weiter</FUN_TEXT>
+      <FUN_TEXT>Continue</FUN_TEXT>
      </RSMPE_FUNT>
     </FUN>
     <BUT>
@@ -183,20 +178,20 @@
       <OBJ_TYPE>P</OBJ_TYPE>
       <OBJ_CODE>000001</OBJ_CODE>
       <MODAL>P</MODAL>
-      <INT_NOTE>Status für Dialog</INT_NOTE>
+      <INT_NOTE>Dialog status</INT_NOTE>
      </RSMPE_ATRT>
      <RSMPE_ATRT>
       <OBJ_TYPE>B</OBJ_TYPE>
       <OBJ_CODE>000001</OBJ_CODE>
       <SUB_CODE>0001</SUB_CODE>
       <MODAL>P</MODAL>
-      <INT_NOTE>Status für Dialog</INT_NOTE>
+      <INT_NOTE>Dialog status</INT_NOTE>
      </RSMPE_ATRT>
     </DOC>
     <TIT>
      <RSMPE_TITT>
       <CODE>T0100</CODE>
-      <TEXT>Programmerweiterungen auswählen</TEXT>
+      <TEXT>Choose program extensions</TEXT>
      </RSMPE_TITT>
     </TIT>
    </CUA>

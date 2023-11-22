@@ -9,13 +9,6 @@
     <RLOAD>D</RLOAD>
     <UCCHECK>X</UCCHECK>
    </PROGDIR>
-   <TPOOL>
-    <item>
-     <ID>R</ID>
-     <ENTRY>Include LZCDS_ALV_LAUNCHERO01</ENTRY>
-     <LENGTH>29</LENGTH>
-    </item>
-   </TPOOL>
   </asx:values>
  </asx:abap>
 </abapGit>

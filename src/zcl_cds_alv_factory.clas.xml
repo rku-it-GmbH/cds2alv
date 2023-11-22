@@ -4,8 +4,8 @@
   <asx:values>
    <VSEOCLASS>
     <CLSNAME>ZCL_CDS_ALV_FACTORY</CLSNAME>
-    <LANGU>D</LANGU>
-    <DESCRIPT>Factory für das CDS ALV Framework</DESCRIPT>
+    <LANGU>E</LANGU>
+    <DESCRIPT>Factory for the CDS ALV Framework</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>

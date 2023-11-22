@@ -4,9 +4,9 @@
   <asx:values>
    <DD02V>
     <TABNAME>ZCDS_ALV_SPECIAL_COLUMNS</TABNAME>
-    <DDLANGUAGE>D</DDLANGUAGE>
+    <DDLANGUAGE>E</DDLANGUAGE>
     <TABCLASS>INTTAB</TABCLASS>
-    <DDTEXT>Besondere Spalten zur Steuerung des ALV-Grids</DDTEXT>
+    <DDTEXT>ALV grid special admin columns</DDTEXT>
     <MASTERLANG>D</MASTERLANG>
     <EXCLASS>1</EXCLASS>
    </DD02V>
@@ -67,12 +67,12 @@
     </DD03P>
    </DD03P_TABLE>
    <I18N_LANGS>
-    <LANGU>E</LANGU>
+    <LANGU>D</LANGU>
    </I18N_LANGS>
    <DD02_TEXTS>
     <item>
-     <DDLANGUAGE>E</DDLANGUAGE>
-     <DDTEXT>ALV grid special admin columns</DDTEXT>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DDTEXT>Besondere Spalten zur Steuerung des ALV-Grids</DDTEXT>
     </item>
    </DD02_TEXTS>
   </asx:values>

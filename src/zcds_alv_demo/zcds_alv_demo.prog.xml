@@ -6,6 +6,7 @@
     <NAME>ZCDS_ALV_DEMO</NAME>
     <DBAPL>S</DBAPL>
     <SUBC>1</SUBC>
+    <RLOAD>E</RLOAD>
     <FIXPT>X</FIXPT>
     <LDBNAME>D$S</LDBNAME>
     <UCCHECK>X</UCCHECK>
@@ -13,8 +14,8 @@
    <TPOOL>
     <item>
      <ID>R</ID>
-     <ENTRY>Demoprogramm für das CDS ALV Framework</ENTRY>
-     <LENGTH>38</LENGTH>
+     <ENTRY>CDS ALV demo program</ENTRY>
+     <LENGTH>70</LENGTH>
     </item>
     <item>
      <ID>S</ID>
@@ -26,47 +27,29 @@
     <item>
      <ID>S</ID>
      <KEY>P_NO_MAX</KEY>
-     <ENTRY>Keine Beschränkung</ENTRY>
-     <LENGTH>26</LENGTH>
+     <ENTRY>No restriction</ENTRY>
+     <LENGTH>38</LENGTH>
     </item>
     <item>
      <ID>S</ID>
      <KEY>P_SPLIT</KEY>
-     <ENTRY>Anzeige im Split Screen</ENTRY>
-     <LENGTH>31</LENGTH>
+     <ENTRY>Display in split screen</ENTRY>
+     <LENGTH>38</LENGTH>
     </item>
     <item>
      <ID>S</ID>
      <KEY>SO_KEY</KEY>
-     <ENTRY>Schlüssel</ENTRY>
-     <LENGTH>17</LENGTH>
+     <ENTRY>Key</ENTRY>
+     <LENGTH>38</LENGTH>
     </item>
    </TPOOL>
    <I18N_TPOOL>
     <item>
-     <LANGUAGE>E</LANGUAGE>
+     <LANGUAGE>D</LANGUAGE>
      <TEXTPOOL>
       <item>
        <ID>R</ID>
-       <ENTRY>CDS ALV demo program</ENTRY>
-       <LENGTH>70</LENGTH>
-      </item>
-      <item>
-       <ID>S</ID>
-       <KEY>P_NO_MAX</KEY>
-       <ENTRY>No restriction</ENTRY>
-       <LENGTH>38</LENGTH>
-      </item>
-      <item>
-       <ID>S</ID>
-       <KEY>P_SPLIT</KEY>
-       <ENTRY>Display in split screen</ENTRY>
-       <LENGTH>38</LENGTH>
-      </item>
-      <item>
-       <ID>S</ID>
-       <KEY>SO_KEY</KEY>
-       <ENTRY>Key</ENTRY>
+       <ENTRY>Demoprogramm für das CDS ALV Framework</ENTRY>
        <LENGTH>38</LENGTH>
       </item>
       <item>
@@ -75,6 +58,24 @@
        <ENTRY>.</ENTRY>
        <LENGTH>9</LENGTH>
        <SPLIT>D</SPLIT>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>P_NO_MAX</KEY>
+       <ENTRY>Keine Beschränkung</ENTRY>
+       <LENGTH>26</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>P_SPLIT</KEY>
+       <ENTRY>Anzeige im Split Screen</ENTRY>
+       <LENGTH>31</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>SO_KEY</KEY>
+       <ENTRY>Schlüssel</ENTRY>
+       <LENGTH>17</LENGTH>
       </item>
      </TEXTPOOL>
     </item>

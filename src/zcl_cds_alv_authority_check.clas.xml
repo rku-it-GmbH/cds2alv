@@ -4,8 +4,8 @@
   <asx:values>
    <VSEOCLASS>
     <CLSNAME>ZCL_CDS_ALV_AUTHORITY_CHECK</CLSNAME>
-    <LANGU>D</LANGU>
-    <DESCRIPT>Berechtigungsprüfungen zum CDS ALV Framework</DESCRIPT>
+    <LANGU>E</LANGU>
+    <DESCRIPT>Authority Checks for the CDS ALV Framework</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>

@@ -4,8 +4,8 @@
   <asx:values>
    <DDLS>
     <DDLNAME>ZI_CDS_ALV_SELECTOPTIONS</DDLNAME>
-    <DDLANGUAGE>D</DDLANGUAGE>
-    <DDTEXT>SELECT-OPTIONS der generierten Programme für CDS-Views</DDTEXT>
+    <DDLANGUAGE>E</DDLANGUAGE>
+    <DDTEXT>SELECT-OPTIONS of generated programs for CDS views</DDTEXT>
    </DDLS>
   </asx:values>
  </asx:abap>

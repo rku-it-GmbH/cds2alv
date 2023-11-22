@@ -4,10 +4,10 @@
   <asx:values>
    <DD02V>
     <TABNAME>ZCDS_ALV_PROGRAM</TABNAME>
-    <DDLANGUAGE>D</DDLANGUAGE>
+    <DDLANGUAGE>E</DDLANGUAGE>
     <TABCLASS>TRANSP</TABCLASS>
     <LANGDEP>X</LANGDEP>
-    <DDTEXT>Programm zur Anzeige eines CDS-Views</DDTEXT>
+    <DDTEXT>Program for displaying a CDS view</DDTEXT>
     <MAINFLAG>X</MAINFLAG>
     <CONTFLAG>C</CONTFLAG>
     <EXCLASS>1</EXCLASS>
@@ -35,7 +35,7 @@
      <ADMINFIELD>0</ADMINFIELD>
      <PRECFIELD>ZCDS_ALV_PROGRAM_HEADER</PRECFIELD>
      <MASK>      S</MASK>
-     <DDTEXT>Kopfdaten eines Programms zur Anzeige eines CDS-Views</DDTEXT>
+     <DDTEXT>Header data of a program for display a CDS view</DDTEXT>
      <COMPTYPE>S</COMPTYPE>
     </DD03P>
    </DD03P_TABLE>
@@ -89,12 +89,12 @@
     </DD36M>
    </DD36M>
    <I18N_LANGS>
-    <LANGU>E</LANGU>
+    <LANGU>D</LANGU>
    </I18N_LANGS>
    <DD02_TEXTS>
     <item>
-     <DDLANGUAGE>E</DDLANGUAGE>
-     <DDTEXT>Program for displaying a CDS view</DDTEXT>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DDTEXT>Programm zur Anzeige eines CDS-Views</DDTEXT>
     </item>
    </DD02_TEXTS>
   </asx:values>

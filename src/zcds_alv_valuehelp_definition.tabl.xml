@@ -4,9 +4,9 @@
   <asx:values>
    <DD02V>
     <TABNAME>ZCDS_ALV_VALUEHELP_DEFINITION</TABNAME>
-    <DDLANGUAGE>D</DDLANGUAGE>
+    <DDLANGUAGE>E</DDLANGUAGE>
     <TABCLASS>INTTAB</TABCLASS>
-    <DDTEXT>Werthilfe über eine CDS-Assoziation</DDTEXT>
+    <DDTEXT>Value help via CDS association</DDTEXT>
     <MASTERLANG>D</MASTERLANG>
     <EXCLASS>1</EXCLASS>
    </DD02V>
@@ -71,12 +71,12 @@
     </DD03P>
    </DD03P_TABLE>
    <I18N_LANGS>
-    <LANGU>E</LANGU>
+    <LANGU>D</LANGU>
    </I18N_LANGS>
    <DD02_TEXTS>
     <item>
-     <DDLANGUAGE>E</DDLANGUAGE>
-     <DDTEXT>Value help via CDS association</DDTEXT>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DDTEXT>Werthilfe über eine CDS-Assoziation</DDTEXT>
     </item>
    </DD02_TEXTS>
   </asx:values>

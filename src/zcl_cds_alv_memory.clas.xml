@@ -4,8 +4,8 @@
   <asx:values>
    <VSEOCLASS>
     <CLSNAME>ZCL_CDS_ALV_MEMORY</CLSNAME>
-    <LANGU>D</LANGU>
-    <DESCRIPT>Zugriffe auf das ABAP-Memory</DESCRIPT>
+    <LANGU>E</LANGU>
+    <DESCRIPT>Access to the ABAP memory</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>

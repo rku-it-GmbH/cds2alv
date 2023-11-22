@@ -10,10 +10,10 @@
     <IMPORTABLE>3</IMPORTABLE>
    </OBJH>
    <OBJT>
-    <LANGUAGE>D</LANGUAGE>
+    <LANGUAGE>E</LANGUAGE>
     <OBJECTNAME>ZCDS_ALV_IOCCLIF</OBJECTNAME>
     <OBJECTTYPE>S</OBJECTTYPE>
-    <DDTEXT>Registrierung von Implementierungen für den IoC Container</DDTEXT>
+    <DDTEXT>Implementation registry for the IoC Container</DDTEXT>
    </OBJT>
    <OBJS>
     <OBJS>

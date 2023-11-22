@@ -4,8 +4,8 @@
   <asx:values>
    <VSEOCLASS>
     <CLSNAME>ZCL_CDS_ALV_VALUE_HELP</CLSNAME>
-    <LANGU>D</LANGU>
-    <DESCRIPT>Wertehilfe für Elemente eines CDS-Views</DESCRIPT>
+    <LANGU>E</LANGU>
+    <DESCRIPT>Value Help for elements of a CDS view</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>

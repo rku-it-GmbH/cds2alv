@@ -4,8 +4,8 @@
   <asx:values>
    <VSEOINTERF>
     <CLSNAME>ZIF_CDS_ALV_SPLIT_SCREEN_CNTR</CLSNAME>
-    <LANGU>D</LANGU>
-    <DESCRIPT>Controller für den Split Screen</DESCRIPT>
+    <LANGU>E</LANGU>
+    <DESCRIPT>Split screen controller</DESCRIPT>
     <EXPOSURE>2</EXPOSURE>
     <STATE>1</STATE>
     <UNICODE>X</UNICODE>

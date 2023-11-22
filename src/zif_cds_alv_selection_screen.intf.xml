@@ -4,8 +4,8 @@
   <asx:values>
    <VSEOINTERF>
     <CLSNAME>ZIF_CDS_ALV_SELECTION_SCREEN</CLSNAME>
-    <LANGU>D</LANGU>
-    <DESCRIPT>Viewklasse für Selection-Screens</DESCRIPT>
+    <LANGU>E</LANGU>
+    <DESCRIPT>View class for selection screens</DESCRIPT>
     <EXPOSURE>2</EXPOSURE>
     <STATE>1</STATE>
     <UNICODE>X</UNICODE>

@@ -4,8 +4,8 @@
   <asx:values>
    <VSEOINTERF>
     <CLSNAME>ZIF_CDS_ALV_REPORT_LAUNCHER</CLSNAME>
-    <LANGU>D</LANGU>
-    <DESCRIPT>Start eines generierten Reports für einen CDS-View</DESCRIPT>
+    <LANGU>E</LANGU>
+    <DESCRIPT>Launcher for generated reports for CDS views</DESCRIPT>
     <EXPOSURE>2</EXPOSURE>
     <STATE>1</STATE>
     <UNICODE>X</UNICODE>

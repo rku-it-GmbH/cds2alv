@@ -6,6 +6,7 @@
     <NAME>ZCDS_ALV_REGENERATE_REPORTS</NAME>
     <DBAPL>S</DBAPL>
     <SUBC>1</SUBC>
+    <RLOAD>E</RLOAD>
     <FIXPT>X</FIXPT>
     <LDBNAME>D$S</LDBNAME>
     <UCCHECK>X</UCCHECK>
@@ -13,18 +14,18 @@
    <TPOOL>
     <item>
      <ID>R</ID>
-     <ENTRY>Erneute Generierung aller Reports zu CDS-Views</ENTRY>
-     <LENGTH>46</LENGTH>
+     <ENTRY>Regenerate all reports for CDS views</ENTRY>
+     <LENGTH>70</LENGTH>
     </item>
    </TPOOL>
    <I18N_TPOOL>
     <item>
-     <LANGUAGE>E</LANGUAGE>
+     <LANGUAGE>D</LANGUAGE>
      <TEXTPOOL>
       <item>
        <ID>R</ID>
-       <ENTRY>Regenerate all reports for CDS views</ENTRY>
-       <LENGTH>70</LENGTH>
+       <ENTRY>Erneute Generierung aller Reports zu CDS-Views</ENTRY>
+       <LENGTH>46</LENGTH>
       </item>
      </TEXTPOOL>
     </item>

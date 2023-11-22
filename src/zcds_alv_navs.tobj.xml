@@ -10,10 +10,10 @@
     <IMPORTABLE>3</IMPORTABLE>
    </OBJH>
    <OBJT>
-    <LANGUAGE>D</LANGUAGE>
+    <LANGUAGE>E</LANGUAGE>
     <OBJECTNAME>ZCDS_ALV_NAV</OBJECTNAME>
     <OBJECTTYPE>S</OBJECTTYPE>
-    <DDTEXT>Intent-Based Navigation für das CDS ALV-Framework</DDTEXT>
+    <DDTEXT>Intent-Based Navigation for the CDS ALV Framework</DDTEXT>
    </OBJT>
    <OBJS>
     <OBJS>

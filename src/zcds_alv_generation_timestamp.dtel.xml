@@ -4,32 +4,32 @@
   <asx:values>
    <DD04V>
     <ROLLNAME>ZCDS_ALV_GENERATION_TIMESTAMP</ROLLNAME>
-    <DDLANGUAGE>D</DDLANGUAGE>
+    <DDLANGUAGE>E</DDLANGUAGE>
     <DOMNAME>SALV_TEST_TSTMP</DOMNAME>
     <LOGFLAG>X</LOGFLAG>
     <HEADLEN>55</HEADLEN>
     <SCRLEN1>10</SCRLEN1>
     <SCRLEN2>20</SCRLEN2>
     <SCRLEN3>40</SCRLEN3>
-    <DDTEXT>Zeitstempel der Generierung</DDTEXT>
-    <REPTEXT>Zeitpunkt der Generierung</REPTEXT>
-    <SCRTEXT_S>Generiert</SCRTEXT_S>
-    <SCRTEXT_M>Generiert am</SCRTEXT_M>
-    <SCRTEXT_L>Zeitpunkt der Generierung</SCRTEXT_L>
-    <DTELMASTER>D</DTELMASTER>
+    <DDTEXT>Generation Timestamp</DDTEXT>
+    <REPTEXT>Generation Timestamp</REPTEXT>
+    <SCRTEXT_S>Generated</SCRTEXT_S>
+    <SCRTEXT_M>Generated on</SCRTEXT_M>
+    <SCRTEXT_L>Generation Timestamp</SCRTEXT_L>
+    <DTELMASTER>E</DTELMASTER>
     <REFKIND>D</REFKIND>
    </DD04V>
    <I18N_LANGS>
-    <LANGU>E</LANGU>
+    <LANGU>D</LANGU>
    </I18N_LANGS>
    <DD04_TEXTS>
     <item>
-     <DDLANGUAGE>E</DDLANGUAGE>
-     <DDTEXT>Generation Timestamp</DDTEXT>
-     <REPTEXT>Generation Timestamp</REPTEXT>
-     <SCRTEXT_S>Generated</SCRTEXT_S>
-     <SCRTEXT_M>Generated on</SCRTEXT_M>
-     <SCRTEXT_L>Generation Timestamp</SCRTEXT_L>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DDTEXT>Zeitstempel der Generierung</DDTEXT>
+     <REPTEXT>Zeitpunkt der Generierung</REPTEXT>
+     <SCRTEXT_S>Generiert</SCRTEXT_S>
+     <SCRTEXT_M>Generiert am</SCRTEXT_M>
+     <SCRTEXT_L>Zeitpunkt der Generierung</SCRTEXT_L>
     </item>
    </DD04_TEXTS>
   </asx:values>

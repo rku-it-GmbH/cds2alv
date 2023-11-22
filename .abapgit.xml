@@ -2,9 +2,9 @@
 <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
  <asx:values>
   <DATA>
-   <MASTER_LANGUAGE>D</MASTER_LANGUAGE>
+   <MASTER_LANGUAGE>E</MASTER_LANGUAGE>
    <I18N_LANGUAGES>
-    <LAISO>E</LAISO>
+    <LAISO>D</LAISO>
    </I18N_LANGUAGES>
    <STARTING_FOLDER>/src/</STARTING_FOLDER>
    <FOLDER_LOGIC>FULL</FOLDER_LOGIC>
@@ -14,6 +14,7 @@
      <MIN_RELEASE>750</MIN_RELEASE>
     </item>
    </REQUIREMENTS>
+   <VERSION_CONSTANT>ZCL_CDS_ALV_VERSION=&gt;VERSION</VERSION_CONSTANT>
   </DATA>
  </asx:values>
 </asx:abap>

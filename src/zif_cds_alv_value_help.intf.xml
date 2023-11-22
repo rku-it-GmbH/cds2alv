@@ -4,8 +4,8 @@
   <asx:values>
    <VSEOINTERF>
     <CLSNAME>ZIF_CDS_ALV_VALUE_HELP</CLSNAME>
-    <LANGU>D</LANGU>
-    <DESCRIPT>Wertehilfe für Elemente eines CDS-Views</DESCRIPT>
+    <LANGU>E</LANGU>
+    <DESCRIPT>Value Help for elements of a CDS view</DESCRIPT>
     <EXPOSURE>2</EXPOSURE>
     <STATE>1</STATE>
     <UNICODE>X</UNICODE>

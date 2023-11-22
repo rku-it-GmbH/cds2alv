@@ -4,7 +4,7 @@
   <asx:values>
    <VSEOCLASS>
     <CLSNAME>ZCL_CDS_ALV_IOC_CONTAINER</CLSNAME>
-    <LANGU>D</LANGU>
+    <LANGU>E</LANGU>
     <DESCRIPT>Inversion of Control Container</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
@@ -17,6 +17,11 @@
      <LANGU>D</LANGU>
      <DESCRIPT>DD: Name eines struktierten Objekts (z.B. Entity, Context)</DESCRIPT>
     </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CDS_VIEW</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>DD: Name of a structured object (e.g. entity, context)</DESCRIPT>
+    </SEOCOMPOTX>
    </DESCRIPTIONS>
    <DESCRIPTIONS_SUB>
     <SEOSUBCOTX>
@@ -26,6 +31,12 @@
      <DESCRIPT>DD: Name eines struktierten Objekts (z.B. Entity, Context)</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>I_CDS_VIEW</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>DD: Name of a structured object (e.g. entity, context)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
      <CMPNAME>GET_CONSTRUCTOR_PARAMETERS</CMPNAME>
      <SCONAME>I_CLASS_NAME</SCONAME>
      <LANGU>D</LANGU>
@@ -33,8 +44,20 @@
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>GET_CONSTRUCTOR_PARAMETERS</CMPNAME>
+     <SCONAME>I_CLASS_NAME</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Object Type Name</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_CONSTRUCTOR_PARAMETERS</CMPNAME>
      <SCONAME>R_PARAMETERS</SCONAME>
      <LANGU>D</LANGU>
+     <DESCRIPT>Parameter</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_CONSTRUCTOR_PARAMETERS</CMPNAME>
+     <SCONAME>R_PARAMETERS</SCONAME>
+     <LANGU>E</LANGU>
      <DESCRIPT>Parameter</DESCRIPT>
     </SEOSUBCOTX>
    </DESCRIPTIONS_SUB>

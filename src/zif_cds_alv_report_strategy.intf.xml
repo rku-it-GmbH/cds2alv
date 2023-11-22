@@ -4,8 +4,8 @@
   <asx:values>
    <VSEOINTERF>
     <CLSNAME>ZIF_CDS_ALV_REPORT_STRATEGY</CLSNAME>
-    <LANGU>D</LANGU>
-    <DESCRIPT>Generierungsstrategie für Reports zu CDS-Views</DESCRIPT>
+    <LANGU>E</LANGU>
+    <DESCRIPT>Generation strategy for reports for CDS views</DESCRIPT>
     <EXPOSURE>2</EXPOSURE>
     <STATE>1</STATE>
     <UNICODE>X</UNICODE>

@@ -4,8 +4,8 @@
   <asx:values>
    <VSEOINTERF>
     <CLSNAME>ZIF_CDS_ALV_TABLE_CONTAINER</CLSNAME>
-    <LANGU>D</LANGU>
-    <DESCRIPT>Container für Daten eines CDS-Views</DESCRIPT>
+    <LANGU>E</LANGU>
+    <DESCRIPT>Table container for data from a CDS view</DESCRIPT>
     <EXPOSURE>2</EXPOSURE>
     <STATE>1</STATE>
     <UNICODE>X</UNICODE>

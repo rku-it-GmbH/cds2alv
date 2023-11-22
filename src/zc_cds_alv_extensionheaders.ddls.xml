@@ -4,8 +4,8 @@
   <asx:values>
    <DDLS>
     <DDLNAME>ZC_CDS_ALV_EXTENSIONHEADERS</DDLNAME>
-    <DDLANGUAGE>D</DDLANGUAGE>
-    <DDTEXT>Erweiterungen von Reports für CDS-Views</DDTEXT>
+    <DDLANGUAGE>E</DDLANGUAGE>
+    <DDTEXT>Program extensions for CDS views</DDTEXT>
    </DDLS>
   </asx:values>
  </asx:abap>

@@ -4,8 +4,8 @@
   <asx:values>
    <DDLS>
     <DDLNAME>ZC_CDS_ALV_PROGRAMS</DDLNAME>
-    <DDLANGUAGE>D</DDLANGUAGE>
-    <DDTEXT>Programme zur Anzeige von CDS-Views</DDTEXT>
+    <DDLANGUAGE>E</DDLANGUAGE>
+    <DDTEXT>Programs for displaying CDS views</DDTEXT>
    </DDLS>
   </asx:values>
  </asx:abap>

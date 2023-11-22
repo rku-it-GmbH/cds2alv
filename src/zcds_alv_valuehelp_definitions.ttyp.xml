@@ -4,14 +4,14 @@
   <asx:values>
    <DD40V>
     <TYPENAME>ZCDS_ALV_VALUEHELP_DEFINITIONS</TYPENAME>
-    <DDLANGUAGE>D</DDLANGUAGE>
+    <DDLANGUAGE>E</DDLANGUAGE>
     <ROWTYPE>ZCDS_ALV_VALUEHELP_DEFINITION</ROWTYPE>
     <ROWKIND>S</ROWKIND>
     <DATATYPE>STRU</DATATYPE>
     <ACCESSMODE>T</ACCESSMODE>
     <KEYDEF>D</KEYDEF>
     <KEYKIND>N</KEYKIND>
-    <DDTEXT>Definitionen von Suchhilfen für Elemente eines CDS-Views</DDTEXT>
+    <DDTEXT>Value help definitions for CDS view elements</DDTEXT>
    </DD40V>
   </asx:values>
  </asx:abap>

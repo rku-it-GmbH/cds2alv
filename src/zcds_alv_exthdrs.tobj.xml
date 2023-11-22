@@ -11,10 +11,10 @@
     <IMPORTABLE>3</IMPORTABLE>
    </OBJH>
    <OBJT>
-    <LANGUAGE>D</LANGUAGE>
+    <LANGUAGE>E</LANGUAGE>
     <OBJECTNAME>ZCDS_ALV_EXTHDR</OBJECTNAME>
     <OBJECTTYPE>S</OBJECTTYPE>
-    <DDTEXT>Erweiterungen für Reports zu CDS-Views: Kopfdaten</DDTEXT>
+    <DDTEXT>Report extensions for CDS views: header data</DDTEXT>
    </OBJT>
    <OBJS>
     <OBJS>

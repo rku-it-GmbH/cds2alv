@@ -4,8 +4,8 @@
   <asx:values>
    <VSEOINTERF>
     <CLSNAME>ZIF_CDS_ALV_AUTHORITY_CHECK</CLSNAME>
-    <LANGU>D</LANGU>
-    <DESCRIPT>Berechtigungsprüfungen für das CDS ALV Framework</DESCRIPT>
+    <LANGU>E</LANGU>
+    <DESCRIPT>Authority checks for the CDS ALV Framework</DESCRIPT>
     <EXPOSURE>2</EXPOSURE>
     <STATE>1</STATE>
     <UNICODE>X</UNICODE>

@@ -4,8 +4,8 @@
   <asx:values>
    <VSEOINTERF>
     <CLSNAME>ZIF_CDS_ALV_MEMORY</CLSNAME>
-    <LANGU>D</LANGU>
-    <DESCRIPT>Zugriffe auf das ABAP-Memory</DESCRIPT>
+    <LANGU>E</LANGU>
+    <DESCRIPT>Access to the ABAP memory</DESCRIPT>
     <EXPOSURE>2</EXPOSURE>
     <STATE>1</STATE>
     <UNICODE>X</UNICODE>

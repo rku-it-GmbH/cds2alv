@@ -4,31 +4,31 @@
   <asx:values>
    <DD04V>
     <ROLLNAME>ZCDS_ALV_ALTERNATIVE_DISPLAY</ROLLNAME>
-    <DDLANGUAGE>D</DDLANGUAGE>
+    <DDLANGUAGE>E</DDLANGUAGE>
     <DOMNAME>XFELD</DOMNAME>
     <HEADLEN>55</HEADLEN>
     <SCRLEN1>10</SCRLEN1>
     <SCRLEN2>20</SCRLEN2>
     <SCRLEN3>40</SCRLEN3>
-    <DDTEXT>Kennzeichen: Alternative Anzeige</DDTEXT>
-    <REPTEXT>Alternative Anzeige</REPTEXT>
-    <SCRTEXT_S>Alt. Anz.</SCRTEXT_S>
-    <SCRTEXT_M>Alternative Anzeige</SCRTEXT_M>
-    <SCRTEXT_L>Alternative Anzeige</SCRTEXT_L>
-    <DTELMASTER>D</DTELMASTER>
+    <DDTEXT>Flag: Alternative Display</DDTEXT>
+    <REPTEXT>Alternative Display</REPTEXT>
+    <SCRTEXT_S>Alt. Disp.</SCRTEXT_S>
+    <SCRTEXT_M>Alternative Display</SCRTEXT_M>
+    <SCRTEXT_L>Alternative Display</SCRTEXT_L>
+    <DTELMASTER>E</DTELMASTER>
     <REFKIND>D</REFKIND>
    </DD04V>
    <I18N_LANGS>
-    <LANGU>E</LANGU>
+    <LANGU>D</LANGU>
    </I18N_LANGS>
    <DD04_TEXTS>
     <item>
-     <DDLANGUAGE>E</DDLANGUAGE>
-     <DDTEXT>Flag: Alternative Display</DDTEXT>
-     <REPTEXT>Alternative Display</REPTEXT>
-     <SCRTEXT_S>Alt. Disp.</SCRTEXT_S>
-     <SCRTEXT_M>Alternative Display</SCRTEXT_M>
-     <SCRTEXT_L>Alternative Display</SCRTEXT_L>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DDTEXT>Kennzeichen: Alternative Anzeige</DDTEXT>
+     <REPTEXT>Alternative Anzeige</REPTEXT>
+     <SCRTEXT_S>Alt. Anz.</SCRTEXT_S>
+     <SCRTEXT_M>Alternative Anzeige</SCRTEXT_M>
+     <SCRTEXT_L>Alternative Anzeige</SCRTEXT_L>
     </item>
    </DD04_TEXTS>
   </asx:values>

@@ -58,7 +58,7 @@ CLASS ZCL_CDS_ALV_BASE IMPLEMENTATION.
                                                          e_parameter_annotations = parameter_annotations ).
 
     TRY.
-        description = entity_annotations[ annoname = 'ENDUSERTEXT.LABEL' ]-value.
+        description = remove_quotes( entity_annotations[ annoname = 'ENDUSERTEXT.LABEL' ]-value ).
       CATCH cx_sy_itab_line_not_found.
         description = cds_view.
     ENDTRY.

@@ -1,3 +1,7 @@
+v 1.0.3
+
+- Fixed an error in evaluating annotation UI.lineItem.semanticObject in the grid builder class.
+
 v 1.0.2
 
 - Changelog added

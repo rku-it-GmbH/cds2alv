@@ -397,7 +397,7 @@ CLASS zcl_cds_alv_grid_builder IMPLEMENTATION.
               field_action-fieldtype = ui_annotation-value.
 
             WHEN 'UI.LINEITEM.SEMANTICOBJECT'.
-              semantic_object = remove_quotes( <element_annotation>-value ).
+              semantic_object = remove_quotes( ui_annotation-value ).
 
             WHEN 'UI.LINEITEM.SEMANTICOBJECTACTION'.
               field_action-semantic_action = remove_quotes( ui_annotation-value ).

@@ -10,10 +10,10 @@
     <NOIVBUFFER>00000010</NOIVBUFFER>
    </ATTRIBUTES>
    <TEXT>
-    <LANGU>D</LANGU>
+    <LANGU>E</LANGU>
     <OBJECT>ZCDS_ALV_N</OBJECT>
-    <TXT>CDS ALV: Laufende Nummer für generierte Programme</TXT>
-    <TXTSHORT>CDS ALV</TXTSHORT>
+    <TXT>Number Range for generated Reports</TXT>
+    <TXTSHORT>Report Number</TXTSHORT>
    </TEXT>
   </asx:values>
  </asx:abap>

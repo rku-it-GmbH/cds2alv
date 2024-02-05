@@ -6,6 +6,7 @@
     <DDLNAME>ZI_CDS_ALV_PROGRAMS</DDLNAME>
     <DDLANGUAGE>E</DDLANGUAGE>
     <DDTEXT>Programs for displaying CDS views</DDTEXT>
+    <SOURCE_TYPE>V</SOURCE_TYPE>
    </DDLS>
   </asx:values>
  </asx:abap>

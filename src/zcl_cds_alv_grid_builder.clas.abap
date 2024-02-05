@@ -84,7 +84,9 @@ ENDCLASS.
 
 
 
-CLASS zcl_cds_alv_grid_builder IMPLEMENTATION.
+CLASS ZCL_CDS_ALV_GRID_BUILDER IMPLEMENTATION.
+
+
   METHOD build_event_handler.
     DATA(event_handler) = NEW zcl_cds_alv_grid_event_handler( i_cds_view              = cds_view
                                                               i_alv_grid              = alv_grid
@@ -102,6 +104,7 @@ CLASS zcl_cds_alv_grid_builder IMPLEMENTATION.
     INSERT event_handler INTO TABLE event_handlers.
   ENDMETHOD.
 
+
   METHOD build_exclude_functions.
     exclude_functions = VALUE #( ( cl_gui_alv_grid=>mc_fc_loc_append_row )
                                  ( cl_gui_alv_grid=>mc_fc_loc_copy )
@@ -115,6 +118,7 @@ CLASS zcl_cds_alv_grid_builder IMPLEMENTATION.
                                  ( cl_gui_alv_grid=>mc_fc_loc_undo ) ).
   ENDMETHOD.
 
+
   METHOD build_f4.
     value_help_fields = VALUE #( FOR field_properties IN field_properties_table
                                  WHERE
@@ -124,6 +128,7 @@ CLASS zcl_cds_alv_grid_builder IMPLEMENTATION.
                                    getbefore  = abap_true
                                    chngeafter = abap_true ) ).
   ENDMETHOD.
+
 
   METHOD build_fieldcatalog.
     CALL FUNCTION 'LVC_FIELDCATALOG_MERGE'
@@ -249,6 +254,7 @@ CLASS zcl_cds_alv_grid_builder IMPLEMENTATION.
     sort_columns( ).
   ENDMETHOD.
 
+
   METHOD build_layout.
     CONSTANTS row_column TYPE lvc_libox VALUE 'A' ##NO_TEXT.
 
@@ -290,6 +296,7 @@ CLASS zcl_cds_alv_grid_builder IMPLEMENTATION.
     ENDIF.
   ENDMETHOD.
 
+
   METHOD build_variant.
     variant-report   = sy-cprog.
     variant-username = sy-uname.
@@ -299,6 +306,7 @@ CLASS zcl_cds_alv_grid_builder IMPLEMENTATION.
                                           IMPORTING e_parameter = variant-variant ).
     ENDIF.
   ENDMETHOD.
+
 
   METHOD constructor.
     super->constructor( i_cds_view    = i_cds_view
@@ -315,6 +323,7 @@ CLASS zcl_cds_alv_grid_builder IMPLEMENTATION.
 
     evaluate_annotations( ).
   ENDMETHOD.
+
 
   METHOD evaluate_annotations.
     DATA(action_counter) = VALUE numc3( ).
@@ -511,6 +520,7 @@ CLASS zcl_cds_alv_grid_builder IMPLEMENTATION.
     ENDIF.
   ENDMETHOD.
 
+
   METHOD register_event_handlers.
     LOOP AT event_handlers INTO DATA(event_handler).
       SET HANDLER event_handler->on_help_request FOR alv_grid.
@@ -529,6 +539,7 @@ CLASS zcl_cds_alv_grid_builder IMPLEMENTATION.
       SET HANDLER event_handler->on_data_changed_finished FOR alv_grid.
     ENDLOOP.
   ENDMETHOD.
+
 
   METHOD sort_columns.
     TYPES: BEGIN OF ty_field_position,
@@ -558,6 +569,7 @@ CLASS zcl_cds_alv_grid_builder IMPLEMENTATION.
       ENDTRY.
     ENDLOOP.
   ENDMETHOD.
+
 
   METHOD zif_cds_alv_grid_builder~create_alv_grid.
     CONSTANTS save_all TYPE char01 VALUE 'A' ##NO_TEXT.
@@ -615,9 +627,11 @@ CLASS zcl_cds_alv_grid_builder IMPLEMENTATION.
     e_alv_grid = alv_grid.
   ENDMETHOD.
 
+
   METHOD zif_cds_alv_grid_builder~get_gui_title.
     r_title = description.
   ENDMETHOD.
+
 
   METHOD zif_cds_alv_grid_builder~get_metadata.
     table_container = i_table_container.
@@ -632,6 +646,7 @@ CLASS zcl_cds_alv_grid_builder IMPLEMENTATION.
     e_sort_order = sort_order.
     e_filters = filter.
   ENDMETHOD.
+
 
   METHOD zif_cds_alv_grid_builder~register_alternative_selection.
     alternative_selection = i_selection_handler.

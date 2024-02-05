@@ -41,7 +41,9 @@ ENDCLASS.
 
 
 
-CLASS zcl_cds_alv_bopf_handler IMPLEMENTATION.
+CLASS ZCL_CDS_ALV_BOPF_HANDLER IMPLEMENTATION.
+
+
   METHOD ask_for_parameters.
     DATA fields TYPE STANDARD TABLE OF sval.
 
@@ -77,6 +79,7 @@ CLASS zcl_cds_alv_bopf_handler IMPLEMENTATION.
     ENDLOOP.
   ENDMETHOD.
 
+
   METHOD constructor.
     super->constructor( i_cds_view    = i_cds_view
                         i_ddic_access = i_ddic_access
@@ -87,9 +90,11 @@ CLASS zcl_cds_alv_bopf_handler IMPLEMENTATION.
     evaluate_annotations( ).
   ENDMETHOD.
 
+
   METHOD evaluate_annotations.
     " not used yet
   ENDMETHOD.
+
 
   METHOD instantiate.
     TRY.
@@ -113,17 +118,18 @@ CLASS zcl_cds_alv_bopf_handler IMPLEMENTATION.
             cl_sadl_entity_trans_factory=>get_transactional_provider( cl_sadl_entity_factory=>co_type-bopf
               )->get_transaction_manager( cl_sadl_entity_factory=>co_type-bopf ).
 
-          transaction_manager->register_entity_transaction(
-              io_entity_transaction = entity_type_trans_manager
-              iv_entity_type        = cl_sadl_entity_factory=>co_type-bopf
-              io_mdp                = cl_sadl_metadata_provider=>get( mp ) ).
+          transaction_manager->register_transaction_framework( io_transaction_manager = entity_type_trans_manager
+                                                               iv_entity_type         = cl_sadl_entity_factory=>co_type-bopf
+                                                               io_mdp                 = cl_sadl_mdp_factory=>get_mdp_for_mp( mp ) ).
         ENDIF.
 
       CATCH cx_sadl_static cx_sadl_contract_violation INTO DATA(previous).
         RAISE EXCEPTION TYPE zcx_cds_alv_message
-          EXPORTING previous = previous.
+          EXPORTING
+            previous = previous.
     ENDTRY.
   ENDMETHOD.
+
 
   METHOD map_attributes_single.
     CLEAR e_source_key.
@@ -144,6 +150,7 @@ CLASS zcl_cds_alv_bopf_handler IMPLEMENTATION.
     ENDIF.
   ENDMETHOD.
 
+
   METHOD map_attributes_table.
     CLEAR e_source_keys.
 
@@ -154,6 +161,7 @@ CLASS zcl_cds_alv_bopf_handler IMPLEMENTATION.
                              IMPORTING e_source_key = <source_key> ).
     ENDLOOP.
   ENDMETHOD.
+
 
   METHOD zif_cds_alv_bopf_handler~delete.
     DATA key_values TYPE REF TO data.
@@ -184,6 +192,7 @@ CLASS zcl_cds_alv_bopf_handler IMPLEMENTATION.
           EXPORTING previous = previous.
     ENDTRY.
   ENDMETHOD.
+
 
   METHOD zif_cds_alv_bopf_handler~execute_action.
     DATA parameters     TYPE REF TO data.
@@ -224,59 +233,61 @@ CLASS zcl_cds_alv_bopf_handler IMPLEMENTATION.
         ENDIF.
 
         " Execution
-        CASE action-static.
-          WHEN abap_false.
-            LOOP AT i_selected_rows ASSIGNING FIELD-SYMBOL(<selected_row>).
-              key_values = runtime->create_entity_structure_ref( ).
-              ASSIGN key_values->* TO FIELD-SYMBOL(<key_values>).
-              map_attributes_single( EXPORTING i_entity_key = <selected_row>
-                                               i_attributes = sadl_definition-attributes
-                                     IMPORTING e_source_key = <key_values> ).
+*        CASE action-static.
+*          WHEN abap_false.
+*            LOOP AT i_selected_rows ASSIGNING FIELD-SYMBOL(<selected_row>).
+*              key_values = runtime->create_entity_structure_ref( ).
+*              ASSIGN key_values->* TO FIELD-SYMBOL(<key_values>).
+*              map_attributes_single( EXPORTING i_entity_key = <selected_row>
+*                                               i_attributes = sadl_definition-attributes
+*                                     IMPORTING e_source_key = <key_values> ).
+*
+*              runtime->execute_single( EXPORTING iv_action_name      = action-name
+*                                                 i_action_parameters = <parameters>
+*                                                 is_key_values       = <key_values>
+*                                       IMPORTING ev_failed           = failed
+*                                                 et_data             = <return> ).
+*
+*              IF failed = abap_false.
+*                failed = transaction_manager->if_sadl_transaction_manager~save( ).
+*              ENDIF.
+*
+*              IF failed = abap_true.
+*                transaction_manager->if_sadl_transaction_manager~discard_changes( ).
+*              ENDIF.
+*            ENDLOOP.
+*
+*          WHEN abap_true.
+        key_values_tab = runtime->create_entity_table_ref( ).
+        ASSIGN key_values_tab->* TO FIELD-SYMBOL(<key_values_tab>).
+        map_attributes_table( EXPORTING i_entity_keys = i_selected_rows
+                                        i_attributes  = sadl_definition-attributes
+                              IMPORTING e_source_keys = <key_values_tab> ).
 
-              runtime->execute_single( EXPORTING iv_action_name      = action-name
-                                                 i_action_parameters = <parameters>
-                                                 is_key_values       = <key_values>
-                                       IMPORTING ev_failed           = failed
-                                                 et_data             = <return> ).
+        runtime->execute( EXPORTING iv_action_name          = action-name
+                                    i_action_parameters     = <parameters>
+                                    it_key_values           = <key_values_tab>
+                          IMPORTING ev_static_action_failed = failed
+                                    et_data                 = <return> ).
 
-              IF failed = abap_false.
-                failed = transaction_manager->if_sadl_transaction_manager~save( ).
-              ENDIF.
+        IF failed = abap_false.
+          failed = transaction_manager->if_sadl_transaction_manager~save( ).
+        ENDIF.
 
-              IF failed = abap_true.
-                transaction_manager->if_sadl_transaction_manager~discard_changes( ).
-              ENDIF.
-            ENDLOOP.
-
-          WHEN abap_true.
-            key_values_tab = runtime->create_entity_table_ref( ).
-            ASSIGN key_values_tab->* TO FIELD-SYMBOL(<key_values_tab>).
-            map_attributes_table( EXPORTING i_entity_keys = i_selected_rows
-                                            i_attributes  = sadl_definition-attributes
-                                  IMPORTING e_source_keys = <key_values_tab> ).
-
-            runtime->execute( EXPORTING iv_action_name          = action-name
-                                        i_action_parameters     = <parameters>
-                                        it_key_values           = <key_values_tab>
-                              IMPORTING ev_static_action_failed = failed
-                                        et_data                 = <return> ).
-
-            IF failed = abap_false.
-              failed = transaction_manager->if_sadl_transaction_manager~save( ).
-            ENDIF.
-
-            IF failed = abap_true.
-              transaction_manager->if_sadl_transaction_manager~discard_changes( ).
-            ENDIF.
-        ENDCASE.
+        IF failed = abap_true.
+          transaction_manager->if_sadl_transaction_manager~discard_changes( ).
+        ENDIF.
+*        ENDCASE.
 
         e_refresh_after = abap_true.
 
       CATCH cx_sadl_contract_violation cx_sadl_static INTO DATA(previous).
         RAISE EXCEPTION TYPE zcx_cds_alv_message
-          EXPORTING previous = previous.
+          EXPORTING
+            previous = previous.
     ENDTRY.
   ENDMETHOD.
+
 
   METHOD zif_cds_alv_bopf_handler~update.
     DATA entity_data TYPE REF TO data.

@@ -19,12 +19,15 @@ ENDCLASS.
 
 
 
-CLASS zcl_cds_alv_ddic_access IMPLEMENTATION.
+CLASS ZCL_CDS_ALV_DDIC_ACCESS IMPLEMENTATION.
+
+
   METHOD zif_cds_alv_ddic_access~exists_view.
     SELECT SINGLE @abap_true FROM dd02b
      WHERE strucobjn = @i_cds_view
       INTO @r_exists.
   ENDMETHOD.
+
 
   METHOD zif_cds_alv_ddic_access~get_annotations_for_cds_view.
     cl_dd_ddl_annotation_service=>get_annos( EXPORTING entityname      = to_upper( i_cds_view )
@@ -32,6 +35,7 @@ CLASS zcl_cds_alv_ddic_access IMPLEMENTATION.
                                                        element_annos   = e_element_annotations
                                                        parameter_annos = e_parameter_annotations ).
   ENDMETHOD.
+
 
   METHOD zif_cds_alv_ddic_access~get_conditions_for_association.
     TRY.
@@ -82,6 +86,7 @@ CLASS zcl_cds_alv_ddic_access IMPLEMENTATION.
     ENDTRY.
   ENDMETHOD.
 
+
   METHOD zif_cds_alv_ddic_access~get_ddic_fields_for_cds_view.
     CALL FUNCTION 'DDIF_FIELDINFO_GET'
       EXPORTING  tabname   = i_cds_view
@@ -96,6 +101,7 @@ CLASS zcl_cds_alv_ddic_access IMPLEMENTATION.
     DELETE r_ddfields WHERE fieldname = '.NODE1'.
   ENDMETHOD.
 
+
   METHOD zif_cds_alv_ddic_access~get_last_modified_at.
     SELECT SINGLE chgdate, chgtime FROM dd02b
      WHERE strucobjn = @i_cds_view
@@ -109,6 +115,7 @@ CLASS zcl_cds_alv_ddic_access IMPLEMENTATION.
             INTO TIME STAMP r_modified_at TIME ZONE sy-zonlo.
   ENDMETHOD.
 
+
   METHOD zif_cds_alv_ddic_access~get_mp_for_entity.
     TRY.
         r_mp = NEW zcl_cds_alv_sadl_mapping_prov( i_entity ).
@@ -118,6 +125,7 @@ CLASS zcl_cds_alv_ddic_access IMPLEMENTATION.
           EXPORTING previous = previous.
     ENDTRY.
   ENDMETHOD.
+
 
   METHOD zif_cds_alv_ddic_access~get_parameters_for_cds_view.
     TRY.
@@ -132,6 +140,7 @@ CLASS zcl_cds_alv_ddic_access IMPLEMENTATION.
           EXPORTING previous = previous.
     ENDTRY.
   ENDMETHOD.
+
 
   METHOD zif_cds_alv_ddic_access~get_sadl_runtime.
     TRY.
@@ -149,17 +158,19 @@ CLASS zcl_cds_alv_ddic_access IMPLEMENTATION.
     ENDTRY.
   ENDMETHOD.
 
+
   METHOD zif_cds_alv_ddic_access~get_source_id.
     TRY.
         " This gets the correct entity ID, when ObjectModel.transactionalProcessingDelegated is used!
         " Parameter type is changed to RETURNING in newer releases!
-        CAST cl_sadl_entity_cds( i_entity )->get_consumption_view_def( IMPORTING ev_source_id = r_source_id ).
+        r_source_id = CAST cl_sadl_entity_cds( i_entity )->get_consumption_view_def( )-base_view_name.
 
       CATCH cx_sadl_static INTO DATA(previous).
         RAISE EXCEPTION TYPE zcx_cds_alv_message
           EXPORTING previous = previous.
     ENDTRY.
   ENDMETHOD.
+
 
   METHOD zif_cds_alv_ddic_access~get_target_for_association.
     TRY.

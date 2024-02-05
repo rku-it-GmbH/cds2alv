@@ -61,8 +61,9 @@ CLASS ZCL_CDS_ALV_SADL_MAPPING_PROV IMPLEMENTATION.
 
       CATCH cx_sadl_static INTO DATA(previous).
         RAISE EXCEPTION TYPE cx_bsa_compile_time
-          EXPORTING textid   = cx_bsa_compile_time=>cx_previous
-                    previous = previous.
+          EXPORTING
+            textid   = cx_bsa_compile_time=>cx_bsa_sadl_xml
+            previous = previous.
     ENDTRY.
   ENDMETHOD.
 

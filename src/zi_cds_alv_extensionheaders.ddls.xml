@@ -6,6 +6,7 @@
     <DDLNAME>ZI_CDS_ALV_EXTENSIONHEADERS</DDLNAME>
     <DDLANGUAGE>E</DDLANGUAGE>
     <DDTEXT>Program extensions for CDS views</DDTEXT>
+    <SOURCE_TYPE>V</SOURCE_TYPE>
    </DDLS>
   </asx:values>
  </asx:abap>

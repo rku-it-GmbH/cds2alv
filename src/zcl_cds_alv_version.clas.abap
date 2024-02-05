@@ -6,7 +6,7 @@ class ZCL_CDS_ALV_VERSION definition
 
 public section.
 
-  constants VERSION type STRING value '1.0.1' ##NO_TEXT.
+  constants VERSION type STRING value '1.0.2' ##NO_TEXT.
 protected section.
 private section.
 ENDCLASS.

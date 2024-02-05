@@ -200,6 +200,30 @@
      <MSGNR>032</MSGNR>
      <TEXT>Empty receiver list &amp;1.</TEXT>
     </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCDS_ALV</ARBGB>
+     <MSGNR>033</MSGNR>
+     <TEXT>Invalid importing parameter &amp;1 for class &amp;2, method &amp;3.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCDS_ALV</ARBGB>
+     <MSGNR>034</MSGNR>
+     <TEXT>Error occurred in class &amp;1, method &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCDS_ALV</ARBGB>
+     <MSGNR>035</MSGNR>
+     <TEXT>Invalid method &amp;2 in class &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCDS_ALV</ARBGB>
+     <MSGNR>036</MSGNR>
+     <TEXT>Error occurred while creating an instance of class &amp;1.</TEXT>
+    </T100>
    </T100>
    <I18N_LANGS>
     <LANGU>D</LANGU>
@@ -371,6 +395,26 @@
      <SPRSL>D</SPRSL>
      <MSGNR>032</MSGNR>
      <TEXT>Leere Empfängerliste &amp;1</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>033</MSGNR>
+     <TEXT>Ungültiger Parameter &amp;1 für Klasse &amp;2, Methode &amp;3.</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>034</MSGNR>
+     <TEXT>Fehler aufgetreten in Klasse &amp;1, Methode &amp;2.</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>035</MSGNR>
+     <TEXT>Ungültige Methode &amp;2 für Klasse &amp;1.</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>036</MSGNR>
+     <TEXT>Fehler aufgetreten bei Instanzerzeugung für Klasse &amp;1.</TEXT>
     </item>
    </T100_TEXTS>
   </asx:values>

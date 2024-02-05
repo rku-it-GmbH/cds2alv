@@ -9,57 +9,74 @@ CLASS zcl_cds_alv_navigation DEFINITION PUBLIC CREATE PUBLIC.
 
   PROTECTED SECTION.
 
-  PRIVATE SECTION.
-    CONSTANTS: BEGIN OF mass_processing,
+private section.
+
+  constants:
+    BEGIN OF mass_processing,
                  none  TYPE zcds_alv_nav_mass_processing VALUE space,
                  loop  TYPE zcds_alv_nav_mass_processing VALUE 'L',
                  table TYPE zcds_alv_nav_mass_processing VALUE 'T',
-               END OF mass_processing.
+               END OF mass_processing .
+  constants EXIT_INTERFACE type SEOITFNAME value 'ZIF_CDS_ALV_NAVIGATION' ##NO_TEXT.
+  data PERSISTENCE type ref to ZIF_CDS_ALV_PERSISTENCE .
+  data DDIC_ACCESS type ref to ZIF_CDS_ALV_DDIC_ACCESS .
+  data LAUNCHER type ref to ZIF_CDS_ALV_REPORT_LAUNCHER .
+  data IOC_CONTAINER type ref to ZIF_CDS_ALV_IOC_CONTAINER .
+  data NAVIGATION_TABLE type ZCDS_ALV_NAVIGATION_TAB .
+  data NAVIGATION_EXITS type ZCDS_ALV_NAVIGATION_EXIT_TAB .
 
-    CONSTANTS exit_interface TYPE seoitfname VALUE 'ZIF_CDS_ALV_NAVIGATION'.
-
-    DATA persistence      TYPE REF TO zif_cds_alv_persistence.
-    DATA ddic_access      TYPE REF TO zif_cds_alv_ddic_access.
-    DATA launcher         TYPE REF TO zif_cds_alv_report_launcher.
-    DATA ioc_container    TYPE REF TO zif_cds_alv_ioc_container.
-    DATA navigation_table TYPE zcds_alv_navigation_tab.
-    DATA navigation_exits TYPE zcds_alv_navigation_exit_tab.
-
-    METHODS ask_for_missing_parameters
-      IMPORTING i_target_view      TYPE ddstrucobjname
-      CHANGING  c_parameter_values TYPE zcds_alv_parameters
-      RAISING   zcx_cds_alv_message.
-
-    METHODS call_bor_method
-      IMPORTING i_navigation   TYPE zcds_alv_nav
-                i_key_field    TYPE fieldname
-                i_selected_row TYPE any
-      RAISING   zcx_cds_alv_message.
-
-    METHODS call_function_module
-      IMPORTING i_navigation    TYPE zcds_alv_nav
-                i_key_field     TYPE fieldname      OPTIONAL
-                i_selected_row  TYPE any            OPTIONAL
-                i_selected_rows TYPE STANDARD TABLE OPTIONAL
-      RAISING   zcx_cds_alv_message.
-
-    METHODS call_transaction
-      IMPORTING i_navigation   TYPE zcds_alv_nav
-                i_key_field    TYPE fieldname
-                i_selected_row TYPE any
-      RAISING   zcx_cds_alv_message.
-
-    METHODS fill_ioc_container.
-
-    METHODS get_object_from_ioc_container
-      IMPORTING i_navigation_exit TYPE zcds_alv_navexit
-      RETURNING VALUE(r_object)   TYPE REF TO zif_cds_alv_navigation
-      RAISING   zcx_cds_alv_message.
+  methods ASK_FOR_MISSING_PARAMETERS
+    importing
+      !I_TARGET_VIEW type DDSTRUCOBJNAME
+    changing
+      !C_PARAMETER_VALUES type ZCDS_ALV_PARAMETERS
+    raising
+      ZCX_CDS_ALV_MESSAGE .
+  methods CALL_BOR_METHOD
+    importing
+      !I_NAVIGATION type ZCDS_ALV_NAV
+      !I_KEY_FIELD type FIELDNAME
+      !I_SELECTED_ROW type ANY
+    raising
+      ZCX_CDS_ALV_MESSAGE .
+  methods CALL_FUNCTION_MODULE
+    importing
+      !I_NAVIGATION type ZCDS_ALV_NAV
+      !I_KEY_FIELD type FIELDNAME optional
+      !I_SELECTED_ROW type ANY optional
+      !I_SELECTED_ROWS type STANDARD TABLE optional
+    raising
+      ZCX_CDS_ALV_MESSAGE .
+  methods CALL_TRANSACTION
+    importing
+      !I_NAVIGATION type ZCDS_ALV_NAV
+      !I_KEY_FIELD type FIELDNAME
+      !I_SELECTED_ROW type ANY
+    raising
+      ZCX_CDS_ALV_MESSAGE .
+  methods CALL_OO_METHOD
+    importing
+      !I_NAVIGATION type ZCDS_ALV_NAV
+      !I_KEY_FIELD type FIELDNAME optional
+      !I_SELECTED_ROW type ANY optional
+      !I_SELECTED_ROWS type STANDARD TABLE optional
+    raising
+      ZCX_CDS_ALV_MESSAGE .
+  methods FILL_IOC_CONTAINER .
+  methods GET_OBJECT_FROM_IOC_CONTAINER
+    importing
+      !I_NAVIGATION_EXIT type ZCDS_ALV_NAVEXIT
+    returning
+      value(R_OBJECT) type ref to ZIF_CDS_ALV_NAVIGATION
+    raising
+      ZCX_CDS_ALV_MESSAGE .
 ENDCLASS.
 
 
 
-CLASS zcl_cds_alv_navigation IMPLEMENTATION.
+CLASS ZCL_CDS_ALV_NAVIGATION IMPLEMENTATION.
+
+
   METHOD ask_for_missing_parameters.
     DATA(dd10bv_tab) = ddic_access->get_parameters_for_cds_view( i_target_view ).
 
@@ -104,6 +121,7 @@ CLASS zcl_cds_alv_navigation IMPLEMENTATION.
     ENDLOOP.
   ENDMETHOD.
 
+
   METHOD call_bor_method.
     DATA objkey    TYPE swo_typeid.
     DATA object    TYPE swo_objhnd.
@@ -144,6 +162,7 @@ CLASS zcl_cds_alv_navigation IMPLEMENTATION.
             WITH sy-msgv1 sy-msgv2 sy-msgv3 sy-msgv4.
     ENDIF.
   ENDMETHOD.
+
 
   METHOD call_function_module.
     DATA exceptions TYPE STANDARD TABLE OF rsexc.
@@ -243,6 +262,132 @@ CLASS zcl_cds_alv_navigation IMPLEMENTATION.
     ENDIF.
   ENDMETHOD.
 
+
+  METHOD call_oo_method.
+    DATA(class_descriptor) = CAST cl_abap_classdescr( cl_abap_typedescr=>describe_by_name( i_navigation-class ) ).
+    DATA(parameter_type_descriptor) = class_descriptor->get_method_parameter_type( p_method_name    = i_navigation-method
+                                                                                   p_parameter_name = i_navigation-method_parameter ).
+
+    DATA input TYPE REF TO data.
+    CREATE DATA input TYPE HANDLE parameter_type_descriptor.
+
+    IF input IS NOT BOUND.
+      RAISE EXCEPTION TYPE zcx_cds_alv_message
+            MESSAGE e033(zcds_alv) WITH i_navigation-method_parameter i_navigation-class i_navigation-method.
+    ENDIF.
+
+    ASSIGN input->* TO FIELD-SYMBOL(<input>).
+
+    IF i_navigation-conversion_exit IS NOT INITIAL.
+      DATA(conversion_function) = |CONVERSION_EXIT_{ i_navigation-conversion_exit }_INPUT|.
+    ENDIF.
+
+    IF i_selected_row IS NOT INITIAL.
+      ASSIGN COMPONENT i_key_field OF STRUCTURE i_selected_row TO FIELD-SYMBOL(<key>).
+      <input> = <key>.
+
+      IF conversion_function IS NOT INITIAL.
+        CALL FUNCTION conversion_function
+          EXPORTING
+            input  = <input>
+          IMPORTING
+            output = <input>.
+      ENDIF.
+
+    ELSEIF i_selected_rows IS NOT INITIAL.
+      FIELD-SYMBOLS <table> TYPE ANY TABLE.
+
+      LOOP AT i_selected_rows ASSIGNING FIELD-SYMBOL(<selected_row>).
+        ASSIGN COMPONENT i_key_field OF STRUCTURE <selected_row> TO <key>.
+        ASSIGN <input> TO <table>.
+        INSERT <key> INTO TABLE <table> ASSIGNING FIELD-SYMBOL(<line>).
+
+        IF conversion_function IS NOT INITIAL.
+          CALL FUNCTION conversion_function
+            EXPORTING
+              input  = <line>
+            IMPORTING
+              output = <line>.
+        ENDIF.
+      ENDLOOP.
+    ENDIF.
+
+    READ TABLE class_descriptor->methods INTO DATA(method) WITH KEY name = i_navigation-method.
+    IF sy-subrc <> 0.
+      RAISE EXCEPTION TYPE zcx_cds_alv_message
+            MESSAGE e035(zcds_alv) WITH i_navigation-class i_navigation-method.
+    ENDIF.
+
+    DATA(parameter_binding) = VALUE abap_parmbind_tab(
+       ( name  = i_navigation-method_parameter
+         kind  = cl_abap_objectdescr=>exporting
+         value = input ) ).
+
+    IF method-is_raising_excps IS NOT INITIAL.
+      DATA(exception_binding) = VALUE abap_excpbind_tab( ( name = `OTHERS` value = 1 ) ).
+    ENDIF.
+
+    TRY.
+        CASE method-is_class.
+          WHEN abap_true.
+            IF method-is_raising_excps IS NOT INITIAL.
+              CALL METHOD (i_navigation-class)=>(i_navigation-method)
+                   PARAMETER-TABLE parameter_binding
+                   EXCEPTION-TABLE exception_binding.
+              IF sy-subrc <> 0.
+                RAISE EXCEPTION TYPE zcx_cds_alv_message
+                      MESSAGE ID sy-msgid TYPE sy-msgty NUMBER sy-msgno
+                      WITH sy-msgv1 sy-msgv2 sy-msgv3 sy-msgv4.
+              ENDIF.
+            ELSE.
+              TRY.
+                  CALL METHOD (i_navigation-class)=>(i_navigation-method)
+                       PARAMETER-TABLE parameter_binding.
+
+                CATCH cx_root.
+                  RAISE EXCEPTION TYPE zcx_cds_alv_message
+                        MESSAGE ID sy-msgid TYPE sy-msgty NUMBER sy-msgno
+                        WITH sy-msgv1 sy-msgv2 sy-msgv3 sy-msgv4.
+              ENDTRY.
+            ENDIF.
+
+          WHEN abap_false.
+            DATA instance TYPE REF TO object.
+            CREATE OBJECT instance TYPE (i_navigation-class).
+
+            IF method-is_raising_excps IS NOT INITIAL.
+              CALL METHOD instance->(i_navigation-method)
+                   PARAMETER-TABLE parameter_binding
+                   EXCEPTION-TABLE exception_binding.
+              IF sy-subrc <> 0.
+                RAISE EXCEPTION TYPE zcx_cds_alv_message
+                      MESSAGE ID sy-msgid TYPE sy-msgty NUMBER sy-msgno
+                      WITH sy-msgv1 sy-msgv2 sy-msgv3 sy-msgv4.
+              ENDIF.
+            ELSE.
+              TRY.
+                  CALL METHOD instance->(i_navigation-method)
+                       PARAMETER-TABLE parameter_binding.
+
+                CATCH cx_root.
+                  RAISE EXCEPTION TYPE zcx_cds_alv_message
+                        MESSAGE ID sy-msgid TYPE sy-msgty NUMBER sy-msgno
+                        WITH sy-msgv1 sy-msgv2 sy-msgv3 sy-msgv4.
+              ENDTRY.
+            ENDIF.
+        ENDCASE.
+
+      CATCH cx_sy_create_object_error.
+        RAISE EXCEPTION TYPE zcx_cds_alv_message
+              MESSAGE e036(zcds_alv) WITH i_navigation-class.
+
+      CATCH cx_sy_dyn_call_error.
+        RAISE EXCEPTION TYPE zcx_cds_alv_message
+              MESSAGE e034(zcds_alv) WITH i_navigation-class i_navigation-method.
+    ENDTRY.
+  ENDMETHOD.
+
+
   METHOD call_transaction.
     ASSIGN COMPONENT i_key_field OF STRUCTURE i_selected_row TO FIELD-SYMBOL(<key>).
 
@@ -254,6 +399,7 @@ CLASS zcl_cds_alv_navigation IMPLEMENTATION.
          WITH AUTHORITY-CHECK AND SKIP FIRST SCREEN.
   ENDMETHOD.
 
+
   METHOD constructor.
     persistence = i_persistence.
     ddic_access = i_ddic_access.
@@ -262,6 +408,7 @@ CLASS zcl_cds_alv_navigation IMPLEMENTATION.
     navigation_exits = persistence->get_navigation_exits( ).
     fill_ioc_container( ).
   ENDMETHOD.
+
 
   METHOD fill_ioc_container.
     ioc_container = NEW zcl_cds_alv_ioc_container( ).
@@ -282,6 +429,7 @@ CLASS zcl_cds_alv_navigation IMPLEMENTATION.
     ENDLOOP.
   ENDMETHOD.
 
+
   METHOD get_object_from_ioc_container.
     DATA(filters) = VALUE zif_cds_alv_ioc_container=>ty_filters(
                               ( key = 'SEMANTIC_OBJECT' value = i_navigation_exit-semantic_object )
@@ -290,6 +438,7 @@ CLASS zcl_cds_alv_navigation IMPLEMENTATION.
 
     r_object ?= ioc_container->resolve( i_interface = exit_interface i_filters = filters ).
   ENDMETHOD.
+
 
   METHOD zif_cds_alv_navigation~navigate_to_object_mass.
     e_refresh_after = abap_false.
@@ -347,6 +496,13 @@ CLASS zcl_cds_alv_navigation IMPLEMENTATION.
                 call_transaction( i_navigation   = navigation
                                   i_key_field    = i_key_field
                                   i_selected_row = <selected_row> ).
+
+              ELSEIF     navigation-class            IS NOT INITIAL
+                     AND navigation-method           IS NOT INITIAL
+                     AND navigation-method_parameter IS NOT INITIAL.
+                call_oo_method( i_navigation   = navigation
+                                i_key_field    = i_key_field
+                                i_selected_row = <selected_row> ).
               ENDIF.
             ENDLOOP.
 
@@ -356,6 +512,13 @@ CLASS zcl_cds_alv_navigation IMPLEMENTATION.
               call_function_module( i_navigation    = navigation
                                     i_key_field     = i_key_field
                                     i_selected_rows = i_selected_rows ).
+
+            ELSEIF     navigation-class            IS NOT INITIAL
+                   AND navigation-method           IS NOT INITIAL
+                   AND navigation-method_parameter IS NOT INITIAL.
+              call_oo_method( i_navigation    = navigation
+                              i_key_field     = i_key_field
+                              i_selected_rows = i_selected_rows ).
             ELSE.
               RAISE EXCEPTION TYPE zcx_cds_alv_message MESSAGE e004(zcds_alv).
             ENDIF.
@@ -368,6 +531,7 @@ CLASS zcl_cds_alv_navigation IMPLEMENTATION.
               MESSAGE e002(zcds_alv) WITH i_object i_action.
     ENDTRY.
   ENDMETHOD.
+
 
   METHOD zif_cds_alv_navigation~navigate_to_object_single.
     e_refresh_after = abap_false.
@@ -416,6 +580,13 @@ CLASS zcl_cds_alv_navigation IMPLEMENTATION.
           call_transaction( i_navigation   = navigation
                             i_key_field    = i_key_field
                             i_selected_row = i_selected_row ).
+
+        ELSEIF     navigation-class            IS NOT INITIAL
+               AND navigation-method           IS NOT INITIAL
+               AND navigation-method_parameter IS NOT INITIAL.
+          call_oo_method( i_navigation   = navigation
+                          i_key_field    = i_key_field
+                          i_selected_row = i_selected_row ).
         ENDIF.
 
         e_refresh_after = navigation-refresh_after.
@@ -425,6 +596,7 @@ CLASS zcl_cds_alv_navigation IMPLEMENTATION.
               MESSAGE e002(zcds_alv) WITH i_object i_action.
     ENDTRY.
   ENDMETHOD.
+
 
   METHOD zif_cds_alv_navigation~navigate_via_association.
     DATA(target_view) = ddic_access->get_target_for_association( i_source_view      = i_source_view

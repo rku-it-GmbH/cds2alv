@@ -6,6 +6,7 @@
     <DDLNAME>ZC_CDS_ALV_EXTENSIONPARAMETERS</DDLNAME>
     <DDLANGUAGE>E</DDLANGUAGE>
     <DDTEXT>Program extension parameters</DDTEXT>
+    <SOURCE_TYPE>V</SOURCE_TYPE>
    </DDLS>
   </asx:values>
  </asx:abap>

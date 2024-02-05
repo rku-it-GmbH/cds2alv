@@ -45,6 +45,8 @@ ENDCLASS.
 
 
 CLASS ZCL_CDS_ALV_BASE IMPLEMENTATION.
+
+
   METHOD constructor.
     cds_view = to_upper( i_cds_view ).
     ddic_access = i_ddic_access.
@@ -65,6 +67,7 @@ CLASS ZCL_CDS_ALV_BASE IMPLEMENTATION.
 
     ddfields = ddic_access->get_ddic_fields_for_cds_view( cds_view ).
   ENDMETHOD.
+
 
   METHOD remove_quotes.
     r_string = replace( val = i_string sub = `'` with = `` occ = 0 ).

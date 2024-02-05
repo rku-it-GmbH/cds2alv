@@ -2,7 +2,6 @@
 <abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
-   <AREAT>Start transaction for generated reports</AREAT>
    <INCLUDES>
     <SOBJ_NAME>LZCDS_ALV_LAUNCHERI01</SOBJ_NAME>
     <SOBJ_NAME>LZCDS_ALV_LAUNCHERO01</SOBJ_NAME>
@@ -15,6 +14,16 @@
      <SHORT_TEXT>Launch program for a CDS view</SHORT_TEXT>
     </item>
    </FUNCTIONS>
+   <I18N_TPOOL>
+    <item>
+     <LANGUAGE>D</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>R</ID>
+      </item>
+     </TEXTPOOL>
+    </item>
+   </I18N_TPOOL>
    <DYNPROS>
     <item>
      <HEADER>

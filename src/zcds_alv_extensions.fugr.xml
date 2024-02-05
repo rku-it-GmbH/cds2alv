@@ -2,7 +2,6 @@
 <abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
-   <AREAT>Maintenance dialog for extensions</AREAT>
    <INCLUDES>
     <SOBJ_NAME>LZCDS_ALV_EXTENSIONSF01</SOBJ_NAME>
     <SOBJ_NAME>LZCDS_ALV_EXTENSIONSF02</SOBJ_NAME>
@@ -41,6 +40,16 @@
      <EXCEPTION_CLASSES>X</EXCEPTION_CLASSES>
     </item>
    </FUNCTIONS>
+   <I18N_TPOOL>
+    <item>
+     <LANGUAGE>D</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>R</ID>
+      </item>
+     </TEXTPOOL>
+    </item>
+   </I18N_TPOOL>
    <DYNPROS>
     <item>
      <HEADER>

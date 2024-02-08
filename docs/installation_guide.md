@@ -9,7 +9,7 @@ abapGit needs to be installed and set up according to the official documentation
 
 Execute abapGit using the report *ZABAPGIT_STANDALONE* or transaction code *ZABAPGIT*, click on *New Online*. 
 
-Fill the field *Git repository URL* with *https://github.com/rku-it-GmbH/cds2alv.git*.
+Fill the field *Git repository URL* with *https://github.com/rku-it-GmbH/cds2alv_s4.git*.
 
 The default package name is *ZCDS_ALV*, create the package, if it does not already exist.
 

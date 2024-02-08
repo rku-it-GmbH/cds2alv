@@ -1,3 +1,8 @@
+v 1.1.0
+
+- Added Implementation of Intent-Based Navigation via ABAP OO methods.
+- Added missing CDS Views and associations for the Report Extension Tables.
+
 v 1.0.3
 
 - Fixed an error in evaluating annotation UI.lineItem.semanticObject in the grid builder class.

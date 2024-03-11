@@ -20,11 +20,11 @@ CLASS zcl_cds_alv_base DEFINITION PUBLIC ABSTRACT CREATE PUBLIC.
                  with_url                     TYPE zcds_alv_field_type VALUE '#WITH_URL',
                END OF field_type.
 
-    DATA description TYPE ddtext.
-    DATA ddfields TYPE ddfields.
-    DATA parameter_annotations TYPE cl_dd_ddl_annotation_service=>ty_t_para_anno_val_src_dtel.
-    DATA element_annotations TYPE cl_dd_ddl_annotation_service=>ty_t_elmnt_anno_val_src_dtel.
-    DATA entity_annotations TYPE cl_dd_ddl_annotation_service=>ty_t_anno_value.
+    DATA description TYPE ddtext .
+    DATA ddfields TYPE ddfields .
+    DATA parameter_annotations TYPE cl_dd_ddl_annotation_service=>ty_t_para_anno_val_src_dtel .
+    DATA element_annotations TYPE cl_dd_ddl_annotation_service=>ty_t_elmnt_anno_val_src_dtel .
+    DATA entity_annotations TYPE cl_dd_ddl_annotation_service=>ty_t_anno_value .
     DATA ddic_access TYPE REF TO zif_cds_alv_ddic_access.
     DATA persistence TYPE REF TO zif_cds_alv_persistence.
     DATA memory TYPE REF TO zif_cds_alv_memory.
@@ -39,13 +39,14 @@ CLASS zcl_cds_alv_base DEFINITION PUBLIC ABSTRACT CREATE PUBLIC.
         i_string        TYPE clike
       RETURNING
         VALUE(r_string) TYPE string.
-		
   PRIVATE SECTION.
 ENDCLASS.
 
 
 
 CLASS ZCL_CDS_ALV_BASE IMPLEMENTATION.
+
+
   METHOD constructor.
     cds_view = to_upper( i_cds_view ).
     ddic_access = i_ddic_access.
@@ -66,6 +67,7 @@ CLASS ZCL_CDS_ALV_BASE IMPLEMENTATION.
 
     ddfields = ddic_access->get_ddic_fields_for_cds_view( cds_view ).
   ENDMETHOD.
+
 
   METHOD remove_quotes.
     r_string = replace( val = i_string sub = `'` with = `` occ = 0 ).

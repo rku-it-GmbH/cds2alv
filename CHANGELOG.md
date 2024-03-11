@@ -1,3 +1,7 @@
+v 1.1.1
+
+- Fixed an error in the handling of class-based exceptions during navigation via ABAP OO methods.
+
 v 1.1.0
 
 - Added Implementation of Intent-Based Navigation via ABAP OO methods.

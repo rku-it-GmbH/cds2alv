@@ -69,7 +69,9 @@ ENDCLASS.
 
 
 
-CLASS zcl_cds_alv_report_strategy IMPLEMENTATION.
+CLASS ZCL_CDS_ALV_REPORT_STRATEGY IMPLEMENTATION.
+
+
   METHOD constructor.
     super->constructor( i_cds_view    = i_cds_view
                         i_ddic_access = i_ddic_access
@@ -79,6 +81,7 @@ CLASS zcl_cds_alv_report_strategy IMPLEMENTATION.
 
     evaluate_annotations( ).
   ENDMETHOD.
+
 
   METHOD evaluate_annotations.
     TRY.
@@ -109,7 +112,7 @@ CLASS zcl_cds_alv_report_strategy IMPLEMENTATION.
             param_properties-label = remove_quotes( <param_annotation>-value ).
         ENDCASE.
 
-        IF <param_annotation>-annoname CP 'CONSUMPTION.VALUEHELPDEFINITION.*'.
+        IF <param_annotation>-annoname CP 'CONSUMPTION.VALUEHELPDEFINITION$*$.*'.
           param_properties-value_help = abap_true.
         ENDIF.
       ENDLOOP.
@@ -168,7 +171,7 @@ CLASS zcl_cds_alv_report_strategy IMPLEMENTATION.
           WHEN 'CONSUMPTION.FILTER.DEFAULTVALUE'.
             field_properties-default_value = remove_quotes( <element_annotation>-value ).
 
-          WHEN 'CONSUMPTION.VALUEHELP' OR 'CONSUMPTION.VALUEHELPDEFINITION'.
+          WHEN 'CONSUMPTION.VALUEHELP'.
             field_properties-value_help = abap_true.
 
           WHEN 'CONSUMPTION.HIDDEN'.
@@ -183,6 +186,10 @@ CLASS zcl_cds_alv_report_strategy IMPLEMENTATION.
           WHEN 'ENDUSERTEXT.LABEL'.
             field_properties-label = remove_quotes( <element_annotation>-value ).
         ENDCASE.
+
+        IF <element_annotation>-annoname CP 'CONSUMPTION.VALUEHELPDEFINITION$*$.*'.
+          field_properties-value_help = abap_true.
+        ENDIF.
       ENDLOOP.
 
       IF field_properties-selection_type IS INITIAL.
@@ -197,10 +204,12 @@ CLASS zcl_cds_alv_report_strategy IMPLEMENTATION.
     ENDLOOP.
   ENDMETHOD.
 
+
   METHOD get_extension_parameters.
     r_extension_parameters = VALUE #( FOR x_extension IN persistence->get_report_extensions( cds_view )
                                       ( LINES OF persistence->get_extension_parameters( x_extension-extension_name ) ) ).
   ENDMETHOD.
+
 
   METHOD get_program_name.
     TRY.
@@ -217,6 +226,7 @@ CLASS zcl_cds_alv_report_strategy IMPLEMENTATION.
         ENDIF.
     ENDTRY.
   ENDMETHOD.
+
 
   METHOD zif_cds_alv_report_strategy~write_source.
     DEFINE append_initial_line.
@@ -485,6 +495,7 @@ CLASS zcl_cds_alv_report_strategy IMPLEMENTATION.
                                                  ( |      MESSAGE message TYPE 'I' DISPLAY LIKE 'E'. | )
                                                  ( |  ENDTRY.                                        | ) ) TO r_program-source_lines.
   ENDMETHOD.
+
 
   METHOD zif_cds_alv_report_strategy~write_textpool.
     LOOP AT field_properties_tab INTO DATA(field_properties).

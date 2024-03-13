@@ -43,11 +43,18 @@ CLASS zcl_cds_alv_value_help DEFINITION PUBLIC INHERITING FROM zcl_cds_alv_base 
       CHANGING  c_value     TYPE any
       RAISING   zcx_cds_alv_message.
 
+    METHODS choose_value_help
+      CHANGING c_value_helps TYPE zcds_alv_valuehelp_definitions
+      RAISING  zcx_cds_alv_message.
+
   PRIVATE SECTION.
 ENDCLASS.
 
 
+
 CLASS zcl_cds_alv_value_help IMPLEMENTATION.
+
+
   METHOD constructor.
     super->constructor( i_cds_view    = i_cds_view
                         i_ddic_access = i_ddic_access
@@ -58,91 +65,124 @@ CLASS zcl_cds_alv_value_help IMPLEMENTATION.
     evaluate_annotations( ).
   ENDMETHOD.
 
+
   METHOD evaluate_annotations.
     LOOP AT element_annotations ASSIGNING FIELD-SYMBOL(<element_annotation_group>)
          GROUP BY <element_annotation_group>-elementname.
 
       DATA(fieldname) = CONV fieldname( <element_annotation_group>-elementname ).
-      DATA(value_help) = VALUE zcds_alv_valuehelp_definition( cds_view = cds_view fieldname = fieldname ).
 
       LOOP AT GROUP <element_annotation_group> ASSIGNING FIELD-SYMBOL(<element_annotation>).
-        CASE <element_annotation>-annoname.
-          WHEN 'CONSUMPTION.VALUEHELP' OR 'CONSUMPTION.VALUEHELPDEFINITION.ASSOCIATION'.
-            value_help-association_name = remove_quotes( <element_annotation>-value ).
-
-          WHEN 'CONSUMPTION.VALUEHELPDEFINITION.ENTITY.NAME'.
-            value_help-target_entity = remove_quotes( <element_annotation>-value ).
-
-          WHEN 'CONSUMPTION.VALUEHELPDEFINITION.ENTITY.ELEMENT'.
-            value_help-target_element = remove_quotes( <element_annotation>-value ).
-
-          WHEN 'CONSUMPTION.VALUEHELPDEFINITION.DISTINCTVALUES'.
-            value_help-distinct_values = xsdbool( <element_annotation>-value = 'true' ).
-
-          WHEN 'CONSUMPTION.VALUEHELPDEFINITION.LABEL'.
-            value_help-label = remove_quotes( <element_annotation>-value ).
-        ENDCASE.
-
-        IF <element_annotation>-annoname NP 'CONSUMPTION.VALUEHELPDEFINITION.ADDITIONALBINDING$*$.*'.
-          CONTINUE.
+        IF <element_annotation>-annoname = 'CONSUMPTION.VALUEHELP'.
+          DATA(value_help) = VALUE zcds_alv_valuehelp_definition( cds_view = cds_view fieldname = fieldname ).
+          value_help-association_name = remove_quotes( <element_annotation>-value ).
+          INSERT value_help INTO TABLE value_helps.
         ENDIF.
 
-        SPLIT <element_annotation>-annoname AT '$' INTO DATA(prefix) DATA(index) DATA(property).
-        READ TABLE value_help-additional_binding ASSIGNING FIELD-SYMBOL(<additional_binding>)
-             WITH KEY index = index.
-        IF sy-subrc <> 0.
-          INSERT VALUE #( index = index ) INTO TABLE value_help-additional_binding ASSIGNING <additional_binding>.
-        ENDIF.
+        IF <element_annotation>-annoname CP 'CONSUMPTION.VALUEHELPDEFINITION$*$.*'.
+          SPLIT <element_annotation>-annoname AT '$' INTO DATA(prefix) DATA(value_help_index) DATA(property).
 
-        CASE |{ prefix }{ property }|.
-          WHEN 'CONSUMPTION.VALUEHELPDEFINITION.ADDITIONALBINDING.LOCALPARAMETER'.
-            <additional_binding>-source_parameter = remove_quotes( <element_annotation>-value ).
-          WHEN 'CONSUMPTION.VALUEHELPDEFINITION.ADDITIONALBINDING.LOCALELEMENT'.
-            <additional_binding>-source_element = remove_quotes( <element_annotation>-value ).
-          WHEN 'CONSUMPTION.VALUEHELPDEFINITION.ADDITIONALBINDING.PARAMETER'.
-            <additional_binding>-target_parameter = remove_quotes( <element_annotation>-value ).
-          WHEN 'CONSUMPTION.VALUEHELPDEFINITION.ADDITIONALBINDING.ELEMENT'.
-            <additional_binding>-target_element = remove_quotes( <element_annotation>-value ).
-          WHEN 'CONSUMPTION.VALUEHELPDEFINITION.ADDITIONALBINDING.USAGE'.
-            <additional_binding>-usage = <element_annotation>-value.
-        ENDCASE.
+          READ TABLE value_helps ASSIGNING FIELD-SYMBOL(<value_help>)
+               WITH KEY cds_view         = cds_view
+                        fieldname        = fieldname
+                        value_help_index = value_help_index.
+          IF sy-subrc <> 0.
+            INSERT VALUE #( cds_view         = cds_view
+                            fieldname        = fieldname
+                            value_help_index = value_help_index )
+            INTO TABLE value_helps ASSIGNING <value_help>.
+          ENDIF.
+
+          CASE |{ prefix }{ property }|.
+            WHEN 'CONSUMPTION.VALUEHELPDEFINITION.ASSOCIATION'.
+              <value_help>-association_name = remove_quotes( <element_annotation>-value ).
+            WHEN  'CONSUMPTION.VALUEHELPDEFINITION.ENTITY.NAME'.
+              <value_help>-target_entity = remove_quotes( <element_annotation>-value ).
+            WHEN  'CONSUMPTION.VALUEHELPDEFINITION.ENTITY.ELEMENT'.
+              <value_help>-target_element = remove_quotes( <element_annotation>-value ).
+            WHEN   'CONSUMPTION.VALUEHELPDEFINITION.DISTINCTVALUES'.
+              <value_help>-distinct_values = xsdbool( <element_annotation>-value = 'true' ).
+            WHEN  'CONSUMPTION.VALUEHELPDEFINITION.LABEL'.
+              <value_help>-label = remove_quotes( <element_annotation>-value ).
+          ENDCASE.
+
+          IF <element_annotation>-annoname NP 'CONSUMPTION.VALUEHELPDEFINITION$*$.ADDITIONALBINDING$*$.*'.
+            CONTINUE.
+          ENDIF.
+
+          SPLIT <element_annotation>-annoname AT '$' INTO prefix value_help_index DATA(add_prefix) DATA(binding_index) property.
+
+          READ TABLE value_helps ASSIGNING <value_help>
+               WITH KEY cds_view         = cds_view
+                        fieldname        = fieldname
+                        value_help_index = value_help_index.
+          IF sy-subrc <> 0.
+            CONTINUE.
+          ENDIF.
+
+          READ TABLE <value_help>-additional_binding ASSIGNING FIELD-SYMBOL(<additional_binding>)
+               WITH KEY index = binding_index.
+          IF sy-subrc <> 0.
+            INSERT VALUE #( index = binding_index ) INTO TABLE <value_help>-additional_binding ASSIGNING <additional_binding>.
+          ENDIF.
+
+          CASE |{ prefix }{ add_prefix }{ property }|.
+            WHEN 'CONSUMPTION.VALUEHELPDEFINITION.ADDITIONALBINDING.LOCALPARAMETER'.
+              <additional_binding>-source_parameter = remove_quotes( <element_annotation>-value ).
+            WHEN 'CONSUMPTION.VALUEHELPDEFINITION.ADDITIONALBINDING.LOCALELEMENT'.
+              <additional_binding>-source_element = remove_quotes( <element_annotation>-value ).
+            WHEN 'CONSUMPTION.VALUEHELPDEFINITION.ADDITIONALBINDING.PARAMETER'.
+              <additional_binding>-target_parameter = remove_quotes( <element_annotation>-value ).
+            WHEN 'CONSUMPTION.VALUEHELPDEFINITION.ADDITIONALBINDING.ELEMENT'.
+              <additional_binding>-target_element = remove_quotes( <element_annotation>-value ).
+            WHEN 'CONSUMPTION.VALUEHELPDEFINITION.ADDITIONALBINDING.USAGE'.
+              <additional_binding>-usage = <element_annotation>-value.
+          ENDCASE.
+
+        ENDIF.
       ENDLOOP.
-
-      IF    value_help-association_name IS NOT INITIAL
-         OR (     value_help-target_entity  IS NOT INITIAL
-              AND value_help-target_element IS NOT INITIAL ).
-        INSERT value_help INTO TABLE value_helps.
-      ENDIF.
     ENDLOOP.
 
     LOOP AT parameter_annotations ASSIGNING FIELD-SYMBOL(<parameter_annotation_group>)
          GROUP BY <parameter_annotation_group>-parametername.
 
       DATA(parameter_name) = CONV ddparname( <parameter_annotation_group>-parametername ).
-      value_help = VALUE zcds_alv_valuehelp_definition( cds_view = cds_view parameter_name = parameter_name ).
 
-      LOOP AT GROUP <parameter_annotation_group> ASSIGNING FIELD-SYMBOL(<parameter_annotation>).
-        CASE <parameter_annotation>-annoname.
+      LOOP AT GROUP <parameter_annotation_group> ASSIGNING FIELD-SYMBOL(<parameter_annotation>)
+           WHERE annoname CP 'CONSUMPTION.VALUEHELPDEFINITION$*$.*'.
+
+        SPLIT <parameter_annotation>-annoname AT '$' INTO prefix value_help_index property.
+
+        READ TABLE value_helps ASSIGNING <value_help>
+             WITH KEY cds_view         = cds_view
+                      parameter_name   = parameter_name
+                      value_help_index = value_help_index.
+        IF sy-subrc <> 0.
+          INSERT VALUE #( cds_view         = cds_view
+                          parameter_name   = parameter_name
+                          value_help_index = value_help_index )
+          INTO TABLE value_helps ASSIGNING <value_help>.
+        ENDIF.
+
+        CASE |{ prefix }{ property }|.
           WHEN 'CONSUMPTION.VALUEHELPDEFINITION.ENTITY.NAME'.
-            value_help-target_entity = remove_quotes( <parameter_annotation>-value ).
+            <value_help>-target_entity = remove_quotes( <parameter_annotation>-value ).
 
           WHEN 'CONSUMPTION.VALUEHELPDEFINITION.ENTITY.ELEMENT'.
-            value_help-target_element = remove_quotes( <parameter_annotation>-value ).
+            <value_help>-target_element = remove_quotes( <parameter_annotation>-value ).
 
           WHEN 'CONSUMPTION.VALUEHELPDEFINITION.DISTINCTVALUES'.
-            value_help-distinct_values = xsdbool( <parameter_annotation>-value = 'true' ).
+            <value_help>-distinct_values = xsdbool( <parameter_annotation>-value = 'true' ).
 
           WHEN 'CONSUMPTION.VALUEHELPDEFINITION.LABEL'.
-            value_help-label = remove_quotes( <parameter_annotation>-value ).
+            <value_help>-label = remove_quotes( <parameter_annotation>-value ).
         ENDCASE.
       ENDLOOP.
-
-      IF     value_help-target_entity  IS NOT INITIAL
-         AND value_help-target_element IS NOT INITIAL.
-        INSERT value_help INTO TABLE value_helps.
-      ENDIF.
     ENDLOOP.
+
+    DELETE value_helps WHERE association_name IS INITIAL AND ( target_entity IS INITIAL OR target_element IS INITIAL ).
   ENDMETHOD.
+
 
   METHOD get_value_from_dialog.
     DATA value  TYPE dynfieldvalue.
@@ -150,15 +190,18 @@ CLASS zcl_cds_alv_value_help IMPLEMENTATION.
 
     value = c_value.
     CALL FUNCTION 'F4IF_INT_TABLE_VALUE_REQUEST'
-      EXPORTING  retfield        = i_fieldname
-                 value           = value
-                 value_org       = 'S'
-                 display         = i_display
-      TABLES     value_tab       = i_table
-                 return_tab      = return
-      EXCEPTIONS parameter_error = 1
-                 no_values_found = 2
-                 OTHERS          = 3.
+      EXPORTING
+        retfield        = i_fieldname
+        value           = value
+        value_org       = 'S'
+        display         = i_display
+      TABLES
+        value_tab       = i_table
+        return_tab      = return
+      EXCEPTIONS
+        parameter_error = 1
+        no_values_found = 2
+        OTHERS          = 3.
     IF sy-subrc <> 0.
       RAISE EXCEPTION TYPE zcx_cds_alv_message
             MESSAGE ID sy-msgid TYPE sy-msgty NUMBER sy-msgno
@@ -169,6 +212,45 @@ CLASS zcl_cds_alv_value_help IMPLEMENTATION.
       c_value = return[ 1 ]-fieldval.
     ENDIF.
   ENDMETHOD.
+
+  METHOD choose_value_help.
+    " TODO: Choose Value Help
+    DATA options TYPE STANDARD TABLE OF spopli.
+    DATA answer  TYPE c LENGTH 3.
+
+    options = VALUE #( FOR x_value_help IN c_value_helps
+                       ( varoption = COND #( WHEN x_value_help-label IS NOT INITIAL THEN
+                                               |{ x_value_help-value_help_index }: { x_value_help-label }|
+                                             WHEN x_value_help-association_name IS NOT INITIAL THEN
+                                               |{ x_value_help-value_help_index }: { x_value_help-association_name }|
+                                             WHEN x_value_help-target_entity IS NOT INITIAL THEN
+                                               |{ x_value_help-value_help_index }: { x_value_help-target_entity }| ) ) ).
+
+    DELETE options WHERE varoption IS INITIAL.
+
+    CALL FUNCTION 'POPUP_TO_DECIDE_LIST'
+      EXPORTING
+        textline1 = 'Choose Value Help'(001)
+        titel     = 'Choose Value Help'(001)
+      IMPORTING
+        answer    = answer
+      TABLES
+        t_spopli  = options
+      EXCEPTIONS
+        OTHERS    = 1.
+    IF sy-subrc <> 0 OR answer = 'A'.
+      RAISE EXCEPTION TYPE zcx_cds_alv_message
+            MESSAGE ID sy-msgid TYPE sy-msgty NUMBER sy-msgno
+            WITH sy-msgv1 sy-msgv2 sy-msgv3 sy-msgv4.
+    ENDIF.
+
+    READ TABLE options INTO DATA(selected_option) WITH KEY selflag = abap_true.
+    IF sy-subrc = 0.
+      DATA(value_help_index) = CONV sytabix( substring_before( val = selected_option-varoption sub = ':' ) ).
+      DELETE c_value_helps WHERE value_help_index <> value_help_index.
+    ENDIF.
+  ENDMETHOD.
+
 
   METHOD value_help_by_association.
     DATA table TYPE REF TO data.
@@ -215,9 +297,11 @@ CLASS zcl_cds_alv_value_help IMPLEMENTATION.
 
       CATCH cx_sadl_static cx_sadl_contract_violation INTO DATA(previous).
         RAISE EXCEPTION TYPE zcx_cds_alv_message
-          EXPORTING previous = previous.
+          EXPORTING
+            previous = previous.
     ENDTRY.
   ENDMETHOD.
+
 
   METHOD value_help_by_target_entity.
     DATA table TYPE REF TO data.
@@ -297,14 +381,25 @@ CLASS zcl_cds_alv_value_help IMPLEMENTATION.
 
       CATCH cx_sadl_static cx_sadl_contract_violation INTO DATA(previous).
         RAISE EXCEPTION TYPE zcx_cds_alv_message
-          EXPORTING previous = previous.
+          EXPORTING
+            previous = previous.
     ENDTRY.
   ENDMETHOD.
+
 
   METHOD zif_cds_alv_value_help~value_help_for_element.
     TRY.
         e_processed = abap_false.
-        DATA(value_help) = value_helps[ fieldname = i_fieldname ].
+
+        DATA(value_helps_for_field) = VALUE zcds_alv_valuehelp_definitions( FOR x_value_help IN value_helps
+                                                                            WHERE ( fieldname = i_fieldname )
+                                                                            ( x_value_help ) ).
+
+        IF lines( value_helps_for_field ) > 1.
+          choose_value_help( CHANGING c_value_helps = value_helps_for_field ).
+        ENDIF.
+
+        DATA(value_help) = value_helps_for_field[ fieldname = i_fieldname ].
 
         IF     value_help-target_entity  IS NOT INITIAL
            AND value_help-target_element IS NOT INITIAL.
@@ -339,7 +434,16 @@ CLASS zcl_cds_alv_value_help IMPLEMENTATION.
   METHOD zif_cds_alv_value_help~value_help_for_parameter.
     TRY.
         e_processed = abap_false.
-        DATA(value_help) = value_helps[ parameter_name = i_parname ].
+
+        DATA(value_helps_for_param) = VALUE zcds_alv_valuehelp_definitions( FOR x_value_help IN value_helps
+                                                                            WHERE ( parameter_name = i_parname )
+                                                                            ( x_value_help ) ).
+
+        IF lines( value_helps_for_param ) > 1.
+          choose_value_help( CHANGING c_value_helps = value_helps_for_param ).
+        ENDIF.
+
+        DATA(value_help) = value_helps_for_param[ parameter_name = i_parname ].
 
         IF     value_help-target_entity  IS NOT INITIAL
            AND value_help-target_element IS NOT INITIAL.
@@ -355,4 +459,5 @@ CLASS zcl_cds_alv_value_help IMPLEMENTATION.
         e_processed = abap_false.
     ENDTRY.
   ENDMETHOD.
+
 ENDCLASS.

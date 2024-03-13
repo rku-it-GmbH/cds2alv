@@ -20,11 +20,11 @@ CLASS zcl_cds_alv_base DEFINITION PUBLIC ABSTRACT CREATE PUBLIC.
                  with_url                     TYPE zcds_alv_field_type VALUE '#WITH_URL',
                END OF field_type.
 
-    DATA description TYPE ddtext.
-    DATA ddfields TYPE ddfields.
-    DATA parameter_annotations TYPE cl_dd_ddl_annotation_service=>ty_t_para_anno_val_src_dtel.
-    DATA element_annotations TYPE cl_dd_ddl_annotation_service=>ty_t_elmnt_anno_val_src_dtel.
-    DATA entity_annotations TYPE cl_dd_ddl_annotation_service=>ty_t_anno_value.
+    DATA description TYPE ddtext .
+    DATA ddfields TYPE ddfields .
+    DATA parameter_annotations TYPE cl_dd_ddl_annotation_service=>ty_t_para_anno_val_src_dtel .
+    DATA element_annotations TYPE cl_dd_ddl_annotation_service=>ty_t_elmnt_anno_val_src_dtel .
+    DATA entity_annotations TYPE cl_dd_ddl_annotation_service=>ty_t_anno_value .
     DATA ddic_access TYPE REF TO zif_cds_alv_ddic_access.
     DATA persistence TYPE REF TO zif_cds_alv_persistence.
     DATA memory TYPE REF TO zif_cds_alv_memory.
@@ -39,7 +39,6 @@ CLASS zcl_cds_alv_base DEFINITION PUBLIC ABSTRACT CREATE PUBLIC.
         i_string        TYPE clike
       RETURNING
         VALUE(r_string) TYPE string.
-		
   PRIVATE SECTION.
 ENDCLASS.
 

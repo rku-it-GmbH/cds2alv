@@ -79,11 +79,14 @@ CLASS zcl_cds_alv_grid_builder DEFINITION PUBLIC CREATE PUBLIC INHERITING FROM z
     DATA delete_enabled TYPE xsdboolean.
 
     METHODS sort_columns.
+
 ENDCLASS.
 
 
 
 CLASS ZCL_CDS_ALV_GRID_BUILDER IMPLEMENTATION.
+
+
   METHOD build_event_handler.
     DATA(event_handler) = NEW zcl_cds_alv_grid_event_handler( i_cds_view              = cds_view
                                                               i_alv_grid              = alv_grid

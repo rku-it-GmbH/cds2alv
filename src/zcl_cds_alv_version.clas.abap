@@ -1,17 +1,9 @@
-class ZCL_CDS_ALV_VERSION definition
-  public
-  abstract
-  final
-  create public .
-
-public section.
-
-  constants VERSION type STRING value '1.0.1' ##NO_TEXT.
-protected section.
-private section.
+CLASS zcl_cds_alv_version DEFINITION PUBLIC ABSTRACT FINAL CREATE PUBLIC.
+  PUBLIC SECTION.
+    CONSTANTS version TYPE string VALUE '1.1.1' ##NO_TEXT.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
 ENDCLASS.
 
-
-
-CLASS ZCL_CDS_ALV_VERSION IMPLEMENTATION.
+CLASS zcl_cds_alv_version IMPLEMENTATION.
 ENDCLASS.

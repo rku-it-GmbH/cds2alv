@@ -3,9 +3,11 @@ CLASS zcl_cds_alv_persistence DEFINITION PUBLIC CREATE PUBLIC.
     INTERFACES zif_cds_alv_persistence.
 
   PROTECTED SECTION.
-  PRIVATE SECTION.
-ENDCLASS.
 
+  PRIVATE SECTION.
+    ALIASES exists_report_for_cds_view FOR zif_cds_alv_persistence~exists_report_for_cds_view.
+    ALIASES get_report_header          FOR zif_cds_alv_persistence~get_report_header.
+ENDCLASS.
 
 
 CLASS zcl_cds_alv_persistence IMPLEMENTATION.
@@ -17,10 +19,10 @@ CLASS zcl_cds_alv_persistence IMPLEMENTATION.
 
   METHOD zif_cds_alv_persistence~get_extension_parameters.
     SELECT * FROM zcds_alv_extpar  AS par
-             JOIN zcds_alv_extpart AS text ON par~extension_name = text~extension_name
-                                          AND par~parameter_name = text~parameter_name
+             JOIN zcds_alv_extpart AS text ON  par~extension_name = text~extension_name
+                                           AND par~parameter_name = text~parameter_name
      WHERE par~extension_name = @i_extension_name
-       AND text~spras = @sy-langu
+       AND text~spras         = @sy-langu
       INTO CORRESPONDING FIELDS OF TABLE @r_parameters.
   ENDMETHOD.
 
@@ -32,20 +34,22 @@ CLASS zcl_cds_alv_persistence IMPLEMENTATION.
     SELECT * FROM zcds_alv_navexit INTO CORRESPONDING FIELDS OF TABLE @r_navigation_exits.
   ENDMETHOD.
 
-
   METHOD zif_cds_alv_persistence~get_next_program_number.
     DATA(object) =  'ZCDS_ALV_N'.
     DATA(nr_range_nr) = '00'.
 
     CALL FUNCTION 'NUMBER_GET_NEXT'
-      EXPORTING  nr_range_nr = nr_range_nr
-                 object      = object
-      IMPORTING  number      = r_number
-      EXCEPTIONS OTHERS      = 1.
+      EXPORTING
+        nr_range_nr = nr_range_nr
+        object      = object
+      IMPORTING
+        number      = r_number
+      EXCEPTIONS
+        OTHERS      = 1.
     IF sy-subrc <> 0.
       RAISE EXCEPTION TYPE zcx_cds_alv_message
-        MESSAGE ID sy-msgid TYPE sy-msgty NUMBER sy-msgno
-        WITH sy-msgv1 sy-msgv2 sy-msgv3 sy-msgv4.
+            MESSAGE ID sy-msgid TYPE sy-msgty NUMBER sy-msgno
+            WITH sy-msgv1 sy-msgv2 sy-msgv3 sy-msgv4.
     ENDIF.
   ENDMETHOD.
 
@@ -82,8 +86,7 @@ CLASS zcl_cds_alv_persistence IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD zif_cds_alv_persistence~get_report_for_cds_view.
-    SELECT SINGLE *
-      FROM zcds_alv_program
+    SELECT SINGLE * FROM zcds_alv_program
      WHERE cds_view = @i_cds_view
       INTO CORRESPONDING FIELDS OF @r_program_info.
     IF sy-subrc <> 0.
@@ -93,11 +96,11 @@ CLASS zcl_cds_alv_persistence IMPLEMENTATION.
 
     IF r_program_info-progname IS NOT INITIAL.
       SELECT * FROM zcds_alv_selopts
-       WHERE progname = @r_program_info-progname
+        WHERE progname = @r_program_info-progname
         INTO CORRESPONDING FIELDS OF TABLE @r_program_info-select_options.
 
       SELECT * FROM zcds_alv_params
-       WHERE progname = @r_program_info-progname
+        WHERE progname = @r_program_info-progname
         INTO CORRESPONDING FIELDS OF TABLE @r_program_info-parameters.
 
       READ REPORT r_program_info-progname INTO r_program_info-source_lines.
@@ -107,6 +110,14 @@ CLASS zcl_cds_alv_persistence IMPLEMENTATION.
   METHOD zif_cds_alv_persistence~save_report_for_cds_view.
     DATA(program) = CORRESPONDING zcds_alv_program( i_program_info ).
     program-cds_view = i_cds_view.
+
+    IF exists_report_for_cds_view( i_cds_view = i_cds_view ).
+      DATA(program_header) = get_report_header( i_cds_view = i_cds_view ).
+
+      " These can be maintained via a view and need to be carried over
+      program-no_generation         = program_header-no_generation.
+      program-add_func_display_mode = program_header-add_func_display_mode.
+    ENDIF.
 
     MODIFY zcds_alv_program FROM @program.
     IF sy-subrc <> 0.
@@ -140,4 +151,15 @@ CLASS zcl_cds_alv_persistence IMPLEMENTATION.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
+
+  METHOD zif_cds_alv_persistence~get_report_header.
+    SELECT SINGLE * FROM zcds_alv_program
+     WHERE cds_view = @i_cds_view
+      INTO CORRESPONDING FIELDS OF @r_program_header.
+    IF sy-subrc <> 0.
+      RAISE EXCEPTION TYPE zcx_cds_alv_message
+            MESSAGE e008(zcds_alv) WITH i_cds_view.
+    ENDIF.
+  ENDMETHOD.
+
 ENDCLASS.

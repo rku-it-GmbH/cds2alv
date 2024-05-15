@@ -18,6 +18,15 @@ INTERFACE zif_cds_alv_persistence PUBLIC.
     RETURNING VALUE(r_program_info) TYPE zcds_alv_program_info
     RAISING   zcx_cds_alv_message.
 
+  "! reads header data of a report for a CDS view.
+  "! @parameter i_cds_view          | CDS view
+  "! @parameter r_program_header    | header data
+  "! @raising   zcx_cds_alv_message | Occurs when no report exists for the CDS view
+  METHODS get_report_header
+    IMPORTING i_cds_view              TYPE ddstrucobjname
+    RETURNING VALUE(r_program_header) TYPE zcds_alv_program_header
+    RAISING   zcx_cds_alv_message.
+
   "! provides a table of all available targets for Intent-Based navigation.
   "! @parameter r_navigation_table | table of navigation targets
   METHODS get_intent_based_navigation
@@ -70,9 +79,9 @@ INTERFACE zif_cds_alv_persistence PUBLIC.
     RETURNING VALUE(r_navigation_exits) TYPE zcds_alv_navigation_exit_tab.
 
   "! provides the next available number for a generated program
-  "! @parameter i_cds_view | CDS view
-  "! @parameter r_number   | next available number
-  "! @raising zcx_cds_alv_message |
+  "! @parameter i_cds_view        | CDS view
+  "! @parameter r_number          | next available number
+  "! @raising zcx_cds_alv_message | Error during numbering are propagated
   METHODS get_next_program_number
     IMPORTING i_cds_view      TYPE ddstrucobjname
     RETURNING VALUE(r_number) TYPE zcds_alv_view_prog_counter

@@ -1,3 +1,9 @@
+v 1.1.1
+
+- Fixed an error in the handling of class-based exceptions during navigation via ABAP OO methods.
+- Corrected Evaluation of the annotation @Consumption.valueHelpDefinition
+- Added an option to display additional functions as separate buttons or dropdown menu
+
 v 1.1.0
 
 - Added Implementation of Intent-Based Navigation via ABAP OO methods.

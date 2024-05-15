@@ -31,6 +31,24 @@ DATA:  BEGIN OF STATUS_ZCDS_ALV_NAVEXIT              .   "state vector
 DATA:  END OF STATUS_ZCDS_ALV_NAVEXIT              .
 CONTROLS: TCTRL_ZCDS_ALV_NAVEXIT
             TYPE TABLEVIEW USING SCREEN '0005'.
+*...processing: ZMCDSALVPROGRAM.................................*
+TABLES: ZMCDSALVPROGRAM, *ZMCDSALVPROGRAM. "view work areas
+CONTROLS: TCTRL_ZMCDSALVPROGRAM
+TYPE TABLEVIEW USING SCREEN '0006'.
+DATA: BEGIN OF STATUS_ZMCDSALVPROGRAM. "state vector
+          INCLUDE STRUCTURE VIMSTATUS.
+DATA: END OF STATUS_ZMCDSALVPROGRAM.
+* Table for entries selected to show on screen
+DATA: BEGIN OF ZMCDSALVPROGRAM_EXTRACT OCCURS 0010.
+INCLUDE STRUCTURE ZMCDSALVPROGRAM.
+          INCLUDE STRUCTURE VIMFLAGTAB.
+DATA: END OF ZMCDSALVPROGRAM_EXTRACT.
+* Table for all entries loaded from database
+DATA: BEGIN OF ZMCDSALVPROGRAM_TOTAL OCCURS 0010.
+INCLUDE STRUCTURE ZMCDSALVPROGRAM.
+          INCLUDE STRUCTURE VIMFLAGTAB.
+DATA: END OF ZMCDSALVPROGRAM_TOTAL.
+
 *.........table declarations:.................................*
 TABLES: *ZCDS_ALV_EXTHDR               .
 TABLES: *ZCDS_ALV_EXTHDRT              .
@@ -46,6 +64,7 @@ TABLES: ZCDS_ALV_EXTPART               .
 TABLES: ZCDS_ALV_IOCCLIF               .
 TABLES: ZCDS_ALV_NAV                   .
 TABLES: ZCDS_ALV_NAVEXIT               .
+TABLES: ZCDS_ALV_PROGRAM               .
 
 * general table data declarations..............
   INCLUDE LSVIMTDT                                .

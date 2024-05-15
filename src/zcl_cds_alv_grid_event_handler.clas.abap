@@ -5,19 +5,20 @@ CLASS zcl_cds_alv_grid_event_handler DEFINITION PUBLIC CREATE PUBLIC.
     CLASS-METHODS class_constructor.
 
     METHODS constructor
-      IMPORTING i_cds_view              TYPE ddstrucobjname
-                i_alv_grid              TYPE REF TO cl_gui_alv_grid
-                i_table_container       TYPE REF TO zif_cds_alv_table_container
-                i_selection             TYPE REF TO zif_cds_alv_selection        OPTIONAL
-                i_value_help            TYPE REF TO zif_cds_alv_value_help       OPTIONAL
-                i_navigation            TYPE REF TO zif_cds_alv_navigation       OPTIONAL
-                i_bopf_handler          TYPE REF TO zif_cds_alv_bopf_handler     OPTIONAL
-                i_selection_screen      TYPE REF TO zif_cds_alv_selection_screen OPTIONAL
-                i_alternative_selection TYPE REF TO zif_cds_alv_select_extension OPTIONAL
-                i_field_actions         TYPE zcds_alv_field_actions              OPTIONAL
-                i_update_enabled        TYPE abap_bool                           DEFAULT abap_false
-                i_delete_enabled        TYPE abap_bool                           DEFAULT abap_false
-                i_editable_fields       TYPE ddfieldnames                        OPTIONAL.
+      IMPORTING i_cds_view               TYPE ddstrucobjname
+                i_alv_grid               TYPE REF TO cl_gui_alv_grid
+                i_table_container        TYPE REF TO zif_cds_alv_table_container
+                i_selection              TYPE REF TO zif_cds_alv_selection        OPTIONAL
+                i_value_help             TYPE REF TO zif_cds_alv_value_help       OPTIONAL
+                i_navigation             TYPE REF TO zif_cds_alv_navigation       OPTIONAL
+                i_bopf_handler           TYPE REF TO zif_cds_alv_bopf_handler     OPTIONAL
+                i_selection_screen       TYPE REF TO zif_cds_alv_selection_screen OPTIONAL
+                i_alternative_selection  TYPE REF TO zif_cds_alv_select_extension OPTIONAL
+                i_field_actions          TYPE zcds_alv_field_actions              OPTIONAL
+                i_update_enabled         TYPE abap_bool                           DEFAULT abap_false
+                i_delete_enabled         TYPE abap_bool                           DEFAULT abap_false
+                i_editable_fields        TYPE ddfieldnames                        OPTIONAL
+                i_functions_display_mode TYPE zcds_alv_func_display_mode          OPTIONAL.
 
   PROTECTED SECTION.
     CONSTANTS:
@@ -38,26 +39,32 @@ CLASS zcl_cds_alv_grid_event_handler DEFINITION PUBLIC CREATE PUBLIC.
         toggle_change_mode        TYPE ui_func VALUE 'DISPCHNG',
         additional_functions_menu TYPE ui_func VALUE 'ADD_FUNC',
       END OF standard_function_code.
+    CONSTANTS:
+      BEGIN OF display_mode,
+        dropdown_menu TYPE zcds_alv_func_display_mode VALUE '0',
+        buttons       TYPE zcds_alv_func_display_mode VALUE '1',
+      END OF display_mode.
 
     CLASS-DATA standard_function_codes TYPE ui_functions.
 
-    DATA cds_view              TYPE ddstrucobjname.
-    DATA ref_to_table          TYPE REF TO data.
-    DATA alv_grid              TYPE REF TO cl_gui_alv_grid.
-    DATA selection             TYPE REF TO zif_cds_alv_selection.
-    DATA value_help            TYPE REF TO zif_cds_alv_value_help.
-    DATA navigation            TYPE REF TO zif_cds_alv_navigation.
-    DATA bopf_handler          TYPE REF TO zif_cds_alv_bopf_handler.
-    DATA table_container       TYPE REF TO zif_cds_alv_table_container.
-    DATA selection_screen      TYPE REF TO zif_cds_alv_selection_screen.
-    DATA alternative_selection TYPE REF TO zif_cds_alv_select_extension.
-    DATA field_actions         TYPE zcds_alv_field_actions.
-    DATA functions             TYPE zcds_alv_functions.
-    DATA standard_functions    TYPE zcds_alv_functions.
-    DATA additional_functions  TYPE zcds_alv_functions.
-    DATA update_enabled        TYPE abap_bool.
-    DATA delete_enabled        TYPE abap_bool.
-    DATA editable_fields       TYPE ddfieldnames.
+    DATA cds_view               TYPE ddstrucobjname.
+    DATA ref_to_table           TYPE REF TO data.
+    DATA alv_grid               TYPE REF TO cl_gui_alv_grid.
+    DATA selection              TYPE REF TO zif_cds_alv_selection.
+    DATA value_help             TYPE REF TO zif_cds_alv_value_help.
+    DATA navigation             TYPE REF TO zif_cds_alv_navigation.
+    DATA bopf_handler           TYPE REF TO zif_cds_alv_bopf_handler.
+    DATA table_container        TYPE REF TO zif_cds_alv_table_container.
+    DATA selection_screen       TYPE REF TO zif_cds_alv_selection_screen.
+    DATA alternative_selection  TYPE REF TO zif_cds_alv_select_extension.
+    DATA field_actions          TYPE zcds_alv_field_actions.
+    DATA functions              TYPE zcds_alv_functions.
+    DATA standard_functions     TYPE zcds_alv_functions.
+    DATA additional_functions   TYPE zcds_alv_functions.
+    DATA update_enabled         TYPE abap_bool.
+    DATA delete_enabled         TYPE abap_bool.
+    DATA editable_fields        TYPE ddfieldnames.
+    DATA functions_display_mode TYPE zcds_alv_func_display_mode.
 
     METHODS dispatch_standard_function
       IMPORTING i_function      TYPE ui_func
@@ -90,11 +97,10 @@ CLASS zcl_cds_alv_grid_event_handler DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 
 
-
 CLASS zcl_cds_alv_grid_event_handler IMPLEMENTATION.
   METHOD build_function_table.
-    additional_functions = VALUE #( FOR field_action IN field_actions WHERE
-                                    ( user_command IS NOT INITIAL )
+    additional_functions = VALUE #( FOR field_action IN field_actions
+                                    WHERE ( user_command IS NOT INITIAL )
                                     ( name = field_action-user_command
                                       text = field_action-label ) ).
 
@@ -124,7 +130,7 @@ CLASS zcl_cds_alv_grid_event_handler IMPLEMENTATION.
              INTO TABLE standard_functions.
     ENDIF.
 
-    IF additional_functions IS NOT INITIAL.
+    IF additional_functions IS NOT INITIAL AND functions_display_mode = display_mode-dropdown_menu.
       INSERT VALUE #( name        = standard_function_code-additional_functions_menu
                       icon        = icon_context_menu
                       tooltip     = TEXT-005
@@ -169,6 +175,7 @@ CLASS zcl_cds_alv_grid_event_handler IMPLEMENTATION.
     delete_enabled = i_delete_enabled.
     editable_fields = i_editable_fields.
     alternative_selection = i_alternative_selection.
+    functions_display_mode = i_functions_display_mode.
 
     ref_to_table = table_container->get_ref_to_table( ).
     build_function_table( ).
@@ -341,8 +348,10 @@ CLASS zcl_cds_alv_grid_event_handler IMPLEMENTATION.
     ENDIF.
 
     TRY.
-        DATA(field_action) = field_actions[ fieldname = es_col_id-fieldname hotspot = abap_true ].
-        dispatch_single_action( i_field_action = field_action i_selected_row = <selected_row> ).
+        DATA(field_action) = field_actions[ fieldname = es_col_id-fieldname
+                                            hotspot   = abap_true ].
+        dispatch_single_action( i_field_action = field_action
+                                i_selected_row = <selected_row> ).
       CATCH cx_sy_itab_line_not_found.
     ENDTRY.
   ENDMETHOD.
@@ -370,8 +379,10 @@ CLASS zcl_cds_alv_grid_event_handler IMPLEMENTATION.
     ENDIF.
 
     TRY.
-        DATA(field_action) = field_actions[ fieldname = e_column-fieldname hotspot = abap_true ].
-        dispatch_single_action( i_field_action = field_action i_selected_row = <selected_row> ).
+        DATA(field_action) = field_actions[ fieldname = e_column-fieldname
+                                            hotspot   = abap_true ].
+        dispatch_single_action( i_field_action = field_action
+                                i_selected_row = <selected_row> ).
       CATCH cx_sy_itab_line_not_found.
     ENDTRY.
   ENDMETHOD.
@@ -391,8 +402,10 @@ CLASS zcl_cds_alv_grid_event_handler IMPLEMENTATION.
     ENDIF.
 
     TRY.
-        DATA(field_action) = field_actions[ fieldname = e_column_id-fieldname hotspot = abap_true ].
-        dispatch_single_action( i_field_action = field_action i_selected_row = <selected_row> ).
+        DATA(field_action) = field_actions[ fieldname = e_column_id-fieldname
+                                            hotspot   = abap_true ].
+        dispatch_single_action( i_field_action = field_action
+                                i_selected_row = <selected_row> ).
       CATCH cx_sy_itab_line_not_found.
     ENDTRY.
   ENDMETHOD.
@@ -405,30 +418,6 @@ CLASS zcl_cds_alv_grid_event_handler IMPLEMENTATION.
                                 icon  = CONV #( function-icon ) ).
       ENDLOOP.
     ENDIF.
-
-*    DATA: ref_to_selected_rows TYPE REF TO data.
-*    FIELD-SYMBOLS: <selected_rows> TYPE STANDARD TABLE.
-*    FIELD-SYMBOLS: <table> TYPE STANDARD TABLE.
-*    ASSIGN ref_to_table->* TO <table>.
-*
-*    CREATE DATA ref_to_selected_rows LIKE <table>.
-*    ASSIGN ref_to_selected_rows->* TO <selected_rows>.
-*
-*    alv_grid->get_selected_rows( IMPORTING et_row_no = DATA(lt_row_no) ).
-*    LOOP AT lt_row_no INTO DATA(row_no) WHERE row_id <> 0.
-*      INSERT <table>[ row_no-row_id ] INTO TABLE <selected_rows>.
-*    ENDLOOP.
-*
-*    IF line_exists( standard_function_codes[ table_line = e_ucomm ] ).
-*      dispatch_standard_function( i_function = e_ucomm i_selected_rows = <selected_rows> ).
-*      RETURN.
-*    ENDIF.
-*
-*    TRY.
-*        DATA(field_action) = field_actions[ user_command = e_ucomm ].
-*        dispatch_mass_action( i_field_action = field_action i_selected_rows = <selected_rows> ).
-*      CATCH cx_sy_itab_line_not_found.
-*    ENDTRY.
   ENDMETHOD.
 
   METHOD zif_cds_alv_grid_event_handler~on_toolbar.
@@ -445,6 +434,18 @@ CLASS zcl_cds_alv_grid_event_handler IMPLEMENTATION.
 
     IF additional_functions IS INITIAL.
       DELETE e_object->mt_toolbar WHERE function = standard_function_code-additional_functions_menu.
+    ENDIF.
+
+    IF functions_display_mode = display_mode-buttons.
+      LOOP AT additional_functions INTO DATA(additional_function).
+        INSERT VALUE #(
+          function   = additional_function-name
+          icon       = additional_function-icon
+          text       = additional_function-text
+          quickinfo  = additional_function-tooltip
+          butn_type  = additional_function-button_type )
+        INTO TABLE e_object->mt_toolbar.
+      ENDLOOP.
     ENDIF.
   ENDMETHOD.
 
@@ -464,13 +465,15 @@ CLASS zcl_cds_alv_grid_event_handler IMPLEMENTATION.
     ENDLOOP.
 
     IF line_exists( standard_function_codes[ table_line = e_ucomm ] ).
-      dispatch_standard_function( i_function = e_ucomm i_selected_rows = <selected_rows> ).
+      dispatch_standard_function( i_function      = e_ucomm
+                                  i_selected_rows = <selected_rows> ).
       RETURN.
     ENDIF.
 
     TRY.
         DATA(field_action) = field_actions[ user_command = e_ucomm ].
-        dispatch_mass_action( i_field_action = field_action i_selected_rows = <selected_rows> ).
+        dispatch_mass_action( i_field_action  = field_action
+                              i_selected_rows = <selected_rows> ).
       CATCH cx_sy_itab_line_not_found.
     ENDTRY.
   ENDMETHOD.

@@ -62,7 +62,10 @@ CLASS zcl_cds_alv_grid_builder DEFINITION PUBLIC CREATE PUBLIC INHERITING FROM z
     METHODS build_layout.
     METHODS build_f4.
     METHODS build_exclude_functions.
-    METHODS build_event_handler.
+
+    METHODS build_event_handler
+      RAISING zcx_cds_alv_message.
+
     METHODS register_event_handlers.
 
   PRIVATE SECTION.
@@ -79,27 +82,34 @@ CLASS zcl_cds_alv_grid_builder DEFINITION PUBLIC CREATE PUBLIC INHERITING FROM z
     DATA delete_enabled TYPE xsdboolean.
 
     METHODS sort_columns.
+
 ENDCLASS.
 
 
 
 CLASS ZCL_CDS_ALV_GRID_BUILDER IMPLEMENTATION.
+
+
   METHOD build_event_handler.
-    DATA(event_handler) = NEW zcl_cds_alv_grid_event_handler( i_cds_view              = cds_view
-                                                              i_alv_grid              = alv_grid
-                                                              i_selection             = selection
-                                                              i_value_help            = value_help
-                                                              i_navigation            = navigation
-                                                              i_bopf_handler          = bopf_handler
-                                                              i_table_container       = table_container
-                                                              i_selection_screen      = selection_screen
-                                                              i_alternative_selection = alternative_selection
-                                                              i_field_actions         = field_actions
-                                                              i_update_enabled        = update_enabled
-                                                              i_delete_enabled        = delete_enabled
-                                                              i_editable_fields       = editable_fields ).
+    DATA(program_info) = persistence->get_report_for_cds_view( cds_view ).
+    DATA(functions_display_mode) = program_info-add_func_display_mode.
+    DATA(event_handler) = NEW zcl_cds_alv_grid_event_handler( i_cds_view               = cds_view
+                                                              i_alv_grid               = alv_grid
+                                                              i_selection              = selection
+                                                              i_value_help             = value_help
+                                                              i_navigation             = navigation
+                                                              i_bopf_handler           = bopf_handler
+                                                              i_table_container        = table_container
+                                                              i_selection_screen       = selection_screen
+                                                              i_alternative_selection  = alternative_selection
+                                                              i_field_actions          = field_actions
+                                                              i_update_enabled         = update_enabled
+                                                              i_delete_enabled         = delete_enabled
+                                                              i_editable_fields        = editable_fields
+                                                              i_functions_display_mode = functions_display_mode ).
     INSERT event_handler INTO TABLE event_handlers.
   ENDMETHOD.
+
 
   METHOD build_exclude_functions.
     exclude_functions = VALUE #( ( cl_gui_alv_grid=>mc_fc_loc_append_row )
@@ -114,6 +124,7 @@ CLASS ZCL_CDS_ALV_GRID_BUILDER IMPLEMENTATION.
                                  ( cl_gui_alv_grid=>mc_fc_loc_undo ) ).
   ENDMETHOD.
 
+
   METHOD build_f4.
     value_help_fields = VALUE #( FOR field_properties IN field_properties_table
                                  WHERE
@@ -123,6 +134,7 @@ CLASS ZCL_CDS_ALV_GRID_BUILDER IMPLEMENTATION.
                                    getbefore  = abap_true
                                    chngeafter = abap_true ) ).
   ENDMETHOD.
+
 
   METHOD build_fieldcatalog.
     CALL FUNCTION 'LVC_FIELDCATALOG_MERGE'
@@ -248,6 +260,7 @@ CLASS ZCL_CDS_ALV_GRID_BUILDER IMPLEMENTATION.
     sort_columns( ).
   ENDMETHOD.
 
+
   METHOD build_layout.
     CONSTANTS row_column TYPE lvc_libox VALUE 'A' ##NO_TEXT.
 
@@ -289,6 +302,7 @@ CLASS ZCL_CDS_ALV_GRID_BUILDER IMPLEMENTATION.
     ENDIF.
   ENDMETHOD.
 
+
   METHOD build_variant.
     variant-report   = sy-cprog.
     variant-username = sy-uname.
@@ -298,6 +312,7 @@ CLASS ZCL_CDS_ALV_GRID_BUILDER IMPLEMENTATION.
                                           IMPORTING e_parameter = variant-variant ).
     ENDIF.
   ENDMETHOD.
+
 
   METHOD constructor.
     super->constructor( i_cds_view    = i_cds_view
@@ -314,6 +329,7 @@ CLASS ZCL_CDS_ALV_GRID_BUILDER IMPLEMENTATION.
 
     evaluate_annotations( ).
   ENDMETHOD.
+
 
   METHOD evaluate_annotations.
     DATA(action_counter) = VALUE numc3( ).
@@ -510,6 +526,7 @@ CLASS ZCL_CDS_ALV_GRID_BUILDER IMPLEMENTATION.
     ENDIF.
   ENDMETHOD.
 
+
   METHOD register_event_handlers.
     LOOP AT event_handlers INTO DATA(event_handler).
       SET HANDLER event_handler->on_help_request FOR alv_grid.
@@ -528,6 +545,7 @@ CLASS ZCL_CDS_ALV_GRID_BUILDER IMPLEMENTATION.
       SET HANDLER event_handler->on_data_changed_finished FOR alv_grid.
     ENDLOOP.
   ENDMETHOD.
+
 
   METHOD sort_columns.
     TYPES: BEGIN OF ty_field_position,
@@ -557,6 +575,7 @@ CLASS ZCL_CDS_ALV_GRID_BUILDER IMPLEMENTATION.
       ENDTRY.
     ENDLOOP.
   ENDMETHOD.
+
 
   METHOD zif_cds_alv_grid_builder~create_alv_grid.
     CONSTANTS save_all TYPE char01 VALUE 'A' ##NO_TEXT.
@@ -614,9 +633,11 @@ CLASS ZCL_CDS_ALV_GRID_BUILDER IMPLEMENTATION.
     e_alv_grid = alv_grid.
   ENDMETHOD.
 
+
   METHOD zif_cds_alv_grid_builder~get_gui_title.
     r_title = description.
   ENDMETHOD.
+
 
   METHOD zif_cds_alv_grid_builder~get_metadata.
     table_container = i_table_container.
@@ -631,6 +652,7 @@ CLASS ZCL_CDS_ALV_GRID_BUILDER IMPLEMENTATION.
     e_sort_order = sort_order.
     e_filters = filter.
   ENDMETHOD.
+
 
   METHOD zif_cds_alv_grid_builder~register_alternative_selection.
     alternative_selection = i_selection_handler.

@@ -80,6 +80,12 @@
      </TEXTPOOL>
     </item>
    </I18N_TPOOL>
+   <DESCRIPTIONS_CLASS>
+    <SEOCLASSTX>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Event Handler für das ALV Grid</DESCRIPT>
+    </SEOCLASSTX>
+   </DESCRIPTIONS_CLASS>
   </asx:values>
  </asx:abap>
 </abapGit>

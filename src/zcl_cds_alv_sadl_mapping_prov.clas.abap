@@ -44,6 +44,7 @@ CLASS ZCL_CDS_ALV_SADL_MAPPING_PROV IMPLEMENTATION.
         " SADL definition according to CL_SADL_ENTITY_UTIL=>GET_SADL_FOR_ENTITY.
         INSERT VALUE #( name = id  type = entity_type  binding = entity_id ) INTO TABLE ms_sadl_definition-data_sources.
         INSERT VALUE #( name = id  anchor = abap_true  data_source = id  max_edit_mode = 'RO'  id = id ) INTO TABLE ms_sadl_definition-structures.
+*        INSERT VALUE #( name = id  anchor = abap_true  data_source = id  max_edit_mode = 'RO'  id = id exposure = exposure ) INTO TABLE ms_sadl_definition-structures.
         INSERT VALUE #( name = 'SADL_QUERY'  structure_id = id  id = 'QUERY' ) INTO TABLE ms_sadl_definition-mapped_queries ASSIGNING FIELD-SYMBOL(<query>).
         DATA(entity_consumption_info) = cl_sadl_entity_factory=>get_instance( )->get_entity_consumption_info( iv_id = entity_id  iv_type = entity_type ).
         entity_consumption_info->get_elements( IMPORTING et_elements = DATA(elements) ).
@@ -61,8 +62,9 @@ CLASS ZCL_CDS_ALV_SADL_MAPPING_PROV IMPLEMENTATION.
 
       CATCH cx_sadl_static INTO DATA(previous).
         RAISE EXCEPTION TYPE cx_bsa_compile_time
-          EXPORTING textid   = cx_bsa_compile_time=>cx_previous
-                    previous = previous.
+          EXPORTING
+            textid   = cx_bsa_compile_time=>cx_bsa_sadl_xml
+            previous = previous.
     ENDTRY.
   ENDMETHOD.
 
@@ -70,7 +72,8 @@ CLASS ZCL_CDS_ALV_SADL_MAPPING_PROV IMPLEMENTATION.
   METHOD constructor.
     GET TIME STAMP FIELD DATA(timestamp).
     DATA(uuid) = CONV if_sadl_types=>ty_uuid( |ZCDS_ALV:{ i_entity->get_id( ) }| ).
-    super->constructor( iv_uuid = uuid iv_timestamp = timestamp ).
+    super->constructor( iv_uuid      = uuid
+                        iv_timestamp = timestamp ).
     entity = i_entity.
   ENDMETHOD.
 

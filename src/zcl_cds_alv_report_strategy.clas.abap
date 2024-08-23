@@ -335,7 +335,7 @@ CLASS ZCL_CDS_ALV_REPORT_STRATEGY IMPLEMENTATION.
     " Default parameters
     APPEND LINES OF VALUE zcds_alv_source_lines(
         ( |PARAMETERS p_maxrec TYPE ddshmaxrec DEFAULT 500 MODIF ID max.| )
-        ( |PARAMETERS p_no_max TYPE xfeld USER-COMMAND no_max.          | )
+        ( |PARAMETERS p_no_max TYPE zcds_alv_no_max USER-COMMAND no_max.| )
         ( |SELECTION-SCREEN SKIP.                                       | )
         ( |PARAMETERS p_selext TYPE zcds_alv_report_extension_name AS LISTBOX visible length 40 USER-COMMAND switch_sel MODIF ID sel.| )
         ( |PARAMETERS p_disext TYPE zcds_alv_report_extension_name AS LISTBOX visible length 40 USER-COMMAND switch_dis MODIF ID dis.| )
@@ -373,14 +373,16 @@ CLASS ZCL_CDS_ALV_REPORT_STRATEGY IMPLEMENTATION.
     append_initial_line.
 
     " INITIALIZATION
-    APPEND LINES OF VALUE zcds_alv_source_lines( ( |INITIALIZATION.                                 | )
-                                                 ( |  sy-title = title.                             | )
-                                                 ( |                                                | )
-                                                 ( |  TRY.                                          | )
-                                                 ( |      controller->initialization( ).            | )
-                                                 ( |    CATCH zcx_cds_alv_message INTO message.     | )
-                                                 ( |      MESSAGE message TYPE 'I' DISPLAY LIKE 'E'.| )
-                                                 ( |  ENDTRY.                                       | ) ) TO r_program-source_lines.
+    APPEND LINES OF VALUE zcds_alv_source_lines( ( |INITIALIZATION.                                     | )
+                                                 ( |  sy-title = title.                                 | )
+                                                 ( |                                                    | )
+                                                 ( |  GET PARAMETER ID 'ZCDS_ALV_NO_MAX' FIELD p_no_max.| )
+                                                 ( |                                                    | )
+                                                 ( |  TRY.                                              | )
+                                                 ( |      controller->initialization( ).                | )
+                                                 ( |    CATCH zcx_cds_alv_message INTO message.         | )
+                                                 ( |      MESSAGE message TYPE 'I' DISPLAY LIKE 'E'.    | )
+                                                 ( |  ENDTRY.                                           | ) ) TO r_program-source_lines.
     append_initial_line.
 
     " AT SELECTION-SCREEN OUTPUT

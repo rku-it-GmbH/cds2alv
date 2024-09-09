@@ -1,3 +1,6 @@
+v 1.3.0
+- Added SET-/GET-Parameter ZCDS_ALV_NO_MAX to allow unrestricted selection as personal default setting.
+
 v 1.2.0
 - New version to stay in sync with the S/4 Edition, which gets some RAP support.
 

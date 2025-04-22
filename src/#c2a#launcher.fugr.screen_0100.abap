@@ -1,0 +1,10 @@
+PROCESS BEFORE OUTPUT.
+  MODULE auth_check_0100.
+  MODULE status_0100.
+
+PROCESS AFTER INPUT.
+  MODULE exit AT EXIT-COMMAND.
+
+  FIELD cds_view MODULE check_view.
+
+  MODULE user_command_0100.

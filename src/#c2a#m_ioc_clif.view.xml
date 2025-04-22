@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_VIEW" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD25V>
+    <VIEWNAME>/C2A/M_IOC_CLIF</VIEWNAME>
+    <AS4LOCAL>A</AS4LOCAL>
+    <DDLANGUAGE>E</DDLANGUAGE>
+    <AGGTYPE>V</AGGTYPE>
+    <ROOTTAB>/C2A/IOC_CLIF</ROOTTAB>
+    <DDTEXT>Implementation registry for the IoC Container</DDTEXT>
+    <VIEWCLASS>C</VIEWCLASS>
+    <CUSTOMAUTH>C</CUSTOMAUTH>
+    <GLOBALFLAG>X</GLOBALFLAG>
+   </DD25V>
+   <DD26V_TABLE>
+    <DD26V>
+     <VIEWNAME>/C2A/M_IOC_CLIF</VIEWNAME>
+     <TABNAME>/C2A/IOC_CLIF</TABNAME>
+     <TABPOS>0001</TABPOS>
+     <FORTABNAME>/C2A/IOC_CLIF</FORTABNAME>
+    </DD26V>
+   </DD26V_TABLE>
+   <DD27P_TABLE>
+    <DD27P>
+     <VIEWFIELD>INTERFACE</VIEWFIELD>
+     <TABNAME>/C2A/IOC_CLIF</TABNAME>
+     <FIELDNAME>INTERFACE</FIELDNAME>
+     <KEYFLAG>X</KEYFLAG>
+     <SHLPORIGIN>X</SHLPORIGIN>
+    </DD27P>
+    <DD27P>
+     <VIEWFIELD>CLASS</VIEWFIELD>
+     <TABNAME>/C2A/IOC_CLIF</TABNAME>
+     <FIELDNAME>CLASS</FIELDNAME>
+     <SHLPORIGIN>X</SHLPORIGIN>
+    </DD27P>
+   </DD27P_TABLE>
+   <TABL_EXTRAS>
+    <TDDAT>
+     <TABNAME>/C2A/M_IOC_CLIF</TABNAME>
+     <CCLASS>/C2A/CONFIG</CCLASS>
+    </TDDAT>
+   </TABL_EXTRAS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

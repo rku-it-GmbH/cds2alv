@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_PARA" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <TPARA>
+    <PARAMID>/C2A/CDS_VIEW</PARAMID>
+   </TPARA>
+   <TPARAT>
+    <PARAMID>/C2A/CDS_VIEW</PARAMID>
+    <SPRACHE>E</SPRACHE>
+    <PARTEXT>CDS view for display in ALV</PARTEXT>
+   </TPARAT>
+  </asx:values>
+ </asx:abap>
+</abapGit>

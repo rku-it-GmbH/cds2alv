@@ -11,15 +11,15 @@ Execute abapGit using the report *ZABAPGIT_STANDALONE* or transaction code *ZABA
 
 Fill the field *Git repository URL* with *https://github.com/rku-it-GmbH/cds2alv.git*.
 
-The default package name is *ZCDS_ALV*, create the package, if it does not already exist.
+The default package name is */C2A/CDS_ALV*, create the package, if it does not already exist.
 
 Create the Online Repository and pull all contents to your system. 
 
-Check if the Viewcluster *ZVC_CDS_ALV_FW* works properly, it may be necessary to generate the Maintenance Views in Function Group *ZCDS_ALV_TABLES* manually.
+Check if the Viewcluster */C2A/VC_CONFIG* works properly, it may be necessary to generate the Maintenance Views in Function Group */C2A/TABLES* manually.
 
 ## Setup
 
-### Maintain the Viewcluster *ZVC_CDS_ALV_FW*
+### Maintain the Viewcluster */C2A/VC_CONFIG*
 
 #### Intent-Based Navigation
 Define the Intent-Based Navigation for the semantic objects and actions you want to use in your CDS Views. 
@@ -48,5 +48,5 @@ Please be aware that the IoC container is not able to resolve cyclic dependencie
 Originally when designing the framework we decided to name the reports using a prefix and the name of the underlying database view of the CDS views.
 As CDS View Entities do not have underlying database views the need for an alternative solution arose.
 
-As of now the solution is to create a unique name by numbering the reports. To this end the framework uses the Number Range *ZCDS_ALV_N* with interval *00*.
+As of now the solution is to create a unique name by numbering the reports. To this end the framework uses the Number Range */C2A/VIEW* with interval *00*.
 This interval needs to be defined in order for the framework to generate reports for CDS View entities.

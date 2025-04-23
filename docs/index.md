@@ -4,7 +4,7 @@ The features of the reports are controlled using CDS Annotations.
 **Version**
 
 The project is maintained on a system with Software Component SAP_ABA 750 SP26.
-It runs on newer releases with minor adjustments, we plan to offer a variant for S/4HANA 2023 in the near future.
+It runs on newer releases with minor adjustments, variants for S/4HANA 2023 are avalailable in separate repositories.
 
 **Resources**
 

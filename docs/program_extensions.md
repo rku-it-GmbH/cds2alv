@@ -1,11 +1,11 @@
 # Program extensions
 
 Program extensions are plugins for the reports genereated by the framework. 
-They can be switched on and off for each individual CDS view in the first screen of the transaction *ZCDS_ALV_START*.
+They can be switched on and off for each individual CDS view in the first screen of the transaction */C2A/CDS_ALV_START*.
 
 ## Defining a Program extension
 
-Program extensions are defined in the Viewcluster *ZVC_CDS_ALV_FW*.
+Program extensions are defined in the Viewcluster */C2A/VC_CONFIG*.
 The definition of a program extension consists of the following information:
 * database key
 * display name
@@ -15,8 +15,8 @@ The definition of a program extension consists of the following information:
 
 ## Implementing a Program extension 
 
-The implementing class of a program extension must implement the interface *ZIF_CDS_ALV_REPORT_EXTENSION*, 
-furthermore it is recommended to inherit from the abstract class *ZCL_CDS_ALV_REPORT_EXTENSION* or a suitable subclass.
+The implementing class of a program extension must implement the interface */C2A/IF_REPORT_EXTENSION*, 
+furthermore it is recommended to inherit from the abstract class */C2A/CL_REPORT_EXTENSION* or a suitable subclass.
 
 Program extensions can enhance the following events:
 
